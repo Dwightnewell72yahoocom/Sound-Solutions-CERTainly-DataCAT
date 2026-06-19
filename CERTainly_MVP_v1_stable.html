@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>CERTainly — NDT CertTrack MVP v1</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f0efe8;min-height:100vh;display:flex;align-items:flex-start;justify-content:center;padding:20px}
+:root{--blue:#185FA5;--blue-lt:#E6F1FB;--blue-dk:#0C447C;--teal:#0F6E56;--teal-lt:#E1F5EE;--teal-dk:#085041;--amber:#BA7517;--amber-lt:#FAEEDA;--red:#A32D2D;--red-lt:#FCEBEB;--green:#3B6D11;--green-lt:#EAF3DE;--green-dk:#27500A;--bg:#ffffff;--bg2:#f5f5f3;--text:#1a1a1a;--text2:#6b6b6b;--border:rgba(0,0,0,0.12)}
+.phone{max-width:390px;width:100%;margin:0 auto;background:#e8e8e8;border-radius:44px;padding:14px;box-shadow:0 20px 60px rgba(0,0,0,0.2)}
+.screen{background:var(--bg);border-radius:32px;overflow:hidden;min-height:780px;position:relative}
+.status-bar{padding:14px 20px 0;display:flex;justify-content:space-between;align-items:center;background:var(--bg)}
+.status-time{font-size:15px;font-weight:600;color:var(--text)}
+.status-icons{font-size:12px;color:var(--text2);display:flex;gap:5px;align-items:center}
+.top-bar{padding:12px 18px;display:flex;align-items:center;justify-content:space-between;border-bottom:0.5px solid var(--border);background:var(--bg)}
+.top-logo{font-size:15px;font-weight:600;color:var(--text)}.top-logo span{color:var(--blue)}
+.back-btn{display:flex;align-items:center;gap:4px;font-size:14px;color:var(--blue);cursor:pointer;-webkit-tap-highlight-color:transparent}
+.screen-body{padding:18px;overflow-y:auto}
+.screen-title{font-size:18px;font-weight:600;color:var(--text);margin-bottom:5px}
+.screen-sub{font-size:13px;color:var(--text2);margin-bottom:18px;line-height:1.55}
+.field-group{margin-bottom:14px}
+.field-label{font-size:11px;font-weight:600;color:var(--text2);margin-bottom:5px;letter-spacing:.05em;text-transform:uppercase}
+.field-input{width:100%;padding:11px 13px;border-radius:10px;border:0.5px solid rgba(0,0,0,0.2);background:var(--bg);font-size:14px;color:var(--text);-webkit-appearance:none;appearance:none}
+.field-input.filled{background:var(--bg2);border-color:rgba(0,0,0,0.1)}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.primary-btn{width:100%;padding:14px;border-radius:12px;background:var(--blue);color:#fff;font-size:15px;font-weight:600;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;-webkit-tap-highlight-color:transparent}
+.primary-btn i{font-size:17px}
+.secondary-btn{width:100%;padding:12px;border-radius:12px;background:var(--bg2);color:var(--text);font-size:14px;font-weight:500;border:0.5px solid rgba(0,0,0,0.15);cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;margin-top:8px;-webkit-tap-highlight-color:transparent}
+.card{background:var(--bg);border:0.5px solid var(--border);border-radius:14px;padding:14px 16px;margin-bottom:10px}
+.card-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.card-title{font-size:14px;font-weight:600;color:var(--text)}
+.badge{display:inline-flex;align-items:center;gap:3px;font-size:11px;font-weight:600;padding:3px 9px;border-radius:20px}
+.badge.ok{background:var(--green-lt);color:var(--green-dk)}
+.badge.warn{background:var(--amber-lt);color:var(--amber)}
+.badge.pending{background:var(--blue-lt);color:var(--blue-dk)}
+.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}
+.stat-card{background:var(--bg2);border-radius:12px;padding:13px}
+.stat-label{font-size:11px;color:var(--text2);margin-bottom:4px}
+.stat-val{font-size:24px;font-weight:600;color:var(--text)}
+.step-row{display:flex;align-items:flex-start;gap:12px;padding:11px 0;border-bottom:0.5px solid var(--border)}
+.step-row:last-child{border-bottom:none}
+.step-num{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;flex-shrink:0}
+.step-num.done{background:var(--green-lt);color:var(--green-dk)}
+.step-num.active{background:var(--blue-lt);color:var(--blue-dk)}
+.step-num.todo{background:var(--bg2);color:var(--text2)}
+.step-info{flex:1;min-width:0}
+.step-title{font-size:13px;font-weight:600;color:var(--text);margin-bottom:2px}
+.step-sub{font-size:11px;color:var(--text2);line-height:1.4}
+.sig-canvas{width:100%;height:88px;border-radius:12px;border:1.5px dashed rgba(0,0,0,0.2);background:var(--bg2);display:flex;align-items:center;justify-content:center;margin-bottom:10px;cursor:pointer}
+.sig-canvas.signed{border-style:solid;border-color:var(--green);background:var(--green-lt)}
+.sig-preview{font-size:24px;color:var(--green-dk);font-family:Georgia,serif;font-style:italic}
+.attest-box{background:var(--bg2);border-radius:10px;padding:12px;margin-bottom:14px;border-left:3px solid var(--blue);border-radius:0 10px 10px 0}
+.attest-text{font-size:12px;color:var(--text2);line-height:1.6}
+.checklist-item{display:flex;align-items:center;gap:10px;padding:11px 0;border-bottom:0.5px solid var(--border)}
+.checklist-item:last-child{border-bottom:none}
+.check-icon{width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:13px}
+.check-icon.done{background:var(--green-lt);color:var(--green-dk)}
+.check-icon.warn{background:var(--amber-lt);color:var(--amber)}
+.check-icon.todo{background:var(--bg2);color:var(--text2);border:0.5px solid rgba(0,0,0,0.15)}
+.check-label{font-size:13px;color:var(--text);flex:1;font-weight:500}
+.check-sub{font-size:11px;color:var(--text2)}
+.signatory-card{background:var(--bg);border:0.5px solid var(--border);border-radius:14px;padding:14px 16px;margin-bottom:10px}
+.sig-person{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.sig-avatar{width:38px;height:38px;border-radius:50%;background:var(--blue-lt);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;color:var(--blue-dk);flex-shrink:0}
+.sig-name{font-size:14px;font-weight:600;color:var(--text)}
+.sig-role-sub{font-size:11px;color:var(--text2)}
+.role-tags{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:10px}
+.role-tag{font-size:10px;font-weight:600;padding:3px 8px;border-radius:10px;background:var(--blue-lt);color:var(--blue-dk)}
+.send-sig-btn{width:100%;padding:11px;border-radius:11px;background:var(--teal);color:#fff;font-size:14px;font-weight:600;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px}
+.sent-indicator{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--teal-dk);padding:9px 11px;background:var(--teal-lt);border-radius:10px}
+.success-icon{width:68px;height:68px;border-radius:50%;background:var(--green-lt);display:flex;align-items:center;justify-content:center;margin:0 auto 18px;font-size:30px;color:var(--green-dk)}
+.success-title{font-size:20px;font-weight:600;color:var(--text);margin-bottom:8px;text-align:center}
+.success-sub{font-size:13px;color:var(--text2);line-height:1.6;margin-bottom:20px;text-align:center}
+.ref-box{background:var(--bg2);border-radius:11px;padding:12px;margin-bottom:10px;text-align:left}
+.ref-label{font-size:11px;color:var(--text2);margin-bottom:3px}
+.ref-val{font-size:13px;font-weight:600;color:var(--text)}
+.divider{height:0.5px;background:var(--border);margin:14px 0}
+.progress-track{height:3px;background:var(--bg2);border-radius:3px;overflow:hidden;margin:0 18px 16px}
+.progress-fill{height:100%;background:var(--blue);border-radius:3px}
+.log-entry{background:var(--bg);border:0.5px solid var(--border);border-radius:11px;padding:11px 13px;margin-bottom:8px;display:flex;align-items:center;gap:10px}
+.log-icon{font-size:19px;color:var(--blue);flex-shrink:0}
+.log-info{flex:1;min-width:0}
+.log-title{font-size:13px;font-weight:600;color:var(--text)}
+.log-meta{font-size:11px;color:var(--text2)}
+.log-pts{font-size:14px;font-weight:600;color:var(--green-dk)}
+.pts-total{background:var(--green-lt);border-radius:12px;padding:13px;display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.signatory-portal{background:var(--bg2);border-radius:14px;padding:12px;margin-top:16px}
+.portal-label{font-size:10px;font-weight:600;color:var(--text2);letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px;text-align:center}
+select.field-input{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24'%3E%3Cpath fill='%236b6b6b' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:32px}
+</style>
+</head>
+<body>
+<div class="phone">
+<div class="screen" id="mainScreen">
+<div class="status-bar">
+  <span class="status-time">9:41</span>
+  <div class="status-icons"><i class="ti ti-wifi"></i><i class="ti ti-battery"></i></div>
+</div>
+
+<div id="s-welcome">
+<div style="padding:28px 22px 18px">
+  <div style="font-size:26px;font-weight:700;color:var(--text);margin-bottom:4px"><span style="color:var(--blue)">CERT</span>ainly</div>
+  <div style="font-size:11px;color:var(--text2);margin-bottom:4px;letter-spacing:.04em">A Sound Solutions DataCAT product</div>
+  <div style="font-size:14px;color:var(--text2);margin-bottom:26px;line-height:1.55">Your NRCan NDT renewal — tracked, logged and submitted. Free for all NDT technicians.</div>
+  <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:24px">
+    <div style="display:flex;align-items:center;gap:12px"><div style="width:36px;height:36px;border-radius:10px;background:var(--blue-lt);display:flex;align-items:center;justify-content:center;flex-shrink:0"><i class="ti ti-pencil" style="font-size:17px;color:var(--blue-dk)"></i></div><div><div style="font-size:14px;font-weight:600;color:var(--text)">Log experience as you earn it</div><div style="font-size:12px;color:var(--text2)">60 seconds per job, anytime</div></div></div>
+    <div style="display:flex;align-items:center;gap:12px"><div style="width:36px;height:36px;border-radius:10px;background:var(--green-lt);display:flex;align-items:center;justify-content:center;flex-shrink:0"><i class="ti ti-file-check" style="font-size:17px;color:var(--green-dk)"></i></div><div><div style="font-size:14px;font-weight:600;color:var(--text)">Forms auto-populated at renewal</div><div style="font-size:12px;color:var(--text2)">All 8 NRCan documents, ready to go</div></div></div>
+    <div style="display:flex;align-items:center;gap:12px"><div style="width:36px;height:36px;border-radius:10px;background:var(--teal-lt);display:flex;align-items:center;justify-content:center;flex-shrink:0"><i class="ti ti-writing" style="font-size:17px;color:var(--teal-dk)"></i></div><div><div style="font-size:14px;font-weight:600;color:var(--text)">Signatures in two taps</div><div style="font-size:12px;color:var(--text2)">Employer, supervisor and referee done instantly</div></div></div>
+  </div>
+  <button class="primary-btn" onclick="goScreen('s-onboard1')"><i class="ti ti-user-plus"></i>Create free account</button>
+  <button class="secondary-btn" onclick="goScreen('s-dashboard')"><i class="ti ti-login"></i>Sign in</button>
+  <div style="text-align:center;margin-top:14px;font-size:12px;color:var(--text2)">English &nbsp;·&nbsp; <span style="color:var(--blue);cursor:pointer">Français</span></div>
+</div>
+</div>
+
+<div id="s-onboard1" style="display:none">
+<div class="top-bar"><span class="back-btn" onclick="goScreen('s-welcome')"><i class="ti ti-arrow-left" style="font-size:17px"></i>Back</span><div style="font-size:12px;color:var(--text2)">Step 1 of 3</div></div>
+<div class="progress-track"><div class="progress-fill" style="width:33%"></div></div>
+<div class="screen-body">
+  <div class="screen-title">Your details</div>
+  <div class="screen-sub">We look you up on the NRCan certified personnel directory to verify your registration instantly.</div>
+  <div class="field-group"><div class="field-label">NRCan registration number</div><div class="field-input filled" style="display:flex;align-items:center;justify-content:space-between">13415 <span class="badge ok"><i class="ti ti-circle-check" style="font-size:11px"></i>Verified</span></div></div>
+  <div class="field-row">
+    <div class="field-group"><div class="field-label">First name</div><div class="field-input filled">Dwight</div></div>
+    <div class="field-group"><div class="field-label">Last name</div><div class="field-input filled">Newell</div></div>
+  </div>
+  <div class="field-group"><div class="field-label">Email</div><div class="field-input filled">newells9@telus.net</div></div>
+  <div class="field-group"><div class="field-label">Mobile number</div><div class="field-input">780-370-8808</div></div>
+  <div style="background:var(--blue-lt);border-radius:10px;padding:11px 13px;margin-bottom:18px;font-size:12px;color:var(--blue-dk);display:flex;gap:8px;align-items:flex-start"><i class="ti ti-info-circle" style="font-size:16px;flex-shrink:0;margin-top:1px"></i>Your name and certs were auto-filled from the NRCan directory. Review and confirm.</div>
+  <button class="primary-btn" onclick="goScreen('s-onboard2')">Continue <i class="ti ti-arrow-right"></i></button>
+</div>
+</div>
+
+<div id="s-onboard2" style="display:none">
+<div class="top-bar"><span class="back-btn" onclick="goScreen('s-onboard1')"><i class="ti ti-arrow-left" style="font-size:17px"></i>Back</span><div style="font-size:12px;color:var(--text2)">Step 2 of 3</div></div>
+<div class="progress-track"><div class="progress-fill" style="width:66%"></div></div>
+<div class="screen-body">
+  <div class="screen-title">Create your signature</div>
+  <div class="screen-sub">Draw once. Applied to all renewal documents automatically — no need to sign each form separately.</div>
+  <div class="sig-canvas signed" id="sigPad" onclick="toggleSig()">
+    <div class="sig-preview" id="sigPreview">Dwight Newell</div>
+  </div>
+  <div style="display:flex;gap:8px;margin-bottom:16px">
+    <button class="secondary-btn" style="margin-top:0;flex:1" onclick="toggleSig()"><i class="ti ti-pencil" style="font-size:15px"></i>Redraw</button>
+    <button class="secondary-btn" style="margin-top:0;flex:1"><i class="ti ti-upload" style="font-size:15px"></i>Upload image</button>
+  </div>
+  <div class="attest-box"><div class="attest-text">By saving your signature you confirm it is your authentic signature and authorise CERTainly to apply it to your NRCan renewal documents on your instruction.</div></div>
+  <button class="primary-btn" onclick="goScreen('s-onboard3')"><i class="ti ti-lock"></i>Save signature securely</button>
+</div>
+</div>
+
+<div id="s-onboard3" style="display:none">
+<div class="top-bar"><span class="back-btn" onclick="goScreen('s-onboard2')"><i class="ti ti-arrow-left" style="font-size:17px"></i>Back</span><div style="font-size:12px;color:var(--text2)">Step 3 of 3</div></div>
+<div class="progress-track"><div class="progress-fill" style="width:100%"></div></div>
+<div class="screen-body">
+  <div class="screen-title">Code of conduct</div>
+  <div class="screen-sub">Required by NRCan with every renewal. Confirm once — stored and attached automatically to every application.</div>
+  <div style="background:var(--bg2);border-radius:11px;padding:13px;margin-bottom:14px;max-height:150px;overflow-y:auto;-webkit-overflow-scrolling:touch">
+    <div style="font-size:12px;color:var(--text2);line-height:1.7">As a certified NDT professional I agree to: comply with the relevant certification scheme provisions; report any violations to NRCan NDTCB immediately; verify my certificate information; not attempt to falsify documents or misrepresent qualifications; discontinue all claims upon expiry; only sign documents within my professional knowledge; undertake only assignments for which I am competent; maintain proficiency by updating technical knowledge as required.</div>
+  </div>
+  <div style="display:flex;align-items:flex-start;gap:10px;padding:13px;background:var(--bg2);border-radius:11px;margin-bottom:18px;cursor:pointer" onclick="toggleCoC()">
+    <div id="cocCheck" style="width:22px;height:22px;border-radius:5px;border:1.5px solid var(--blue);background:var(--blue);display:flex;align-items:center;justify-content:center;flex-shrink:0"><i class="ti ti-check" style="font-size:14px;color:#fff"></i></div>
+    <div style="font-size:13px;color:var(--text);line-height:1.5">I, Dwight Conrad Newell, agree to abide by the NRCan NDTCB Code of Conduct</div>
+  </div>
+  <button class="primary-btn" onclick="goScreen('s-dashboard')"><i class="ti ti-rocket"></i>Enter CERTainly</button>
+</div>
+</div>
+
+<div id="s-dashboard" style="display:none">
+<div class="top-bar">
+  <div class="top-logo"><span>CERT</span>ainly</div>
+  <div style="display:flex;gap:10px;align-items:center"><i class="ti ti-bell" style="font-size:19px;color:var(--text2)"></i><div style="width:32px;height:32px;border-radius:50%;background:var(--blue-lt);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;color:var(--blue-dk)">DN</div></div>
+</div>
+<div class="screen-body">
+  <div style="font-size:13px;color:var(--text2);margin-bottom:13px">Dwight Conrad Newell &nbsp;·&nbsp; Reg# 13415</div>
+  <div class="stat-grid">
+    <div class="stat-card"><div class="stat-label">Active certs</div><div class="stat-val" style="color:var(--green)">4</div></div>
+    <div class="stat-card" style="background:var(--amber-lt)"><div class="stat-label" style="color:var(--amber)">Expiring soon</div><div class="stat-val" style="color:var(--amber)">1</div></div>
+    <div class="stat-card"><div class="stat-label">SCS points</div><div class="stat-val" style="color:var(--blue)">87<span style="font-size:14px;font-weight:400;color:var(--text2)">/100</span></div></div>
+    <div class="stat-card"><div class="stat-label">Days to renewal</div><div class="stat-val" style="color:var(--amber)">57</div></div>
+  </div>
+  <div style="background:var(--amber-lt);border-radius:12px;padding:13px;margin-bottom:15px;display:flex;gap:10px;align-items:flex-start;border:0.5px solid var(--amber)">
+    <i class="ti ti-clock-alert" style="font-size:19px;color:var(--amber);flex-shrink:0"></i>
+    <div><div style="font-size:13px;font-weight:600;color:var(--amber)">MT Level 2 renewal due Aug 15</div><div style="font-size:11px;color:var(--amber);margin-top:2px">57 days remaining</div></div>
+  </div>
+  <button class="primary-btn" onclick="goScreen('s-log')"><i class="ti ti-plus"></i>Log experience</button>
+  <button class="secondary-btn" onclick="goScreen('s-renewal-checklist')"><i class="ti ti-file-certificate"></i>Start MT renewal package</button>
+  <button class="secondary-btn" onclick="goScreen('s-scs')"><i class="ti ti-chart-bar"></i>View SCS points tracker</button>
+</div>
+</div>
+
+<div id="s-log" style="display:none">
+<div class="top-bar"><span class="back-btn" onclick="goScreen('s-dashboard')"><i class="ti ti-arrow-left" style="font-size:17px"></i>Dashboard</span><span style="font-size:14px;font-weight:600;color:var(--text)">Log experience</span></div>
+<div class="screen-body">
+  <div class="screen-sub">Each entry auto-calculates SCS points and builds your renewal package as you go.</div>
+  <div class="field-group"><div class="field-label">Activity type</div>
+    <select class="field-input">
+      <option>#1 — Performance of NDT activities</option>
+      <option>#2 — Theoretical training</option>
+      <option>#3 — Practical training</option>
+      <option>#4 — Delivery of training</option>
+      <option>#5 — Research / engineering NDT</option>
+      <option>#6 — Technical seminar attendance</option>
+      <option>#7 — Seminar presentation</option>
+      <option>#8 — NDT society membership</option>
+      <option>#9 — Mentoring NDT personnel</option>
+    </select>
+  </div>
+  <div class="field-group"><div class="field-label">NDT method</div>
+    <select class="field-input"><option>MT — Magnetic testing</option><option>PT — Penetrant testing</option><option>UT — Ultrasonic testing</option><option>ET — Eddy current testing</option><option>RT — Radiographic testing</option><option>XF — X-Ray fluorescence</option><option>UT-PA — Phased array</option></select>
+  </div>
+  <div class="field-row">
+    <div class="field-group"><div class="field-label">Date from</div><input type="date" class="field-input" value="2026-06-10"></div>
+    <div class="field-group"><div class="field-label">Date to</div><input type="date" class="field-input" value="2026-06-12"></div>
+  </div>
+  <div class="field-group"><div class="field-label">Employer / company</div><div class="field-input filled">Buffalo Inspection Services</div></div>
+  <div class="field-group"><div class="field-label">Supervisor name</div><div class="field-input filled">Andrew Crawford</div></div>
+  <div class="field-group"><div class="field-label">Brief description</div><textarea class="field-input" rows="2" style="resize:none">Pipeline weld inspection, Fort McMurray AB</textarea></div>
+  <div style="background:var(--green-lt);border-radius:11px;padding:11px 13px;margin-bottom:14px;display:flex;justify-content:space-between;align-items:center"><span style="font-size:13px;color:var(--green-dk)">Points this entry</span><span style="font-size:18px;font-weight:600;color:var(--green-dk)">+6 pts</span></div>
+  <button class="primary-btn" onclick="goScreen('s-dashboard')"><i class="ti ti-device-floppy"></i>Save entry</button>
+</div>
+</div>
+
+<div id="s-scs" style="display:none">
+<div class="top-bar"><span class="back-btn" onclick="goScreen('s-dashboard')"><i class="ti ti-arrow-left" style="font-size:17px"></i>Dashboard</span><span style="font-size:14px;font-weight:600;color:var(--text)">SCS points — MT Level 2</span></div>
+<div class="screen-body">
+  <div class="pts-total"><div><div style="font-size:12px;color:var(--green-dk);font-weight:500">Total points accumulated</div><div style="font-size:11px;color:var(--green)">13 more needed</div></div><div style="font-size:22px;font-weight:700;color:var(--green-dk)">87/100</div></div>
+  <div style="height:6px;background:var(--bg2);border-radius:6px;overflow:hidden;margin-bottom:16px"><div style="height:100%;width:87%;background:var(--green);border-radius:6px"></div></div>
+  <div style="font-size:11px;font-weight:600;color:var(--text2);letter-spacing:.04em;text-transform:uppercase;margin-bottom:8px">Part A activities</div>
+  <div class="log-entry"><i class="ti ti-briefcase log-icon"></i><div class="log-info"><div class="log-title">#1 NDT field work</div><div class="log-meta">Years 4 & 5 · 50 days</div></div><div class="log-pts">50 pts</div></div>
+  <div class="log-entry"><i class="ti ti-school log-icon"></i><div class="log-info"><div class="log-title">#2 Theoretical training</div><div class="log-meta">2023 · Enbridge 40hrs</div></div><div class="log-pts">5 pts</div></div>
+  <div style="font-size:11px;font-weight:600;color:var(--text2);letter-spacing:.04em;text-transform:uppercase;margin:12px 0 8px">Part B activities</div>
+  <div class="log-entry"><i class="ti ti-users log-icon"></i><div class="log-info"><div class="log-title">#9 Mentoring</div><div class="log-meta">TMEP 2020–2023 · 3 mentees</div></div><div class="log-pts">30 pts</div></div>
+  <div class="log-entry"><i class="ti ti-id-badge log-icon"></i><div class="log-info"><div class="log-title">#8 Society memberships</div><div class="log-meta">ASTTBC · AWS · API</div></div><div class="log-pts">2 pts</div></div>
+  <button class="primary-btn" style="margin-top:8px" onclick="goScreen('s-renewal-checklist')"><i class="ti ti-arrow-right"></i>Proceed to renewal package</button>
+</div>
+</div>
+
+<div id="s-renewal-checklist" style="display:none">
+<div class="top-bar"><span class="back-btn" onclick="goScreen('s-dashboard')"><i class="ti ti-arrow-left" style="font-size:17px"></i>Dashboard</span><span style="font-size:14px;font-weight:600;color:var(--text)">MT renewal package</span></div>
+<div class="screen-body">
+  <div class="screen-sub">All 8 required NRCan documents. Auto-populated from your profile and logged activity.</div>
+  <div class="card" style="margin-bottom:14px">
+    <div class="checklist-item"><div class="check-icon done"><i class="ti ti-check" style="font-size:13px"></i></div><div><div class="check-label">Renewal application (8.2.1-075)</div><div class="check-sub">Auto-filled from your profile</div></div></div>
+    <div class="checklist-item"><div class="check-icon done"><i class="ti ti-check" style="font-size:13px"></i></div><div><div class="check-label">SCS form (8.2.1-073)</div><div class="check-sub">87 pts logged · ready</div></div></div>
+    <div class="checklist-item"><div class="check-icon done"><i class="ti ti-check" style="font-size:13px"></i></div><div><div class="check-label">Code of conduct (8.2.1-002)</div><div class="check-sub">Signed at onboarding · attached</div></div></div>
+    <div class="checklist-item"><div class="check-icon done"><i class="ti ti-check" style="font-size:13px"></i></div><div><div class="check-label">Record of experience (page 2)</div><div class="check-sub">Auto-filled from work history</div></div></div>
+    <div class="checklist-item"><div class="check-icon warn"><i class="ti ti-clock" style="font-size:13px"></i></div><div><div class="check-label">Attestations — 3 signatures</div><div class="check-sub">Pending · send now</div></div></div>
+    <div class="checklist-item"><div class="check-icon done"><i class="ti ti-check" style="font-size:13px"></i></div><div><div class="check-label">Vision test form</div><div class="check-sub">Uploaded 2023/10/17 · valid</div></div></div>
+    <div class="checklist-item"><div class="check-icon todo"><i class="ti ti-camera" style="font-size:13px"></i></div><div><div class="check-label">Passport photos</div><div class="check-sub">Not due until 2030</div></div></div>
+    <div class="checklist-item" style="border:none"><div class="check-icon warn"><i class="ti ti-credit-card" style="font-size:13px"></i></div><div><div class="check-label">Payment</div><div class="check-sub">Sent via NRCan secure link after approval</div></div></div>
+  </div>
+  <button class="primary-btn" onclick="goScreen('s-signatories')"><i class="ti ti-send"></i>Request signatures</button>
+  <button class="secondary-btn" onclick="goScreen('s-preview')"><i class="ti ti-eye"></i>Preview full package</button>
+</div>
+</div>
+
+<div id="s-signatories" style="display:none">
+<div class="top-bar"><span class="back-btn" onclick="goScreen('s-renewal-checklist')"><i class="ti ti-arrow-left" style="font-size:17px"></i>Checklist</span><span style="font-size:14px;font-weight:600;color:var(--text)">Request signatures</span></div>
+<div class="screen-body">
+  <div class="screen-sub">One person can cover all three roles. They receive a single link — two taps to sign.</div>
+  <div class="signatory-card">
+    <div class="sig-person"><div class="sig-avatar">AC</div><div><div class="sig-name">Andrew Crawford</div><div class="sig-role-sub">Buffalo Inspection Services · Reg# 6337</div></div></div>
+    <div class="role-tags"><span class="role-tag">Employer</span><span class="role-tag">Supervisor</span><span class="role-tag">Referee</span></div>
+    <div style="font-size:11px;color:var(--text2);margin-bottom:10px">a.crawford@buffaloinspection.com · 780-405-4113</div>
+    <div class="sent-indicator"><i class="ti ti-check" style="font-size:15px"></i>Link sent · waiting for response</div>
+  </div>
+  <button class="secondary-btn" onclick="goScreen('s-signatory-link')" style="margin-top:0"><i class="ti ti-user-plus" style="font-size:15px"></i>Add another signatory</button>
+  <div class="divider"></div>
+  <div class="signatory-portal">
+    <div class="portal-label">What Andrew sees on his phone</div>
+    <div style="background:var(--bg);border-radius:12px;padding:13px">
+      <div style="font-size:14px;font-weight:600;color:var(--text);margin-bottom:4px">Dwight Newell's MT Level 2 renewal</div>
+      <div style="font-size:11px;color:var(--text2);margin-bottom:10px">NRCan NDTCB attestation · Aug 2026</div>
+      <div style="background:var(--bg2);border-radius:9px;padding:10px;margin-bottom:10px;font-size:12px;color:var(--text2);line-height:1.6">I confirm that Dwight Conrad Newell has performed satisfactory NDT work in the MT method during the past 5 years and that the information in this renewal package is accurate to the best of my knowledge.</div>
+      <div style="font-size:11px;color:var(--text2);margin-bottom:6px">Signing as: <strong style="color:var(--text)">Employer · Supervisor · Referee</strong></div>
+      <div style="font-size:11px;color:var(--text2);margin-bottom:10px">NRCan reg# <strong style="color:var(--text)">6337</strong> verified ✓</div>
+      <button style="width:100%;padding:13px;border-radius:11px;background:var(--teal);color:#fff;font-size:15px;font-weight:600;border:none;cursor:pointer" onclick="goScreen('s-signed')"><i class="ti ti-writing" style="font-size:16px;margin-right:6px"></i>Confirm and sign</button>
+    </div>
+  </div>
+</div>
+</div>
+
+<div id="s-signatory-link" style="display:none">
+<div class="top-bar"><span class="back-btn" onclick="goScreen('s-signatories')"><i class="ti ti-arrow-left" style="font-size:17px"></i>Back</span><span style="font-size:14px;font-weight:600;color:var(--text)">Add signatory</span></div>
+<div class="screen-body">
+  <div class="screen-sub">They'll receive a secure link — no app download required. Works on any phone browser.</div>
+  <div class="field-group"><div class="field-label">Full name</div><input type="text" class="field-input" value="Andrew Crawford"></div>
+  <div class="field-group"><div class="field-label">NRCan registration # (if certified)</div><div class="field-input filled" style="display:flex;align-items:center;justify-content:space-between">6337 <span class="badge ok"><i class="ti ti-circle-check" style="font-size:11px"></i>Verified</span></div></div>
+  <div class="field-group"><div class="field-label">Signing as</div>
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <label style="display:flex;align-items:center;gap:9px;font-size:14px;color:var(--text);cursor:pointer"><input type="checkbox" checked style="width:18px;height:18px">Employer</label>
+      <label style="display:flex;align-items:center;gap:9px;font-size:14px;color:var(--text);cursor:pointer"><input type="checkbox" checked style="width:18px;height:18px">Supervisor</label>
+      <label style="display:flex;align-items:center;gap:9px;font-size:14px;color:var(--text);cursor:pointer"><input type="checkbox" checked style="width:18px;height:18px">Referee</label>
+    </div>
+  </div>
+  <div class="field-group"><div class="field-label">Send link via</div>
+    <div style="display:flex;gap:8px">
+      <div style="flex:1;padding:11px;border-radius:11px;border:2px solid var(--blue);background:var(--blue-lt);text-align:center;font-size:13px;font-weight:600;color:var(--blue-dk);cursor:pointer">Email</div>
+      <div style="flex:1;padding:11px;border-radius:11px;border:0.5px solid rgba(0,0,0,0.15);text-align:center;font-size:13px;color:var(--text2);cursor:pointer">SMS</div>
+      <div style="flex:1;padding:11px;border-radius:11px;border:0.5px solid rgba(0,0,0,0.15);text-align:center;font-size:13px;color:var(--text2);cursor:pointer">WhatsApp</div>
+    </div>
+  </div>
+  <div class="field-group"><div class="field-label">Email address</div><div class="field-input filled">a.crawford@buffaloinspection.com</div></div>
+  <button class="primary-btn" onclick="goScreen('s-signatories')"><i class="ti ti-send"></i>Send signature request</button>
+</div>
+</div>
+
+<div id="s-signed" style="display:none">
+<div class="top-bar"><span class="back-btn" onclick="goScreen('s-signatories')"><i class="ti ti-arrow-left" style="font-size:17px"></i>Back</span><span style="font-size:14px;font-weight:600;color:var(--text)">All signed</span></div>
+<div class="screen-body">
+  <div style="text-align:center;padding:20px 0">
+    <div class="success-icon"><i class="ti ti-circle-check" style="font-size:32px"></i></div>
+    <div class="success-title">Package ready to submit</div>
+    <div class="success-sub">All signatures collected. Your complete renewal package is assembled and ready for NRCan.</div>
+    <div class="ref-box"><div class="ref-label">Documents included</div><div class="ref-val" style="font-size:12px;line-height:1.9">✓ Renewal application &nbsp; ✓ SCS form<br>✓ Code of conduct &nbsp; ✓ Record of experience<br>✓ All 3 attestations &nbsp; ✓ Vision test</div></div>
+    <div class="ref-box"><div class="ref-label">Submitting to</div><div class="ref-val" style="font-size:12px">NRCan NDTCB · ndtrecertification&#8209;endrecertification@nrcan&#8209;rncan.gc.ca</div></div>
+    <button class="primary-btn" onclick="goScreen('s-submitted')" style="margin-bottom:8px"><i class="ti ti-send"></i>Submit to NRCan now</button>
+    <button class="secondary-btn"><i class="ti ti-download"></i>Download PDF package</button>
+  </div>
+</div>
+</div>
+
+<div id="s-submitted" style="display:none">
+<div class="top-bar"><div class="top-logo"><span>CERT</span>ainly</div></div>
+<div class="screen-body">
+  <div style="text-align:center;padding:20px 0">
+    <div class="success-icon" style="background:var(--blue-lt)"><i class="ti ti-rocket" style="font-size:30px;color:var(--blue-dk)"></i></div>
+    <div class="success-title">Submitted successfully</div>
+    <div class="success-sub">Your MT Level 2 renewal package has been sent to NRCan. Confirmation email within 24 hours.</div>
+    <div class="ref-box"><div class="ref-label">Submission reference</div><div class="ref-val">CRT-2026-13415-MT2</div></div>
+    <div class="ref-box"><div class="ref-label">Submitted on</div><div class="ref-val">June 19, 2026 · 9:41 AM</div></div>
+    <div class="ref-box"><div class="ref-label">Next renewal due</div><div class="ref-val">August 15, 2031</div></div>
+    <div style="background:var(--teal-lt);border-radius:11px;padding:12px;margin-bottom:16px;font-size:12px;color:var(--teal-dk);text-align:left;line-height:1.6"><i class="ti ti-bell" style="font-size:15px;margin-right:5px"></i>CERTainly will start logging your next 5-year period automatically. Next reminder set for May 15, 2031.</div>
+    <button class="primary-btn" onclick="goScreen('s-dashboard')"><i class="ti ti-home"></i>Back to dashboard</button>
+  </div>
+</div>
+</div>
+
+<div id="s-preview" style="display:none">
+<div class="top-bar"><span class="back-btn" onclick="goScreen('s-renewal-checklist')"><i class="ti ti-arrow-left" style="font-size:17px"></i>Checklist</span><span style="font-size:14px;font-weight:600;color:var(--text)">Package preview</span></div>
+<div class="screen-body">
+  <div class="screen-sub">Review before sending. All fields auto-populated from your profile and 5 years of logged activity.</div>
+  <div class="card">
+    <div class="card-head"><div class="card-title">Renewal application (8.2.1-075)</div><span class="badge ok">Ready</span></div>
+    <table style="width:100%;font-size:12px;border-collapse:collapse">
+      <tr><td style="color:var(--text2);padding:4px 0;width:45%">Name</td><td style="font-weight:600;color:var(--text)">Dwight Conrad Newell</td></tr>
+      <tr><td style="color:var(--text2);padding:4px 0">Reg#</td><td style="font-weight:600;color:var(--text)">13415</td></tr>
+      <tr><td style="color:var(--text2);padding:4px 0">DOB</td><td style="font-weight:600;color:var(--text)">1972/05/20</td></tr>
+      <tr><td style="color:var(--text2);padding:4px 0">Method</td><td style="font-weight:600;color:var(--text)">MT — EMC Sector</td></tr>
+      <tr><td style="color:var(--text2);padding:4px 0">Employer</td><td style="font-weight:600;color:var(--text)">Buffalo Inspection Services</td></tr>
+      <tr><td style="color:var(--text2);padding:4px 0">Language</td><td style="font-weight:600;color:var(--text)">English</td></tr>
+    </table>
+  </div>
+  <div class="card">
+    <div class="card-head"><div class="card-title">SCS points summary (8.2.1-073)</div><span class="badge ok">87 pts</span></div>
+    <table style="width:100%;font-size:12px;border-collapse:collapse">
+      <tr><td style="color:var(--text2);padding:4px 0">#1 NDT field work</td><td style="font-weight:600;text-align:right;color:var(--text)">50 pts</td></tr>
+      <tr><td style="color:var(--text2);padding:4px 0">#2 Theoretical training</td><td style="font-weight:600;text-align:right;color:var(--text)">5 pts</td></tr>
+      <tr><td style="color:var(--text2);padding:4px 0">#8 Society membership</td><td style="font-weight:600;text-align:right;color:var(--text)">2 pts</td></tr>
+      <tr><td style="color:var(--text2);padding:4px 0">#9 Mentoring</td><td style="font-weight:600;text-align:right;color:var(--text)">30 pts</td></tr>
+      <tr style="border-top:0.5px solid var(--border)"><td style="font-weight:600;padding:5px 0;color:var(--text)">Total</td><td style="font-weight:600;text-align:right;color:var(--green)">87 / 100</td></tr>
+    </table>
+  </div>
+  <button class="primary-btn" onclick="goScreen('s-signatories')"><i class="ti ti-send"></i>Looks good — request signatures</button>
+</div>
+</div>
+
+</div>
+</div>
+
+<script>
+var screens=['s-welcome','s-onboard1','s-onboard2','s-onboard3','s-dashboard','s-log','s-scs','s-renewal-checklist','s-signatories','s-signatory-link','s-signed','s-submitted','s-preview'];
+function goScreen(id){
+  screens.forEach(function(s){
+    var el=document.getElementById(s);
+    if(el)el.style.display='none';
+  });
+  var el=document.getElementById(id);
+  if(el)el.style.display='block';
+  window.scrollTo(0,0);
+}
+function toggleSig(){
+  var pad=document.getElementById('sigPad');
+  var preview=document.getElementById('sigPreview');
+  if(pad.classList.contains('signed')){
+    pad.classList.remove('signed');
+    preview.textContent='Draw your signature here';
+    preview.style.fontSize='13px';
+    preview.style.color='var(--text2)';
+    preview.style.fontStyle='normal';
+    preview.style.fontFamily='inherit';
+  } else {
+    pad.classList.add('signed');
+    preview.textContent='Dwight Newell';
+    preview.style.fontSize='24px';
+    preview.style.color='var(--green-dk)';
+    preview.style.fontStyle='italic';
+    preview.style.fontFamily='Georgia,serif';
+  }
+}
+function toggleCoC(){
+  var c=document.getElementById('cocCheck');
+  var checked=c.getAttribute('data-checked')!=='false';
+  if(checked){
+    c.setAttribute('data-checked','false');
+    c.style.background='var(--bg)';
+    c.style.borderColor='rgba(0,0,0,0.2)';
+    c.innerHTML='';
+  } else {
+    c.setAttribute('data-checked','true');
+    c.style.background='var(--blue)';
+    c.style.borderColor='var(--blue)';
+    c.innerHTML='<i class="ti ti-check" style="font-size:14px;color:#fff"></i>';
+  }
+}
+</script>
+</body>
+</html>
