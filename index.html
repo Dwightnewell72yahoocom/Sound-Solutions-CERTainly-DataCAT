@@ -42,7 +42,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .screen-sub{font-size:13px;color:var(--text2);margin-bottom:18px;line-height:1.55}
 .field-group{margin-bottom:14px}
 .field-label{font-size:11px;font-weight:600;color:var(--text2);margin-bottom:5px;letter-spacing:.05em;text-transform:uppercase}
-.field-input{width:100%;padding:11px 13px;border-radius:10px;border:0.5px solid rgba(0,0,0,0.2);background:var(--bg);font-size:14px;color:var(--text);-webkit-appearance:none}
+.field-input{width:100%;padding:13px 14px;border-radius:12px;border:0.5px solid rgba(0,0,0,0.2);background:var(--bg);font-size:16px;color:var(--text);-webkit-appearance:none;min-height:50px;box-sizing:border-box}
 .field-input.filled{background:var(--bg2);border-color:rgba(0,0,0,0.1)}
 .field-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .primary-btn{width:100%;padding:14px;border-radius:12px;background:var(--gold-dk);color:#fff;font-size:15px;font-weight:700;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px}
@@ -183,6 +183,21 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .divider{height:0.5px;background:var(--border);margin:14px 0}
 
 /* VERIFY SCREEN */
+
+/* ACTIVITY TILES */
+.act-tile{background:var(--bg);border:1.5px solid var(--olive);border-radius:13px;padding:12px;cursor:pointer;transition:background .15s}
+.act-tile:active{background:var(--gold-lt)}
+.act-tile-b{border-color:var(--blue)}
+.act-tile-num{display:inline-block;font-size:10px;font-weight:800;color:#fff;background:var(--olive);padding:2px 7px;border-radius:10px;margin-bottom:5px;letter-spacing:.04em}
+.act-tile-num-b{background:var(--blue)}
+.act-tile-name{font-size:12px;font-weight:700;color:var(--text);margin-bottom:3px;line-height:1.3}
+.act-tile-rate{font-size:10px;color:var(--text2);margin-bottom:4px}
+.act-tile-cap{font-size:10px;font-weight:600;color:var(--olive-dk);margin-bottom:4px}
+.act-tile-bar{height:4px;background:var(--bg2);border-radius:4px;overflow:hidden}
+.act-tile-fill{height:100%;background:var(--olive);border-radius:4px;transition:width .3s}
+.act-tile-fill-b{background:var(--blue)}
+.act-tile.capped{opacity:.6;border-style:dashed}
+
 .verify-chip{display:inline-flex;align-items:center;padding:5px 13px;border-radius:20px;font-size:12px;font-weight:600;background:var(--bg2);color:var(--text2);cursor:pointer;white-space:nowrap;border:1px solid transparent;flex-shrink:0}
 .verify-chip.active{background:var(--olive);color:var(--cream);border-color:var(--olive)}
 .verify-result{background:var(--bg);border:0.5px solid var(--border);border-radius:13px;padding:13px 14px;margin-bottom:8px;cursor:pointer}
@@ -195,6 +210,22 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .cert-pill.expiring{background:var(--amber-lt);color:var(--amber)}
 .cert-pill.overdue{background:var(--red-lt);color:var(--red)}
 .verify-empty{text-align:center;padding:32px 16px;font-size:13px;color:var(--text2);line-height:1.6}
+
+
+.log-tab{flex:0 0 auto;padding:10px 14px;font-size:11px;font-weight:600;color:var(--text2);cursor:pointer;border-bottom:3px solid transparent;text-align:center;line-height:1.4;white-space:nowrap;min-width:72px;min-height:44px;display:flex;flex-direction:column;align-items:center;justify-content:center;-webkit-tap-highlight-color:transparent}
+.log-tab.active{color:var(--olive-dk);border-bottom-color:var(--gold);background:var(--gold-lt)}
+.log-tab i{font-size:18px;display:block;margin-bottom:3px}
+.act-sub-btn{background:var(--bg);border:1.5px solid var(--border);border-radius:14px;padding:14px 16px;cursor:pointer;margin-bottom:0;min-height:60px;-webkit-tap-highlight-color:transparent;display:block;width:100%}
+.act-sub-btn.selected{border-color:var(--gold-dk);background:var(--gold-lt)}
+.log-pts-pill{display:inline-flex;align-items:center;padding:4px 10px;border-radius:20px;font-size:12px;font-weight:700}
+.log-pts-pill.ok{background:var(--green-lt);color:var(--green-dk)}
+.log-pts-pill.partial{background:var(--amber-lt);color:var(--amber)}
+.log-pts-pill.zero{background:var(--bg2);color:var(--text2)}
+.log-save-btn{width:100%;padding:16px;border-radius:14px;background:var(--olive);color:#fff;font-size:15px;font-weight:700;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;min-height:52px;-webkit-tap-highlight-color:transparent;margin-top:4px}
+.log-save-btn:active{opacity:0.85;transform:scale(0.98)}
+.entry-card{background:var(--bg);border:0.5px solid var(--border);border-radius:12px;padding:13px 14px;margin-bottom:8px;display:flex;align-items:flex-start;gap:10px;position:relative}
+.entry-card-dot{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;color:#fff;flex-shrink:0;margin-top:1px}
+.entry-del{position:absolute;right:12px;top:12px;width:28px;height:28px;border-radius:50%;background:var(--red-lt);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--red)}
 
 select.field-input{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24'%3E%3Cpath fill='%236b6b6b' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:32px}
 </style>
@@ -257,7 +288,7 @@ select.field-input{background-image:url("data:image/svg+xml,%3Csvg xmlns='http:/
     <button onclick="goScreen('s-welcome')" style="width:100%;max-width:280px;padding:15px;border-radius:30px;background:#E8A020;color:#4a4e28;font-size:16px;font-weight:700;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:12px">
       <i class="ti ti-rocket" style="font-size:17px"></i>Get started
     </button>
-    <div style="font-size:10px;color:#c8b888;letter-spacing:.06em;opacity:.7">A Sound Solutions product</div>
+    <div style="font-size:10px;color:#c8b888;letter-spacing:.06em;opacity:.7">A Sound Solutions product · v16</div>
   </div>
 
 </div>
@@ -547,7 +578,7 @@ select.field-input{background-image:url("data:image/svg+xml,%3Csvg xmlns='http:/
 </div>
 </div>
 
-<!-- LOG EXPERIENCE — METHOD SCOPED -->
+<!-- LOG EXPERIENCE — 7 TABS -->
 <div id="s-log" style="display:none">
 <div class="status-bar"><span class="status-time">9:41</span><div class="status-icons"><i class="ti ti-wifi"></i><i class="ti ti-battery"></i></div></div>
 <div class="method-header">
@@ -555,78 +586,36 @@ select.field-input{background-image:url("data:image/svg+xml,%3Csvg xmlns='http:/
     <span class="back-btn" onclick="goScreen('s-select-method-log')"><i class="ti ti-arrow-left" style="font-size:17px"></i></span>
     <span id="logMethodBadge" class="method-badge mt">MT Level 2</span>
   </div>
-  <span style="font-size:12px;font-weight:600;color:var(--text2)" id="logPtsHeader">87 / 100 pts</span>
+  <span style="font-size:12px;font-weight:600;color:var(--text2)" id="logPtsHeader">0 / 100 pts</span>
 </div>
-<div class="screen-body">
-  <div style="margin-bottom:14px">
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px"><span style="font-size:12px;font-weight:600;color:var(--text2)">SCS points progress</span><span style="font-size:13px;font-weight:700;color:var(--green-dk)" id="logPtsDisplay">87 / 100</span></div>
-    <div class="pts-bar-track"><div class="pts-bar-fill mt" id="logPtsBar" style="width:87%"></div></div>
+<div style="padding:10px 16px;background:var(--bg);border-bottom:0.5px solid var(--border)">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px">
+    <span style="font-size:11px;color:var(--text2)">Part A: <strong id="logPartA" style="color:var(--olive-dk)">0</strong> pts &nbsp;·&nbsp; Part B: <strong id="logPartB" style="color:var(--blue)">0</strong> pts</span>
+    <span style="font-size:12px;font-weight:700;color:var(--green-dk)" id="logPtsDisplay">0 / 100</span>
   </div>
-  <div id="logStack" style="margin-bottom:14px"></div>
-  <div style="background:var(--bg2);border-radius:14px;padding:14px;margin-bottom:14px">
-    <div style="font-size:12px;font-weight:600;color:var(--text2);letter-spacing:.04em;text-transform:uppercase;margin-bottom:12px">New entry</div>
-    <div class="field-group"><div class="field-label">Activity type</div>
-      <select class="field-input" id="actType" onchange="updatePtsPreview()">
-        <option value="1|2">A#1 — NDT field work · 2pts/day · max 25/yr · 95/5yr</option>
-        <option value="2|1">A#2 — Theoretical training · 1pt/day · max 5/yr · 15/5yr</option>
-        <option value="3|2">A#3 — Practical training · 2pts/day · max 10/yr · 25/5yr</option>
-        <option value="4|1">A#4 — Delivery of training · 1pt/day · max 15/yr · 75/5yr</option>
-        <option value="5|1">A#5 — Research / engineering NDT · 1pt/wk · max 15/yr · 60/5yr</option>
-        <option value="6|1">B#6 — Technical seminar attendance · 1pt/day · max 2/yr · 10/5yr</option>
-        <option value="7|3">B#7 — Presenting at seminar · 3pts each · max 3/yr · 15/5yr</option>
-        <option value="8|1">B#8 — Society membership · 1pt/membership · max 2/yr · 5/5yr</option>
-        <option value="9|2">B#9 — Mentoring NDT personnel · 2pts/mentee · max 10/yr · 30/5yr</option>
-        <option value="10|1">B#10 — Standardization committees · 1pt/committee · max 3/yr · 15/5yr</option>
-        <option value="11|2">B#11 — Role within certification body · 2pts/activity · max 10/yr · 30/5yr</option>
-      </select>
-    </div>
-    <!-- MAX POINTS REFERENCE CARD -->
-    <div id="actMaxInfo" style="background:var(--gold-lt);border-radius:10px;padding:10px 13px;margin-top:-8px;margin-bottom:14px;font-size:11px;color:var(--gold-dk);line-height:1.7">
-      <div style="font-weight:700;margin-bottom:3px">Part A activities — min 50 pts required from Part A</div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px">
-        <span>#1 NDT field work</span><span style="text-align:right;font-weight:600">max 95 pts / 5yr</span>
-        <span>#2 Theoretical training</span><span style="text-align:right;font-weight:600">max 15 pts / 5yr</span>
-        <span>#3 Practical training</span><span style="text-align:right;font-weight:600">max 25 pts / 5yr</span>
-        <span>#4 Delivery of training</span><span style="text-align:right;font-weight:600">max 75 pts / 5yr</span>
-        <span>#5 Research / engineering</span><span style="text-align:right;font-weight:600">max 60 pts / 5yr</span>
-      </div>
-      <div style="font-weight:700;margin-top:6px;margin-bottom:3px">Part B activities</div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px">
-        <span>#6 Seminar attendance</span><span style="text-align:right;font-weight:600">max 10 pts / 5yr</span>
-        <span>#7 Presenting seminar</span><span style="text-align:right;font-weight:600">max 15 pts / 5yr</span>
-        <span>#8 Society membership</span><span style="text-align:right;font-weight:600">max 5 pts / 5yr</span>
-        <span>#9 Mentoring</span><span style="text-align:right;font-weight:600">max 30 pts / 5yr</span>
-        <span>#10 Committees</span><span style="text-align:right;font-weight:600">max 15 pts / 5yr</span>
-        <span>#11 Certification body role</span><span style="text-align:right;font-weight:600">max 30 pts / 5yr</span>
-      </div>
-      <div style="margin-top:6px;padding-top:6px;border-top:0.5px solid rgba(160,110,16,0.3);font-weight:700;display:flex;justify-content:space-between">
-        <span>Total required</span><span>100 pts (min 50 from Part A)</span>
-      </div>
-    </div>
-    <div class="field-row">
-      <div class="field-group"><div class="field-label">Date from</div><input type="date" class="field-input" id="actFrom" value="2026-06-15" onchange="updatePtsPreview()"></div>
-      <div class="field-group"><div class="field-label">Date to</div><input type="date" class="field-input" id="actTo" value="2026-06-18" onchange="updatePtsPreview()"></div>
-    </div>
-    <div class="field-group"><div class="field-label">Employer</div><input type="text" class="field-input" id="actEmployer" value="Buffalo Inspection Services"></div>
-    <div class="field-group"><div class="field-label">Supervisor</div><input type="text" class="field-input" id="actSupervisor" value="Andrew Crawford · Reg# 6337"></div>
-    <div class="field-group"><div class="field-label">Description</div><textarea class="field-input" id="actDesc" rows="2" style="resize:none"></textarea></div>
-    <div style="background:var(--green-lt);border-radius:10px;padding:10px 12px;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center">
-      <span style="font-size:12px;color:var(--green-dk)">Points this entry</span>
-      <span style="font-size:18px;font-weight:700;color:var(--green-dk)" id="entryPts">+8 pts</span>
-    </div>
-    <button class="primary-btn blue" onclick="saveEntry()"><i class="ti ti-device-floppy"></i>Save — log another</button>
-  </div>
-  <button class="secondary-btn" onclick="goScreen('s-method-home')"><i class="ti ti-check"></i>Done logging</button>
+  <div class="pts-bar-track"><div class="pts-bar-fill mt" id="logPtsBar" style="width:0%"></div></div>
+  <div style="font-size:9px;color:var(--text2);margin-top:3px;text-align:right">Min 50 pts from Part A required</div>
 </div>
+<div style="display:flex;overflow-x:auto;background:var(--bg);border-bottom:2px solid var(--border);-webkit-overflow-scrolling:touch;scrollbar-width:none">
+  <div class="log-tab active" id="ltab-1" onclick="setLogTab(1)"><i class="ti ti-briefcase" style="font-size:14px;display:block;margin-bottom:2px"></i>Field Work</div>
+  <div class="log-tab" id="ltab-2" onclick="setLogTab(2)"><i class="ti ti-book" style="font-size:14px;display:block;margin-bottom:2px"></i>Training Received</div>
+  <div class="log-tab" id="ltab-3" onclick="setLogTab(3)"><i class="ti ti-presentation" style="font-size:14px;display:block;margin-bottom:2px"></i>Training Delivered</div>
+  <div class="log-tab" id="ltab-4" onclick="setLogTab(4)"><i class="ti ti-flask" style="font-size:14px;display:block;margin-bottom:2px"></i>Research</div>
+  <div class="log-tab" id="ltab-5" onclick="setLogTab(5)"><i class="ti ti-microphone" style="font-size:14px;display:block;margin-bottom:2px"></i>Seminars</div>
+  <div class="log-tab" id="ltab-6" onclick="setLogTab(6)"><i class="ti ti-certificate" style="font-size:14px;display:block;margin-bottom:2px"></i>Professional</div>
+  <div class="log-tab" id="ltab-7" onclick="setLogTab(7)"><i class="ti ti-users" style="font-size:14px;display:block;margin-bottom:2px"></i>Mentoring</div>
+</div>
+<div class="screen-body" style="padding-top:12px;padding-bottom:90px" id="logTabContent"></div>
 <div class="bottom-nav">
   <div class="nav-item" onclick="goScreen('s-dashboard')"><i class="ti ti-layout-dashboard nav-icon"></i><span class="nav-label">Dashboard</span></div>
   <div class="nav-item active" onclick="goScreen('s-select-method-log')"><i class="ti ti-pencil nav-icon"></i><span class="nav-label">Log</span></div>
-  <div class="nav-item" onclick="goScreen('s-scs')"><i class="ti ti-chart-bar nav-icon"></i><span class="nav-label">Points</span></div>
-  <div class="nav-item" onclick="goScreen('s-renewal-checklist')"><i class="ti ti-file-certificate nav-icon"></i><span class="nav-label">Renew</span></div>
+  <div class="nav-item" onclick="goScreen('s-select-method-scs')"><i class="ti ti-chart-bar nav-icon"></i><span class="nav-label">Points</span></div>
+  <div class="nav-item" onclick="goScreen('s-select-method-renew')"><i class="ti ti-file-certificate nav-icon"></i><span class="nav-label">Renew</span></div>
+  <div class="nav-item" onclick="goScreen('s-verify')"><i class="ti ti-search nav-icon"></i><span class="nav-label">Verify</span></div>
 </div>
 </div>
 
-<!-- SCS TRACKER — METHOD SCOPED -->
+<!-- SCS TRACKER — WITH SHORTFALL DETECTOR + GAP ANALYSIS -->
 <div id="s-scs" style="display:none">
 <div class="status-bar"><span class="status-time">9:41</span><div class="status-icons"><i class="ti ti-wifi"></i><i class="ti ti-battery"></i></div></div>
 <div class="method-header">
@@ -636,23 +625,111 @@ select.field-input{background-image:url("data:image/svg+xml,%3Csvg xmlns='http:/
   </div>
   <span style="font-size:12px;color:var(--text2)">SCS points</span>
 </div>
-<div class="screen-body">
-  <div style="background:var(--green-lt);border-radius:12px;padding:13px;display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
-    <div><div style="font-size:12px;color:var(--green-dk);font-weight:600">Total accumulated</div><div style="font-size:11px;color:var(--green)" id="scsRemaining">13 more to reach 100</div></div>
-    <div style="font-size:24px;font-weight:700;color:var(--green-dk)" id="scsTotalDisplay">87/100</div>
+<div class="screen-body" style="padding-bottom:90px">
+
+  <!-- TOTAL CARD -->
+  <div style="border-radius:14px;padding:16px;margin-bottom:14px" id="scsTotalCard">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px">
+      <div>
+        <div style="font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;margin-bottom:2px" id="scsTotalLabel">Total accumulated</div>
+        <div style="font-size:11px" id="scsRemaining"></div>
+      </div>
+      <div style="font-size:32px;font-weight:800" id="scsTotalDisplay">0/100</div>
+    </div>
+    <div style="height:8px;background:rgba(0,0,0,0.1);border-radius:8px;overflow:hidden;margin-bottom:8px">
+      <div id="scsBar" style="height:100%;border-radius:8px;transition:width .4s;width:0%"></div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+      <div style="background:rgba(0,0,0,0.1);border-radius:8px;padding:8px;text-align:center">
+        <div style="font-size:18px;font-weight:700" id="scsPartA">0</div>
+        <div style="font-size:9px;opacity:.75">Part A pts · min 50</div>
+      </div>
+      <div style="background:rgba(0,0,0,0.1);border-radius:8px;padding:8px;text-align:center">
+        <div style="font-size:18px;font-weight:700" id="scsPartB">0</div>
+        <div style="font-size:9px;opacity:.75">Part B pts</div>
+      </div>
+    </div>
   </div>
-  <div style="height:7px;background:var(--bg2);border-radius:7px;overflow:hidden;margin-bottom:16px"><div class="pts-bar-fill mt" id="scsBar" style="width:87%"></div></div>
-  <div style="font-size:11px;font-weight:600;color:var(--text2);letter-spacing:.05em;text-transform:uppercase;margin-bottom:8px">Your logged activities</div>
-  <div id="scsEntryList"></div>
-  <div style="font-size:11px;font-weight:600;color:var(--text2);letter-spacing:.05em;text-transform:uppercase;margin:12px 0 8px">Pre-loaded activities</div>
-  <div id="scsPreloaded"></div>
+
+  <!-- SHORTFALL DETECTOR -->
+  <div id="scsShortfallBox" style="display:none"></div>
+
+  <!-- GAP ANALYSIS -->
+  <div id="scsGapBox" style="display:none"></div>
+
+  <!-- ATTESTATION PROMPT -->
+  <div id="scsAttestBox" style="display:none"></div>
+
+  <!-- PART A BREAKDOWN -->
+  <div style="font-size:11px;font-weight:700;color:var(--olive-dk);letter-spacing:.05em;text-transform:uppercase;margin-bottom:8px;margin-top:4px">Part A — Direct Practice</div>
+  <div id="scsPartAList"></div>
+
+  <!-- PART B BREAKDOWN -->
+  <div style="font-size:11px;font-weight:700;color:var(--blue);letter-spacing:.05em;text-transform:uppercase;margin-bottom:8px;margin-top:12px">Part B — Professional Development</div>
+  <div id="scsPartBList"></div>
+
   <button class="primary-btn" style="margin-top:8px" onclick="goScreen('s-renewal-checklist')"><i class="ti ti-arrow-right"></i>Proceed to renewal package</button>
+
 </div>
 <div class="bottom-nav">
   <div class="nav-item" onclick="goScreen('s-dashboard')"><i class="ti ti-layout-dashboard nav-icon"></i><span class="nav-label">Dashboard</span></div>
   <div class="nav-item" onclick="goScreen('s-select-method-log')"><i class="ti ti-pencil nav-icon"></i><span class="nav-label">Log</span></div>
   <div class="nav-item active" onclick="goScreen('s-select-method-scs')"><i class="ti ti-chart-bar nav-icon"></i><span class="nav-label">Points</span></div>
-  <div class="nav-item" onclick="goScreen('s-renewal-checklist')"><i class="ti ti-file-certificate nav-icon"></i><span class="nav-label">Renew</span></div>
+  <div class="nav-item" onclick="goScreen('s-select-method-renew')"><i class="ti ti-file-certificate nav-icon"></i><span class="nav-label">Renew</span></div>
+  <div class="nav-item" onclick="goScreen('s-verify')"><i class="ti ti-search nav-icon"></i><span class="nav-label">Verify</span></div>
+</div>
+</div>
+
+<!-- ATTESTATION LETTER SCREEN -->
+<div id="s-attestation" style="display:none">
+<div class="status-bar"><span class="status-time">9:41</span><div class="status-icons"><i class="ti ti-wifi"></i><i class="ti ti-battery"></i></div></div>
+<div class="top-bar">
+  <span class="back-btn" onclick="goScreen('s-scs')"><i class="ti ti-arrow-left" style="font-size:17px"></i>Back</span>
+  <span style="font-size:14px;font-weight:600;color:var(--text)">Request attestation</span>
+</div>
+<div class="screen-body" style="padding-bottom:90px">
+
+  <div style="background:var(--amber-lt);border-radius:12px;padding:13px;margin-bottom:14px;display:flex;gap:10px">
+    <i class="ti ti-info-circle" style="font-size:18px;color:var(--amber);flex-shrink:0;margin-top:1px"></i>
+    <div style="font-size:12px;color:var(--amber);line-height:1.6">
+      <strong>Have you done the work but don't have documentation?</strong><br>
+      A supervisor attestation letter is an official NRCan-accepted way to confirm activities you've performed. Your supervisor signs a pre-written letter — CERTainly attaches it to your renewal package automatically.
+    </div>
+  </div>
+
+  <div style="font-size:12px;font-weight:600;color:var(--text2);letter-spacing:.04em;text-transform:uppercase;margin-bottom:10px">Which activities need attestation?</div>
+
+  <div id="attestActList"></div>
+
+  <div style="height:0.5px;background:var(--border);margin:14px 0"></div>
+  <div style="font-size:12px;font-weight:600;color:var(--text2);letter-spacing:.04em;text-transform:uppercase;margin-bottom:10px">Who will sign the letter?</div>
+
+  <div class="signatory-card" style="margin-bottom:10px">
+    <div class="sig-person">
+      <div class="sig-avatar">AC</div>
+      <div>
+        <div style="font-size:14px;font-weight:600;color:var(--text)">Andrew Crawford</div>
+        <div style="font-size:11px;color:var(--text2)">Buffalo Inspection Services · Reg# 6337 · verified ✓</div>
+      </div>
+    </div>
+    <div style="font-size:11px;color:var(--text2);margin-bottom:10px">a.crawford@buffaloinspection.com · 780-405-4113</div>
+  </div>
+
+  <div style="font-size:12px;font-weight:600;color:var(--text2);letter-spacing:.04em;text-transform:uppercase;margin-bottom:10px">Letter preview</div>
+  <div style="background:var(--bg);border:0.5px solid var(--border);border-radius:12px;padding:14px;margin-bottom:14px">
+    <div style="font-size:12px;color:var(--text);line-height:1.8" id="attestLetterPreview"></div>
+  </div>
+
+  <button class="primary-btn" onclick="sendAttestationRequest()"><i class="ti ti-mail"></i>Email attestation request to Andrew Crawford</button>
+  <button class="secondary-btn" onclick="copyAttestationLink()"><i class="ti ti-copy"></i>Copy letter template to clipboard</button>
+
+</div>
+<div class="bottom-nav">
+  <div class="nav-item" onclick="goScreen('s-dashboard')"><i class="ti ti-layout-dashboard nav-icon"></i><span class="nav-label">Dashboard</span></div>
+  <div class="nav-item" onclick="goScreen('s-select-method-log')"><i class="ti ti-pencil nav-icon"></i><span class="nav-label">Log</span></div>
+  <div class="nav-item active" onclick="goScreen('s-select-method-scs')"><i class="ti ti-chart-bar nav-icon"></i><span class="nav-label">Points</span></div>
+  <div class="nav-item" onclick="goScreen('s-select-method-renew')"><i class="ti ti-file-certificate nav-icon"></i><span class="nav-label">Renew</span></div>
+  <div class="nav-item" onclick="goScreen('s-verify')"><i class="ti ti-search nav-icon"></i><span class="nav-label">Verify</span></div>
 </div>
 </div>
 
@@ -1091,7 +1168,7 @@ var todayStr=new Date().toLocaleDateString('en-CA');
 var activeMethod='mt'; // 'mt' or 'ut'
 var sigPad=null;
 var logEntries={mt:[],ut:[]};
-var basePoints={mt:87,ut:55};
+var basePoints={mt:103,ut:103};
 
 // Method config
 var methodConfig={
@@ -1111,9 +1188,12 @@ var methodConfig={
     sigPortalSub:'NRCan NDTCB attestation · Aug 2026',
     sigPortalText:'I confirm that Dwight Conrad Newell has performed satisfactory NDT work in the MT method during the past 5 years without significant interruption, and that the information in this renewal package is accurate to the best of my knowledge.',
     preloaded:[
-      {title:'#9 Mentoring — TMEP 2020–2023',meta:'3 mentees · NDT Coordinator',pts:30},
-      {title:'#2 Theoretical training — Enbridge',meta:'2023 · 40hrs · crack sizing UT/MT',pts:5},
-      {title:'#8 Society memberships',meta:'ASTTBC · AWS · API',pts:2}
+      {title:'#1 MT field work — EMC sector',meta:'Buffalo/KC Inspection · 2021–2023 · 2 yrs active',pts:50,actNum:1,part:'A'},
+      {title:'#2 Theory training — Enbridge MT/UT',meta:'2023 · 40hrs · crack sizing',pts:5,actNum:2,part:'A'},
+      {title:'#3 Practical training — PAUT',meta:'2025 · 50hrs · phased array UT',pts:10,actNum:3,part:'A'},
+      {title:'#8 Society memberships',meta:'ASTTBC · AWS · all years',pts:5,actNum:8,part:'B'},
+      {title:'#9 Mentoring — 6 crews UT/MT',meta:'~20 personnel · 3 yrs · attestation letters',pts:30,actNum:9,part:'B'},
+      {title:'#10 NDT Coordinator / beta testing',meta:'2025 · technical committees · 100hrs',pts:3,actNum:10,part:'B'}
     ]
   },
   ut:{
@@ -1132,9 +1212,12 @@ var methodConfig={
     sigPortalSub:'NRCan NDTCB late renewal · overdue May 2026',
     sigPortalText:'I confirm that Dwight Conrad Newell has performed satisfactory NDT work in the UT method and that the information in this renewal package is accurate to the best of my knowledge.',
     preloaded:[
-      {title:'#1 UT field work — pipeline inspection',meta:'Buffalo Inspection · 2025',pts:25},
-      {title:'#1 UT field work — phased array scanning',meta:'KC Inspection · 2024',pts:20},
-      {title:'#8 Society memberships',meta:'ASTTBC · AWS · API',pts:2}
+      {title:'#1 UT field work — EMC sector',meta:'Buffalo/KC Inspection · 2021–2023 · 2 yrs active',pts:50,actNum:1,part:'A'},
+      {title:'#2 Theory training — Enbridge UT/MT',meta:'2023 · 40hrs · crack sizing',pts:5,actNum:2,part:'A'},
+      {title:'#3 Practical training — PAUT',meta:'2025 · 50hrs · phased array UT',pts:10,actNum:3,part:'A'},
+      {title:'#8 Society memberships',meta:'ASTTBC · AWS · all years',pts:5,actNum:8,part:'B'},
+      {title:'#9 Mentoring — 6 crews UT/MT',meta:'~20 personnel · 3 yrs · attestation letters',pts:30,actNum:9,part:'B'},
+      {title:'#10 NDT Coordinator / beta testing',meta:'2025 · technical committees · 100hrs',pts:3,actNum:10,part:'B'}
     ]
   }
 };
@@ -1142,7 +1225,7 @@ var methodConfig={
 function setActiveMethod(m){activeMethod=m;}
 
 // ── SCREEN NAVIGATION ──
-var screens=['s-splash','s-employer','s-verify','s-urgent','s-welcome','s-onboard1','s-onboard2','s-onboard3','s-dashboard','s-method-home','s-select-method-log','s-select-method-scs','s-select-method-renew','s-log','s-scs','s-renewal-checklist','s-pdf-preview','s-signatories','s-signatory-add','s-signed','s-payment'];
+var screens=['s-splash','s-attestation','s-employer','s-verify','s-act-form','s-attestation','s-scs','s-urgent','s-welcome','s-onboard1','s-onboard2','s-onboard3','s-dashboard','s-method-home','s-select-method-log','s-select-method-scs','s-select-method-renew','s-log','s-scs','s-renewal-checklist','s-pdf-preview','s-signatories','s-signatory-add','s-signed','s-payment'];
 
 function goScreen(id){
   screens.forEach(function(s){var el=document.getElementById(s);if(el)el.style.display='none';});
@@ -1152,6 +1235,7 @@ function goScreen(id){
   var m=methodConfig[activeMethod];
   // Update method-scoped UI
   if(id==='s-verify')initVerify();
+  if(id==='s-attestation')initAttestationScreen();
   if(id==='s-employer')initEmployer();
   if(id==='s-onboard2')initSigPad();
   if(id==='s-method-home')updateMethodHome(m);
@@ -1181,36 +1265,6 @@ function updateMethodHome(m){
       alert.innerHTML='<div style="background:var(--amber-lt);border:0.5px solid var(--amber);border-radius:11px;padding:12px;margin-bottom:14px;font-size:12px;color:var(--amber);display:flex;gap:8px;align-items:flex-start"><i class="ti ti-clock" style="font-size:16px;flex-shrink:0"></i><span><strong>MT Level 2 renewal due Aug 15, 2026.</strong> 57 days remaining. Start your renewal package now.</span></div>';
     }
   }
-}
-
-function updateLogScreen(m){
-  var badge=document.getElementById('logMethodBadge');
-  var header=document.getElementById('logPtsHeader');
-  var display=document.getElementById('logPtsDisplay');
-  var bar=document.getElementById('logPtsBar');
-  var total=getTotalPoints();
-  if(badge){badge.textContent=m.label;badge.className='method-badge '+m.badgeClass;}
-  if(header)header.textContent=total+' / 100 pts';
-  if(display)display.textContent=total+' / 100';
-  if(bar){bar.style.width=Math.min(total,100)+'%';bar.className='pts-bar-fill '+m.badgeClass;}
-  updateLogStack(m);
-}
-
-function updateLogStack(m){
-  var stack=document.getElementById('logStack');
-  if(!stack)return;
-  var entries=logEntries[activeMethod]||[];
-  if(entries.length===0){
-    stack.innerHTML='<div class="log-empty"><i class="ti ti-clipboard" style="font-size:22px;display:block;margin-bottom:6px;color:rgba(0,0,0,0.15)"></i>No entries yet for '+m.label+'<br><span style="font-size:11px">Log your first job below</span></div>';
-    return;
-  }
-  stack.innerHTML='';
-  entries.forEach(function(e,i){
-    var div=document.createElement('div');
-    div.className='log-stack-entry';
-    div.innerHTML='<div class="log-entry-num '+m.badgeClass+'">'+(i+1)+'</div><div style="flex:1;min-width:0"><div style="font-size:13px;font-weight:600;color:var(--text)">'+e.title+'</div><div style="font-size:11px;color:var(--text2);margin-top:2px">'+e.employer+' · '+e.from+' to '+e.to+'</div><div style="font-size:11px;color:var(--text2);font-style:italic;margin-top:1px">'+e.desc+'</div></div><div style="font-size:13px;font-weight:700;color:var(--green-dk);flex-shrink:0">+'+e.pts+'</div>';
-    stack.appendChild(div);
-  });
 }
 
 function updateScsScreen(m){
@@ -1398,9 +1452,12 @@ function calcPoints(actVal,fromDate,toDate){
   return Math.min(days*ptsPerUnit,cap);
 }
 function getTotalForMethod(m){
-  var extra=0;(logEntries[m]||[]).forEach(function(e){extra+=e.pts;});
-  var preloaded=0;(methodConfig[m].preloaded||[]).forEach(function(p){preloaded+=p.pts;});
-  return Math.min((basePoints[m]||0)+extra,100);
+  var prev=activeMethod;
+  activeMethod=m;
+  var total=0;
+  for(var n=1;n<=11;n++){total+=getActPtsLogged(n);}
+  activeMethod=prev;
+  return Math.min(total,100);
 }
 function getTotalPoints(){return getTotalForMethod(activeMethod);}
 function updatePtsPreview(){
@@ -1614,6 +1671,957 @@ function showVerifyDetail(t){
   alert(msg);
 }
 
+
+// ══════════════════════════════════════════════════════
+// 11-ACTIVITY LOGGING ENGINE
+// ══════════════════════════════════════════════════════
+
+var ACT_CONFIG = {
+  1:{ name:'NDT Field Work', nrcan:'Performance of NDT Activities', part:'A', rate:2, unit:'day', maxYr:25, max5yr:95,
+      desc:'Claimed for directly performing NDT methods on the job site.', color:'var(--olive)',
+      fields:['method','employer','supervisor','dateFrom','dateTo','description'] },
+  2:{ name:'Theory Training', nrcan:'Completion of Theoretical Training', part:'A', rate:1, unit:'day', maxYr:5, max5yr:15,
+      desc:'Attending theoretical/classroom NDT training courses.',color:'var(--olive)',
+      fields:['trainingTitle','provider','dateFrom','dateTo','hours'] },
+  3:{ name:'Practical Training', nrcan:'Completion of Practical Training', part:'A', rate:2, unit:'day', maxYr:10, max5yr:25,
+      desc:'Attending hands-on practical NDT training sessions.',color:'var(--olive)',
+      fields:['trainingTitle','provider','dateFrom','dateTo','hours'] },
+  4:{ name:'Delivering Training', nrcan:'Delivery of NDT Training', part:'A', rate:1, unit:'day', maxYr:15, max5yr:75,
+      desc:'Teaching, instructing or delivering NDT training to others.',color:'var(--olive)',
+      fields:['trainingTitle','organisation','dateFrom','dateTo','numStudents'] },
+  5:{ name:'Research & Engineering', nrcan:'Research or Engineering of NDT', part:'A', rate:1, unit:'week', maxYr:15, max5yr:60,
+      desc:'NDT research, procedure development, software or engineering work.',color:'var(--olive)',
+      fields:['projectTitle','organisation','dateFrom','dateTo','description'] },
+  6:{ name:'Seminar Attendance', nrcan:'Attendance at Technical Seminars', part:'B', rate:1, unit:'day', maxYr:2, max5yr:10,
+      desc:'Attending technical seminars, conferences or industry events.',color:'var(--blue)',
+      fields:['seminarTitle','organiser','date','numDays'] },
+  7:{ name:'Seminar Presentation', nrcan:'Presenting at Technical Seminars', part:'B', rate:3, unit:'presentation', maxYr:3, max5yr:15,
+      desc:'Presenting a paper or talk at a technical seminar or conference.',color:'var(--blue)',
+      fields:['presentationTitle','seminarName','date'] },
+  8:{ name:'Society Membership', nrcan:'Membership in NDT Society', part:'B', rate:1, unit:'membership', maxYr:2, max5yr:5,
+      desc:'Active membership in a recognised NDT professional society.',color:'var(--blue)',
+      fields:['society','memberNumber','year'] },
+  9:{ name:'Mentoring NDT', nrcan:'Mentoring of NDT Personnel', part:'B', rate:2, unit:'mentee', maxYr:10, max5yr:30,
+      desc:'Formally mentoring NDT technicians in their professional development.',color:'var(--blue)',
+      fields:['menteeName','menteeLevel','dateFrom','dateTo'] },
+  10:{ name:'NDT Committees', nrcan:'Participation in NDT Standardization Committees', part:'B', rate:1, unit:'committee', maxYr:3, max5yr:15,
+      desc:'Active participation in NDT standardization or technical committees.',color:'var(--blue)',
+      fields:['committeeName','organisation','year'] },
+  11:{ name:'Cert Body Role', nrcan:'Role Within Certification Body', part:'B', rate:2, unit:'activity', maxYr:10, max5yr:30,
+      desc:'Active role within an NDT certification body (e.g. examiner, committee member).',color:'var(--blue)',
+      fields:['roleName','organisation','dateFrom','dateTo'] }
+};
+
+var currentActNum = 1;
+
+function getActPtsLogged(actNum){
+  var total = 0;
+  (logEntries[activeMethod]||[]).filter(function(e){ return e.actNum === actNum; }).forEach(function(e){ total += (e.pts||0); });
+  var cfg = ACT_CONFIG[actNum];
+  (methodConfig[activeMethod].preloaded||[]).filter(function(p){ return p.actNum === actNum; }).forEach(function(p){ total += (p.pts||0); });
+  return Math.min(total, cfg ? cfg.max5yr : total);
+}
+
+function updateLogTiles(){
+  var m = methodConfig[activeMethod];
+  var totalPts = getTotalPoints();
+  var partA = 0; var partB = 0;
+  (logEntries[activeMethod]||[]).forEach(function(e){
+    var cfg = ACT_CONFIG[e.actNum];
+    if(cfg && cfg.part==='A') partA += (e.pts||0);
+    else partB += (e.pts||0);
+  });
+  // Add preloaded
+  (m.preloaded||[]).forEach(function(p){
+    if(p.part==='A') partA += p.pts;
+    else partB += p.pts;
+  });
+
+  // Update header
+  var hdr = document.getElementById('logPtsHeader');
+  if(hdr) hdr.textContent = totalPts + ' / 100 pts';
+  var disp = document.getElementById('logPtsDisplay');
+  if(disp) disp.textContent = totalPts + ' / 100';
+  var bar = document.getElementById('logPtsBar');
+  if(bar) bar.style.width = Math.min(totalPts,100) + '%';
+  var paEl = document.getElementById('logPartA');
+  if(paEl) paEl.textContent = partA;
+  var pbEl = document.getElementById('logPartB');
+  if(pbEl) pbEl.textContent = partB;
+
+  // Update each tile
+  for(var i=1; i<=11; i++){
+    var cfg = ACT_CONFIG[i];
+    var pts = getActPtsLogged(i);
+    var capEl = document.getElementById('cap-'+i);
+    var barEl = document.getElementById('bar-'+i);
+    var tileEl = document.getElementById('tile-'+i);
+    if(capEl) capEl.textContent = pts;
+    if(barEl) barEl.style.width = Math.min(100, Math.round(pts/cfg.max5yr*100)) + '%';
+    if(tileEl){
+      if(pts >= cfg.max5yr){
+        tileEl.classList.add('capped');
+        tileEl.title = 'Maximum points reached for this activity';
+      } else {
+        tileEl.classList.remove('capped');
+      }
+    }
+  }
+}
+
+function openActForm(actNum){
+  currentActNum = actNum;
+  var cfg = ACT_CONFIG[actNum];
+  var m = methodConfig[activeMethod];
+
+  // Set header
+  var titleEl = document.getElementById('actFormTitle');
+  if(titleEl){ titleEl.textContent = (cfg.part+actNum) + ' · ' + cfg.name; titleEl.className = 'method-badge '+(cfg.part==='A'?'mt':'ut'); }
+
+  // Info card
+  var infoCard = document.getElementById('actInfoCard');
+  if(infoCard) infoCard.style.cssText = 'border-radius:12px;padding:12px 14px;margin-bottom:16px;background:'+(cfg.part==='A'?'var(--gold-lt)':'var(--blue-lt)')+';color:'+(cfg.part==='A'?'var(--gold-dk)':'var(--blue-dk)');
+  var infoTitle = document.getElementById('actInfoTitle');
+  if(infoTitle) infoTitle.textContent = 'Activity #'+actNum+' — '+cfg.nrcan;
+  var infoDesc = document.getElementById('actInfoDesc');
+  if(infoDesc) infoDesc.textContent = cfg.desc;
+  var infoRate = document.getElementById('actInfoRate');
+  if(infoRate) infoRate.textContent = cfg.rate + ' pt'+( cfg.rate>1?'s':'') + '/'+cfg.unit;
+  var infoMaxYr = document.getElementById('actInfoMaxYr');
+  if(infoMaxYr) infoMaxYr.textContent = cfg.maxYr + ' pts';
+  var infoMax5yr = document.getElementById('actInfoMax5yr');
+  if(infoMax5yr) infoMax5yr.textContent = cfg.max5yr + ' pts';
+
+  // Render form fields
+  renderActFields(actNum, cfg, m);
+  updateActPreview();
+  goScreen('s-act-form');
+}
+
+function renderActFields(actNum, cfg, m){
+  var container = document.getElementById('actFormFields');
+  if(!container) return;
+  var today = new Date().toISOString().split('T')[0];
+  var lastWeek = new Date(Date.now()-7*24*60*60*1000).toISOString().split('T')[0];
+  var html = '';
+
+  var fld = function(id, label, type, val, extra){
+    return '<div class="field-group"><div class="field-label">'+label+'</div>'+
+      '<input type="'+type+'" class="field-input" id="af_'+id+'" value="'+(val||'')+'" '+(extra||'')+' oninput="updateActPreview()"></div>';
+  };
+  var sel = function(id, label, options, val){
+    var opts = options.map(function(o){ return '<option value="'+o.v+'"'+(o.v===val?' selected':'')+'>'+o.l+'</option>'; }).join('');
+    return '<div class="field-group"><div class="field-label">'+label+'</div><select class="field-input" id="af_'+id+'" onchange="updateActPreview()">'+opts+'</select></div>';
+  };
+  var txt = function(id, label, val){
+    return '<div class="field-group"><div class="field-label">'+label+'</div>'+
+      '<textarea class="field-input" id="af_'+id+'" rows="2" style="resize:none" oninput="updateActPreview()">'+(val||'')+'</textarea></div>';
+  };
+
+  // Method selector for all activities
+  html += sel('method','NDT method',[
+    {v:activeMethod.toUpperCase(),l:activeMethod.toUpperCase()+' · '+methodConfig[activeMethod].fullName},
+    {v:'MT',l:'MT · Magnetic Testing'},{v:'UT',l:'UT · Ultrasonic Testing'},
+    {v:'PT',l:'PT · Penetrant Testing'},{v:'RT',l:'RT · Radiographic Testing'},
+    {v:'ET',l:'ET · Eddy Current'},{v:'UT-PA',l:'UT-PA · Phased Array'}
+  ], activeMethod.toUpperCase());
+
+  if(actNum===1){
+    html += fld('employer','Employer / company','text','Buffalo Inspection Services');
+    html += fld('supervisor','Supervisor name & reg#','text','Andrew Crawford · Reg# 6337');
+    html += '<div class="field-row">'+fld('dateFrom','Date from','date',lastWeek)+fld('dateTo','Date to','date',today)+'</div>';
+    html += fld('location','Location / project','text','');
+    html += txt('description','Work description (optional)','');
+  }
+  else if(actNum===2||actNum===3){
+    html += fld('trainingTitle','Course / training title','text','');
+    html += fld('provider','Training provider','text','');
+    html += '<div class="field-row">'+fld('dateFrom','Date from','date',lastWeek)+fld('dateTo','Date to','date',today)+'</div>';
+    html += fld('hours','Total hours','number','8');
+  }
+  else if(actNum===4){
+    html += fld('trainingTitle','Course / training title','text','');
+    html += fld('organisation','Organisation','text','');
+    html += '<div class="field-row">'+fld('dateFrom','Date from','date',lastWeek)+fld('dateTo','Date to','date',today)+'</div>';
+    html += fld('numStudents','Number of students','number','1');
+  }
+  else if(actNum===5){
+    html += fld('projectTitle','Project / research title','text','');
+    html += fld('organisation','Organisation','text','KC Inspection Ltd');
+    html += '<div class="field-row">'+fld('dateFrom','Date from','date',lastWeek)+fld('dateTo','Date to','date',today)+'</div>';
+    html += txt('description','Description of research / engineering work','');
+  }
+  else if(actNum===6){
+    html += fld('seminarTitle','Seminar / conference name','text','');
+    html += fld('organiser','Organiser','text','');
+    html += fld('date','Date attended','date',today);
+    html += fld('numDays','Number of days','number','1');
+  }
+  else if(actNum===7){
+    html += fld('presentationTitle','Presentation title','text','');
+    html += fld('seminarName','Seminar / conference name','text','');
+    html += fld('date','Date','date',today);
+  }
+  else if(actNum===8){
+    html += sel('society','NDT society',[
+      {v:'ASTTBC',l:'ASTTBC — Applied Science Technologists & Technicians of BC'},
+      {v:'AWS',l:'AWS — American Welding Society'},
+      {v:'API',l:'API — American Petroleum Institute'},
+      {v:'CSNDT',l:'CSNDT — Canadian Society for NDT'},
+      {v:'ASNT',l:'ASNT — American Society for NDT'},
+      {v:'Other',l:'Other — specify below'}
+    ],'ASTTBC');
+    html += fld('memberNumber','Membership number','text','');
+    html += fld('year','Membership year','number',new Date().getFullYear());
+  }
+  else if(actNum===9){
+    html += fld('menteeName','Mentee name','text','');
+    html += sel('menteeLevel','Mentee certification level',[
+      {v:'Student',l:'Student / trainee'},{v:'Level 1',l:'Level 1 candidate'},{v:'Level 2',l:'Level 2 candidate'}
+    ],'Level 1');
+    html += '<div class="field-row">'+fld('dateFrom','Mentoring from','date',lastWeek)+fld('dateTo','Mentoring to','date',today)+'</div>';
+  }
+  else if(actNum===10){
+    html += fld('committeeName','Committee name','text','');
+    html += fld('organisation','Organisation','text','');
+    html += fld('year','Year','number',new Date().getFullYear());
+  }
+  else if(actNum===11){
+    html += fld('roleName','Role / position','text','');
+    html += fld('organisation','Certification body','text','');
+    html += '<div class="field-row">'+fld('dateFrom','From','date',lastWeek)+fld('dateTo','To','date',today)+'</div>';
+  }
+
+  container.innerHTML = html;
+}
+
+function updateActPreview(){
+  var actNum = currentActNum;
+  var cfg = ACT_CONFIG[actNum];
+  if(!cfg) return;
+  var pts = 0;
+  var note = '';
+
+  if(cfg.unit==='day'){
+    var from = document.getElementById('af_dateFrom');
+    var to = document.getElementById('af_dateTo');
+    if(from && to && from.value && to.value){
+      var days = Math.max(1, Math.round((new Date(to.value)-new Date(from.value))/(1000*60*60*24))+1);
+      pts = Math.min(days * cfg.rate, cfg.maxYr);
+      note = days + ' day'+(days!==1?'s':'')+' × '+cfg.rate+' pt'+(cfg.rate>1?'s':'')+'/day (max '+cfg.maxYr+'/yr)';
+    }
+  }
+  else if(cfg.unit==='week'){
+    var from = document.getElementById('af_dateFrom');
+    var to = document.getElementById('af_dateTo');
+    if(from && to && from.value && to.value){
+      var days = Math.max(1, Math.round((new Date(to.value)-new Date(from.value))/(1000*60*60*24))+1);
+      var weeks = Math.max(1, Math.round(days/7));
+      pts = Math.min(weeks * cfg.rate, cfg.maxYr);
+      note = weeks + ' week'+(weeks!==1?'s':'')+' × '+cfg.rate+' pt/week (max '+cfg.maxYr+'/yr)';
+    }
+  }
+  else {
+    // Fixed unit — membership, mentee, presentation, committee, activity
+    pts = cfg.rate;
+    note = cfg.rate + ' pt'+(cfg.rate>1?'s':'')+' per '+cfg.unit;
+  }
+
+  var previewEl = document.getElementById('actPtsPreview');
+  if(previewEl) previewEl.textContent = '+' + pts;
+  var ptsEl = document.getElementById('actFormPts');
+  if(ptsEl) ptsEl.textContent = '+' + pts + ' pts';
+  var noteEl = document.getElementById('actPtsNote');
+  if(noteEl) noteEl.textContent = note;
+}
+
+function saveActEntry(){
+  var actNum = currentActNum;
+  var cfg = ACT_CONFIG[actNum];
+  if(!cfg) return;
+
+  // Calculate pts
+  var pts = 0;
+  if(cfg.unit==='day'){
+    var from = document.getElementById('af_dateFrom');
+    var to = document.getElementById('af_dateTo');
+    if(from && to && from.value && to.value){
+      var days = Math.max(1,Math.round((new Date(to.value)-new Date(from.value))/(1000*60*60*24))+1);
+      pts = Math.min(days*cfg.rate, cfg.maxYr);
+    }
+  } else if(cfg.unit==='week'){
+    var from = document.getElementById('af_dateFrom');
+    var to = document.getElementById('af_dateTo');
+    if(from && to && from.value && to.value){
+      var days = Math.max(1,Math.round((new Date(to.value)-new Date(from.value))/(1000*60*60*24))+1);
+      pts = Math.min(Math.max(1,Math.round(days/7))*cfg.rate, cfg.maxYr);
+    }
+  } else {
+    pts = cfg.rate;
+  }
+
+  if(pts <= 0){ alert('Please fill in the required dates or fields.'); return; }
+
+  // Build entry label
+  var label = cfg.name;
+  var getVal = function(id){ var el=document.getElementById('af_'+id); return el?el.value:''; };
+  if(actNum===1) label = 'Field Work · '+getVal('employer');
+  else if(actNum===2) label = 'Theory Training · '+(getVal('trainingTitle')||'Course');
+  else if(actNum===3) label = 'Practical Training · '+(getVal('trainingTitle')||'Course');
+  else if(actNum===4) label = 'Delivering · '+(getVal('trainingTitle')||'Training');
+  else if(actNum===5) label = 'Research · '+(getVal('projectTitle')||'NDT Project');
+  else if(actNum===6) label = 'Seminar · '+(getVal('seminarTitle')||'Event');
+  else if(actNum===7) label = 'Presented · '+(getVal('presentationTitle')||'Paper');
+  else if(actNum===8) label = 'Membership · '+getVal('society');
+  else if(actNum===9) label = 'Mentored · '+getVal('menteeName');
+  else if(actNum===10) label = 'Committee · '+getVal('committeeName');
+  else if(actNum===11) label = 'Cert Role · '+getVal('roleName');
+
+  var fromVal = getVal('dateFrom') || getVal('date') || '';
+  var toVal = getVal('dateTo') || '';
+
+  if(!logEntries[activeMethod]) logEntries[activeMethod] = [];
+  logEntries[activeMethod].push({
+    actNum: actNum,
+    nrcanActivity: actNum,   // direct map to NRCan SCS form line
+    nrcanLabel: cfg.nrcan,
+    part: cfg.part,
+    title: label,
+    method: getVal('method') || activeMethod.toUpperCase(),
+    from: fromVal,
+    to: toVal,
+    pts: pts,
+    employer: getVal('employer') || getVal('organisation') || getVal('provider') || '',
+    supervisor: getVal('supervisor') || '',
+    description: getVal('description') || getVal('trainingTitle') || getVal('presentationTitle') || getVal('roleName') || ''
+  });
+
+  // Persist
+  try{ localStorage.setItem('certainly_log', JSON.stringify(logEntries)); }catch(e){}
+
+  // Update dashboard
+  updateDashboard();
+  updateDashCards();
+
+  // Show success flash then go back to log screen
+  var btn = document.querySelector('#s-act-form .primary-btn');
+  if(btn){ btn.innerHTML = '<i class="ti ti-circle-check"></i>Saved — +'+pts+' pts'; btn.style.background='var(--green)'; }
+  setTimeout(function(){
+    goScreen('s-log');
+  }, 900);
+}
+
+function deleteLogEntry(idx){
+  if(!logEntries[activeMethod]) return;
+  logEntries[activeMethod].splice(idx,1);
+  try{localStorage.setItem('certainly_log',JSON.stringify(logEntries));}catch(e){}
+  updateDashboard();
+  updateDashCards();
+  renderLogTabContent(currentLogTab);
+  updateLogScreen(methodConfig[activeMethod]);
+}
+
+function updateLogScreen(m){
+  var badge=document.getElementById('logMethodBadge');
+  var total=getTotalPoints();
+  if(badge){badge.textContent=m.label;badge.className='method-badge '+m.badgeClass;}
+  updateLogTiles();
+  updateLogStack(m);
+}
+
+function updateLogStack(m){
+  var stack=document.getElementById('logStack');
+  if(!stack)return;
+  var entries=(logEntries[activeMethod]||[]).slice().reverse().slice(0,5);
+  if(entries.length===0){
+    stack.innerHTML='<div class="log-empty"><i class="ti ti-clipboard" style="font-size:22px;display:block;margin-bottom:6px;color:rgba(0,0,0,0.15)"></i>No entries yet<br><span style="font-size:11px">Tap an activity above to log your first entry</span></div>';
+    return;
+  }
+  var html='';
+  entries.forEach(function(e){
+    var cfg=ACT_CONFIG[e.actNum]||{};
+    var partColor=cfg.part==='B'?'var(--blue)':'var(--olive)';
+    html+='<div class="log-stack-entry">';
+    html+='<div style="width:28px;height:28px;border-radius:50%;background:'+partColor+';display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;color:#fff;flex-shrink:0">'+(cfg.part||'A')+(e.actNum||1)+'</div>';
+    html+='<div style="flex:1;min-width:0"><div style="font-size:13px;font-weight:600;color:var(--text)">'+e.title+'</div>';
+    if(e.from) html+='<div style="font-size:11px;color:var(--text2)">'+e.from+(e.to?' → '+e.to:'')+'</div>';
+    html+='<div style="font-size:10px;color:var(--text2);font-style:italic">'+cfg.nrcan+'</div></div>';
+    html+='<div style="font-size:14px;font-weight:700;color:var(--green-dk);flex-shrink:0">+'+e.pts+'</div>';
+    html+='</div>';
+  });
+  stack.innerHTML=html;
+}
+
+// ══════════════════════════════════════════════════════════════
+// 7-TAB LOGGING SYSTEM
+// ══════════════════════════════════════════════════════════════
+var currentLogTab = 1;
+
+var TAB_CONFIG = {
+  1:{label:'Field Work',icon:'ti-briefcase',color:'var(--olive)',desc:'NDT field work you performed on the job site.',
+     activities:[{actNum:1,label:'NDT Field Work',nrcan:'Performance of NDT Activities',rate:2,unit:'day',maxYr:25,max5yr:95,part:'A'}]},
+  2:{label:'Training Received',icon:'ti-book',color:'var(--olive)',desc:'Training courses you attended as a student.',
+     activities:[
+       {actNum:2,label:'Theoretical Training',nrcan:'Completion of Theoretical Training',rate:1,unit:'day',maxYr:5,max5yr:15,part:'A'},
+       {actNum:3,label:'Practical Training',nrcan:'Completion of Practical Training',rate:2,unit:'day',maxYr:10,max5yr:25,part:'A'}
+     ]},
+  3:{label:'Training Delivered',icon:'ti-presentation',color:'var(--olive)',desc:'Training you delivered to others.',
+     activities:[{actNum:4,label:'Delivery of Training',nrcan:'Delivery of NDT Training',rate:1,unit:'day',maxYr:15,max5yr:75,part:'A'}]},
+  4:{label:'Research',icon:'ti-flask',color:'var(--olive)',desc:'NDT research, procedure development, software or engineering work.',
+     activities:[{actNum:5,label:'Research / Engineering of NDT',nrcan:'Research or Engineering of NDT',rate:1,unit:'week',maxYr:15,max5yr:60,part:'A'}]},
+  5:{label:'Seminars',icon:'ti-microphone',color:'var(--blue)',desc:'Technical seminars, conferences or events.',
+     activities:[
+       {actNum:6,label:'Seminar Attendance',nrcan:'Attendance at Technical Seminars',rate:1,unit:'day',maxYr:2,max5yr:10,part:'B'},
+       {actNum:7,label:'Seminar Presentation',nrcan:'Presenting at Technical Seminars',rate:3,unit:'presentation',maxYr:3,max5yr:15,part:'B'}
+     ]},
+  6:{label:'Professional',icon:'ti-certificate',color:'var(--blue)',desc:'Memberships, committee work and certification body roles.',
+     activities:[
+       {actNum:8,label:'Society Membership',nrcan:'Membership in NDT Society',rate:1,unit:'membership',maxYr:2,max5yr:5,part:'B'},
+       {actNum:10,label:'Standardization Committee',nrcan:'Participation in NDT Standardization Committees',rate:1,unit:'committee',maxYr:3,max5yr:15,part:'B'},
+       {actNum:11,label:'Certification Body Role',nrcan:'Role Within Certification Body',rate:2,unit:'activity',maxYr:10,max5yr:30,part:'B'}
+     ]},
+  7:{label:'Mentoring',icon:'ti-users',color:'var(--blue)',desc:'Formally mentoring NDT technicians.',
+     activities:[{actNum:9,label:'Mentoring NDT Personnel',nrcan:'Mentoring of NDT Personnel',rate:2,unit:'mentee',maxYr:10,max5yr:30,part:'B'}]}
+};
+
+var ACT_CONFIG = {
+  1:{name:'NDT Field Work',nrcan:'Performance of NDT Activities',part:'A',rate:2,unit:'day',maxYr:25,max5yr:95},
+  2:{name:'Theory Training',nrcan:'Completion of Theoretical Training',part:'A',rate:1,unit:'day',maxYr:5,max5yr:15},
+  3:{name:'Practical Training',nrcan:'Completion of Practical Training',part:'A',rate:2,unit:'day',maxYr:10,max5yr:25},
+  4:{name:'Delivering Training',nrcan:'Delivery of NDT Training',part:'A',rate:1,unit:'day',maxYr:15,max5yr:75},
+  5:{name:'Research & Engineering',nrcan:'Research or Engineering of NDT',part:'A',rate:1,unit:'week',maxYr:15,max5yr:60},
+  6:{name:'Seminar Attendance',nrcan:'Attendance at Technical Seminars',part:'B',rate:1,unit:'day',maxYr:2,max5yr:10},
+  7:{name:'Seminar Presentation',nrcan:'Presenting at Technical Seminars',part:'B',rate:3,unit:'presentation',maxYr:3,max5yr:15},
+  8:{name:'Society Membership',nrcan:'Membership in NDT Society',part:'B',rate:1,unit:'membership',maxYr:2,max5yr:5},
+  9:{name:'Mentoring NDT',nrcan:'Mentoring of NDT Personnel',part:'B',rate:2,unit:'mentee',maxYr:10,max5yr:30},
+  10:{name:'NDT Committees',nrcan:'Participation in NDT Standardization Committees',part:'B',rate:1,unit:'committee',maxYr:3,max5yr:15},
+  11:{name:'Cert Body Role',nrcan:'Role Within Certification Body',part:'B',rate:2,unit:'activity',maxYr:10,max5yr:30}
+};
+
+var currentActNum = 1;
+var selectedAttestActs = [];
+
+function setLogTab(tabNum){
+  currentLogTab = tabNum;
+  for(var i=1;i<=7;i++){
+    var el=document.getElementById('ltab-'+i);
+    if(el){ if(i===tabNum) el.classList.add('active'); else el.classList.remove('active'); }
+  }
+  renderLogTabContent(tabNum);
+}
+
+function getActPtsLogged(actNum){
+  var total=0;
+  var cfg=ACT_CONFIG[actNum];
+  (logEntries[activeMethod]||[]).filter(function(e){return e.actNum===actNum;}).forEach(function(e){total+=(e.pts||0);});
+  (methodConfig[activeMethod].preloaded||[]).filter(function(p){return p.actNum===actNum;}).forEach(function(p){total+=(p.pts||0);});
+  return Math.min(total, cfg ? cfg.max5yr : total);
+}
+
+function getFieldVal(id){ var el=document.getElementById('tf_'+id); return el?el.value:''; }
+
+function buildFormHTML(actNum){
+  var today=new Date().toISOString().split('T')[0];
+  var lastWeek=new Date(Date.now()-7*24*60*60*1000).toISOString().split('T')[0];
+  var html='';
+
+  function fld(id,lbl,type,val,extra){
+    return '<div class="field-group"><div class="field-label">'+lbl+'</div><input type="'+type+'" class="field-input" id="tf_'+id+'" value="'+(val||'')+'" '+(extra||'')+' oninput="updateTabPreview()"></div>';
+  }
+  function sel(id,lbl,opts,val){
+    var o=opts.map(function(op){return '<option value="'+op.v+'"'+(op.v===val?' selected':'')+'>'+op.l+'</option>';}).join('');
+    return '<div class="field-group"><div class="field-label">'+lbl+'</div><select class="field-input" id="tf_'+id+'" onchange="updateTabPreview()">'+o+'</select></div>';
+  }
+  function ta(id,lbl){
+    return '<div class="field-group"><div class="field-label">'+lbl+'</div><textarea class="field-input" id="tf_'+id+'" rows="2" style="resize:none"></textarea></div>';
+  }
+  var methodOpts=[
+    {v:activeMethod.toUpperCase(),l:activeMethod.toUpperCase()+' - '+methodConfig[activeMethod].fullName},
+    {v:'MT',l:'MT - Magnetic Testing'},{v:'UT',l:'UT - Ultrasonic Testing'},
+    {v:'PT',l:'PT - Penetrant Testing'},{v:'RT',l:'RT - Radiographic Testing'},
+    {v:'ET',l:'ET - Eddy Current'},{v:'UT-PA',l:'UT-PA - Phased Array'}
+  ];
+  html+=sel('method','NDT method',methodOpts,activeMethod.toUpperCase());
+
+  if(actNum===1){
+    html+=fld('employer','Employer / company','text','Buffalo Inspection Services');
+    html+=fld('supervisor','Supervisor name and reg#','text','Andrew Crawford - Reg# 6337');
+    html+='<div class="field-row">'+fld('dateFrom','Date from','date',lastWeek)+fld('dateTo','Date to','date',today)+'</div>';
+    html+=fld('location','Location / project','text','');
+    html+=ta('description','Work description (optional)');
+  } else if(actNum===2||actNum===3){
+    html+=fld('trainingTitle','Course title','text','');
+    html+=fld('provider','Training provider','text','');
+    html+='<div class="field-row">'+fld('dateFrom','Date from','date',lastWeek)+fld('dateTo','Date to','date',today)+'</div>';
+    html+=fld('hours','Total hours','number','8');
+  } else if(actNum===4){
+    html+=fld('trainingTitle','Course title','text','');
+    html+=fld('organisation','Organisation','text','');
+    html+='<div class="field-row">'+fld('dateFrom','Date from','date',lastWeek)+fld('dateTo','Date to','date',today)+'</div>';
+    html+=fld('numStudents','Number of students','number','1');
+  } else if(actNum===5){
+    html+=fld('projectTitle','Project title','text','');
+    html+=fld('organisation','Organisation','text','KC Inspection Ltd');
+    html+='<div class="field-row">'+fld('dateFrom','Date from','date',lastWeek)+fld('dateTo','Date to','date',today)+'</div>';
+    html+=ta('description','Description of research or engineering work');
+  } else if(actNum===6){
+    html+=fld('seminarTitle','Seminar name','text','');
+    html+=fld('organiser','Organiser','text','');
+    html+=fld('date','Date attended','date',today);
+    html+=fld('numDays','Number of days','number','1');
+  } else if(actNum===7){
+    html+=fld('presentationTitle','Presentation title','text','');
+    html+=fld('seminarName','Seminar name','text','');
+    html+=fld('date','Date','date',today);
+  } else if(actNum===8){
+    var socOpts=[
+      {v:'ASTTBC',l:'ASTTBC - Applied Science Technologists BC'},
+      {v:'AWS',l:'AWS - American Welding Society'},
+      {v:'API',l:'API - American Petroleum Institute'},
+      {v:'CSNDT',l:'CSNDT - Canadian Society for NDT'},
+      {v:'ASNT',l:'ASNT - American Society for NDT'},
+      {v:'Other',l:'Other'}
+    ];
+    html+=sel('society','NDT society',socOpts,'ASTTBC');
+    html+=fld('memberNumber','Membership number','text','');
+    html+=fld('year','Membership year','number',new Date().getFullYear().toString());
+  } else if(actNum===9){
+    html+=fld('menteeName','Mentee full name','text','');
+    var lvlOpts=[{v:'Student',l:'Student / trainee'},{v:'Level 1',l:'Level 1 candidate'},{v:'Level 2',l:'Level 2 candidate'}];
+    html+=sel('menteeLevel','Mentee level',lvlOpts,'Level 1');
+    html+='<div class="field-row">'+fld('dateFrom','Mentoring from','date',lastWeek)+fld('dateTo','Mentoring to','date',today)+'</div>';
+  } else if(actNum===10){
+    html+=fld('committeeName','Committee name','text','');
+    html+=fld('organisation','Organisation','text','');
+    html+=fld('year','Year','number',new Date().getFullYear().toString());
+  } else if(actNum===11){
+    html+=fld('roleName','Role / position','text','');
+    html+=fld('organisation','Certification body','text','');
+    html+='<div class="field-row">'+fld('dateFrom','From','date',lastWeek)+fld('dateTo','To','date',today)+'</div>';
+  }
+  return html;
+}
+
+function renderLogTabContent(tabNum){
+  var tc=TAB_CONFIG[tabNum];
+  var container=document.getElementById('logTabContent');
+  if(!container||!tc) return;
+
+  currentActNum=tc.activities[0].actNum;
+  var html='';
+
+  // ── HEADER: activity name + live points pill ──
+  var totalPts=0;
+  tc.activities.forEach(function(a){totalPts+=getActPtsLogged(a.actNum);});
+  var maxPts=tc.activities.reduce(function(s,a){return s+a.max5yr;},0);
+  var pillCls=totalPts>=maxPts?'ok':totalPts>0?'partial':'zero';
+  html+='<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">';
+  html+='<div style="font-size:15px;font-weight:700;color:var(--text)">'+tc.label+'</div>';
+  html+='<span class="log-pts-pill '+pillCls+'">'+totalPts+' / '+maxPts+' pts</span>';
+  html+='</div>';
+  html+='<div style="font-size:12px;color:var(--text2);margin-bottom:14px">'+tc.desc+'</div>';
+
+  // ── SUB-ACTIVITY SELECTOR (pill style for multi-activity tabs) ──
+  if(tc.activities.length>1){
+    html+='<div style="display:flex;gap:8px;margin-bottom:14px;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:2px;scrollbar-width:none">';
+    tc.activities.forEach(function(a,i){
+      var p=getActPtsLogged(a.actNum);
+      var active=i===0;
+      html+='<button class="act-sub-pill'+(active?' selected':'')+'" onclick="selectSubAct('+a.actNum+',this)" data-actnum="'+a.actNum+'" style="flex-shrink:0;padding:8px 14px;border-radius:20px;border:1.5px solid '+(active?'var(--gold-dk)':'var(--border)')+';background:'+(active?'var(--gold-lt)':'var(--bg)')+';font-size:12px;font-weight:600;color:'+(active?'var(--olive-dk)':'var(--text2)')+';cursor:pointer;min-height:40px;white-space:nowrap">';
+      html+=a.label+'<span style="margin-left:6px;font-size:11px;color:'+(p>0?'var(--green-dk)':'var(--text2)')+'">'+p+'pts</span>';
+      html+='</button>';
+    });
+    html+='</div>';
+  }
+
+  // ── FORM FIELDS ──
+  html+='<div style="background:var(--bg2);border-radius:14px;padding:14px;margin-bottom:14px">';
+  html+=buildFormHTML(currentActNum);
+  html+='</div>';
+
+  // ── LIVE POINTS PREVIEW ──
+  html+='<div style="display:flex;justify-content:space-between;align-items:center;background:var(--green-lt);border-radius:12px;padding:14px 16px;margin-bottom:12px">';
+  html+='<div><div style="font-size:12px;font-weight:700;color:var(--green-dk)">Points this entry</div>';
+  html+='<div style="font-size:11px;color:var(--text2);margin-top:2px" id="tabPtsNote">Enter dates above</div></div>';
+  html+='<div style="font-size:36px;font-weight:800;color:var(--green-dk);line-height:1" id="tabPtsPreview">+0</div>';
+  html+='</div>';
+
+  // ── SAVE BUTTON ──
+  html+='<button class="log-save-btn" id="tabSaveBtn" onclick="saveTabEntry()"><i class="ti ti-device-floppy" style="font-size:20px"></i>Save entry</button>';
+
+  // ── LOGGED ENTRIES ──
+  var tabEntries=[];
+  tc.activities.forEach(function(a){
+    (logEntries[activeMethod]||[]).filter(function(e){return e.actNum===a.actNum;}).forEach(function(e){tabEntries.push(e);});
+  });
+
+  if(tabEntries.length>0){
+    html+='<div style="font-size:11px;font-weight:700;color:var(--text2);text-transform:uppercase;letter-spacing:.05em;margin:18px 0 10px">Your entries ('+tabEntries.length+')</div>';
+    tabEntries.slice().reverse().forEach(function(e,idx){
+      var cfg=ACT_CONFIG[e.actNum]||{};
+      var dotColor=cfg.part==='A'?'var(--olive)':'var(--blue)';
+      var realIdx=logEntries[activeMethod].indexOf(e);
+      html+='<div class="entry-card">';
+      html+='<div class="entry-card-dot" style="background:'+dotColor+'">'+(cfg.part||'A')+(e.actNum||1)+'</div>';
+      html+='<div style="flex:1;min-width:0">';
+      html+='<div style="font-size:13px;font-weight:600;color:var(--text)">'+e.title+'</div>';
+      if(e.from) html+='<div style="font-size:11px;color:var(--text2);margin-top:2px">'+e.from+(e.to?' → '+e.to:'')+'</div>';
+      html+='<div style="font-size:12px;font-weight:700;color:var(--green-dk);margin-top:3px">+'+e.pts+' pts</div>';
+      html+='</div>';
+      html+='<button class="entry-del" onclick="deleteLogEntry('+realIdx+')" aria-label="Delete entry"><i class="ti ti-trash" style="font-size:14px"></i></button>';
+      html+='</div>';
+    });
+  } else {
+    html+='<div class="log-empty" style="margin-top:16px">';
+    html+='<i class="ti ti-clipboard-list" style="font-size:28px;display:block;margin-bottom:8px;color:rgba(0,0,0,0.15)"></i>';
+    html+='<div style="font-size:13px;font-weight:600;margin-bottom:4px">No entries yet</div>';
+    html+='<div style="font-size:11px">Fill in the form above and tap Save entry</div>';
+    html+='</div>';
+  }
+
+  container.innerHTML=html;
+  updateTabPreview();
+}
+
+function selectSubAct(actNum,el){
+  currentActNum=actNum;
+  document.querySelectorAll('.act-sub-pill,.act-sub-btn').forEach(function(b){b.classList.remove('selected');b.style.borderColor='var(--border)';b.style.background='var(--bg)';b.style.color='var(--text2)';});
+  if(el) el.classList.add('selected');
+  // Replace only the form fields section
+  var formStart=document.getElementById('tf_method');
+  if(formStart){
+    // Rebuild just the form portion
+    var container=document.getElementById('logTabContent');
+    if(container){
+      var fieldsHTML=buildFormHTML(actNum);
+      // Find and replace form section
+      renderLogTabContent(currentLogTab);
+      setTimeout(function(){
+        var btn=document.querySelector('.act-sub-btn[data-actnum="'+actNum+'"]');
+        if(btn){document.querySelectorAll('.act-sub-btn').forEach(function(b){b.classList.remove('selected');});btn.classList.add('selected');}
+      },30);
+    }
+  }
+}
+
+function updateTabPreview(){
+  var actNum=currentActNum;
+  var cfg=ACT_CONFIG[actNum];
+  if(!cfg) return;
+  var pts=0; var note='Enter dates above';
+  if(cfg.unit==='day'){
+    var from=document.getElementById('tf_dateFrom');
+    var to=document.getElementById('tf_dateTo');
+    if(from&&to&&from.value&&to.value){
+      var days=Math.max(1,Math.round((new Date(to.value)-new Date(from.value))/(1000*60*60*24))+1);
+      pts=Math.min(days*cfg.rate,cfg.maxYr);
+      note=days+' day'+(days!==1?'s':'')+' x '+cfg.rate+' pt'+(cfg.rate>1?'s':'')+'/day';
+    }
+  } else if(cfg.unit==='week'){
+    var from=document.getElementById('tf_dateFrom');
+    var to=document.getElementById('tf_dateTo');
+    if(from&&to&&from.value&&to.value){
+      var days=Math.max(1,Math.round((new Date(to.value)-new Date(from.value))/(1000*60*60*24))+1);
+      var weeks=Math.max(1,Math.round(days/7));
+      pts=Math.min(weeks*cfg.rate,cfg.maxYr);
+      note=weeks+' week'+(weeks!==1?'s':'')+' x '+cfg.rate+' pt/week';
+    }
+  } else {
+    pts=cfg.rate;
+    note=cfg.rate+' pt'+(cfg.rate>1?'s':'')+' per '+cfg.unit;
+  }
+  var prev=document.getElementById('tabPtsPreview'); if(prev) prev.textContent='+'+pts;
+  var noteEl=document.getElementById('tabPtsNote'); if(noteEl) noteEl.textContent=note;
+}
+
+function saveTabEntry(){
+  var actNum=currentActNum;
+  var cfg=ACT_CONFIG[actNum];
+  if(!cfg){return;}
+  var pts=0;
+  if(cfg.unit==='day'){
+    var from=document.getElementById('tf_dateFrom');
+    var to=document.getElementById('tf_dateTo');
+    if(from&&to&&from.value&&to.value){
+      var days=Math.max(1,Math.round((new Date(to.value)-new Date(from.value))/(1000*60*60*24))+1);
+      pts=Math.min(days*cfg.rate,cfg.maxYr);
+    }
+  } else if(cfg.unit==='week'){
+    var from=document.getElementById('tf_dateFrom');
+    var to=document.getElementById('tf_dateTo');
+    if(from&&to&&from.value&&to.value){
+      var days=Math.max(1,Math.round((new Date(to.value)-new Date(from.value))/(1000*60*60*24))+1);
+      pts=Math.min(Math.max(1,Math.round(days/7))*cfg.rate,cfg.maxYr);
+    }
+  } else { pts=cfg.rate; }
+  if(pts<=0){alert('Please fill in the required fields.');return;}
+
+  var label=cfg.name;
+  if(actNum===1) label='Field Work - '+getFieldVal('employer');
+  else if(actNum===2) label='Theory Training - '+(getFieldVal('trainingTitle')||'Course');
+  else if(actNum===3) label='Practical Training - '+(getFieldVal('trainingTitle')||'Course');
+  else if(actNum===4) label='Delivering - '+(getFieldVal('trainingTitle')||'Training');
+  else if(actNum===5) label='Research - '+(getFieldVal('projectTitle')||'Project');
+  else if(actNum===6) label='Seminar - '+(getFieldVal('seminarTitle')||'Event');
+  else if(actNum===7) label='Presented - '+(getFieldVal('presentationTitle')||'Paper');
+  else if(actNum===8) label='Membership - '+getFieldVal('society');
+  else if(actNum===9) label='Mentored - '+getFieldVal('menteeName');
+  else if(actNum===10) label='Committee - '+getFieldVal('committeeName');
+  else if(actNum===11) label='Cert Role - '+getFieldVal('roleName');
+
+  if(!logEntries[activeMethod]) logEntries[activeMethod]=[];
+  logEntries[activeMethod].push({
+    actNum:actNum,nrcanActivity:actNum,nrcanLabel:cfg.nrcan,part:cfg.part,
+    title:label,method:getFieldVal('method')||activeMethod.toUpperCase(),
+    from:getFieldVal('dateFrom')||getFieldVal('date')||'',
+    to:getFieldVal('dateTo')||'',pts:pts,
+    employer:getFieldVal('employer')||getFieldVal('organisation')||getFieldVal('provider')||'',
+    supervisor:getFieldVal('supervisor')||'',
+    description:getFieldVal('description')||getFieldVal('trainingTitle')||getFieldVal('presentationTitle')||getFieldVal('roleName')||''
+  });
+  try{localStorage.setItem('certainly_log',JSON.stringify(logEntries));}catch(e){}
+  updateDashboard();updateDashCards();
+  var btn=document.getElementById('tabSaveBtn');
+  if(btn){btn.innerHTML='<i class="ti ti-circle-check"></i>Saved - +'+pts+' pts';btn.style.background='var(--green)';}
+  setTimeout(function(){renderLogTabContent(currentLogTab);},900);
+}
+
+function updateLogScreen(m){
+  var badge=document.getElementById('logMethodBadge');
+  var total=getTotalPoints();
+  if(badge){badge.textContent=m.label;badge.className='method-badge '+m.badgeClass;}
+  var hdr=document.getElementById('logPtsHeader'); if(hdr) hdr.textContent=total+' / 100 pts';
+  var disp=document.getElementById('logPtsDisplay'); if(disp) disp.textContent=total+' / 100';
+  var bar=document.getElementById('logPtsBar'); if(bar){bar.style.width=Math.min(total,100)+'%';bar.className='pts-bar-fill '+m.badgeClass;}
+  updateLogPartTotals();
+  setLogTab(currentLogTab||1);
+}
+
+function updateLogPartTotals(){
+  var partA=0;var partB=0;
+  (logEntries[activeMethod]||[]).forEach(function(e){
+    var cfg=ACT_CONFIG[e.actNum];
+    if(cfg&&cfg.part==='A') partA+=(e.pts||0); else partB+=(e.pts||0);
+  });
+  var paEl=document.getElementById('logPartA'); if(paEl) paEl.textContent=partA;
+  var pbEl=document.getElementById('logPartB'); if(pbEl) pbEl.textContent=partB;
+}
+
+// ══════════════════════════════════════════════════════════════
+// SCS TRACKER WITH SHORTFALL DETECTOR + GAP ANALYSIS
+// ══════════════════════════════════════════════════════════════
+function updateScsScreen(m){
+  var badge=document.getElementById('scsMethodBadge');
+  if(badge){badge.textContent=m.label;badge.className='method-badge '+m.badgeClass;}
+  var total=getTotalPoints();
+  var partA=0;var partB=0;
+  [1,2,3,4,5].forEach(function(n){partA+=getActPtsLogged(n);});
+  [6,7,8,9,10,11].forEach(function(n){partB+=getActPtsLogged(n);});
+  partA=Math.min(partA,100); partB=Math.min(partB,100);
+  var passing=total>=100&&partA>=50;
+  var shortfall=100-total;
+  var partAShort=Math.max(0,50-partA);
+
+  var card=document.getElementById('scsTotalCard');
+  if(card){ card.style.cssText='border-radius:14px;padding:16px;margin-bottom:14px;background:'+(passing?'var(--green-lt)':'var(--red-lt)')+';color:'+(passing?'var(--green-dk)':'var(--red)'); }
+  var bar=document.getElementById('scsBar');
+  if(bar){bar.style.width=Math.min(total,100)+'%';bar.style.background=passing?'var(--green)':'var(--red)';}
+  var dispEl=document.getElementById('scsTotalDisplay'); if(dispEl) dispEl.textContent=total+'/100';
+  var remEl=document.getElementById('scsRemaining'); if(remEl) remEl.textContent=passing?'Requirements met':''+shortfall+' more points needed';
+  var paEl=document.getElementById('scsPartA'); if(paEl) paEl.textContent=partA;
+  var pbEl=document.getElementById('scsPartB'); if(pbEl) pbEl.textContent=partB;
+
+  // Shortfall box
+  var sfBox=document.getElementById('scsShortfallBox');
+  if(sfBox){
+    if(!passing){
+      var sfParts=[];
+      sfParts.push('<div style="background:var(--amber-lt);border:1.5px solid var(--amber);border-radius:14px;padding:14px;margin-bottom:14px">');
+      sfParts.push('<div style="font-size:13px;font-weight:700;color:var(--amber);margin-bottom:8px">'+shortfall+' points short of renewal minimum</div>');
+      sfParts.push('<div style="font-size:12px;color:var(--text);line-height:1.7;margin-bottom:10px">');
+      sfParts.push('Before concluding you are short, have you claimed everything? Many techs miss:<br>');
+      sfParts.push('<strong>Activity A5</strong> - coordination, software development and procedure writing qualifies<br>');
+      sfParts.push('<strong>Activity B9</strong> - informal mentoring on the job site counts<br>');
+      sfParts.push('<strong>Activity B6</strong> - technical seminars, even half-day events count');
+      if(partAShort>0) sfParts.push('<br><strong style="color:var(--red)">Part A shortfall: '+partAShort+' more points needed from direct NDT practice</strong>');
+      sfParts.push('</div>');
+      sfParts.push('<div style="display:flex;flex-direction:column;gap:8px">');
+      sfParts.push('<button onclick="goLogScreen()" style="width:100%;padding:11px;border-radius:10px;background:var(--olive);color:#fff;font-size:13px;font-weight:600;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px"><i class="ti ti-pencil" style="font-size:15px"></i>Review unclaimed activities</button>');
+      sfParts.push('<button onclick="goAttestScreen()" style="width:100%;padding:11px;border-radius:10px;background:var(--amber);color:#fff;font-size:13px;font-weight:600;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px"><i class="ti ti-writing" style="font-size:15px"></i>Request attestation letters</button>');
+      sfParts.push('</div></div>');
+      sfBox.innerHTML=sfParts.join('');
+    } else {
+      sfBox.innerHTML='<div style="background:var(--green-lt);border:1.5px solid var(--green);border-radius:14px;padding:14px;margin-bottom:14px;display:flex;gap:10px;align-items:flex-start"><i class="ti ti-circle-check" style="font-size:20px;color:var(--green-dk);flex-shrink:0;margin-top:1px"></i><div style="font-size:13px;color:var(--green-dk);font-weight:600">Points requirement met - '+total+' total, '+partA+' from Part A</div></div>';
+    }
+    sfBox.style.display='block';
+  }
+
+  // Gap analysis
+  var gapBox=document.getElementById('scsGapBox');
+  if(gapBox&&!passing){
+    var gParts=['<div style="background:var(--blue-lt);border-radius:14px;padding:14px;margin-bottom:14px">'];
+    gParts.push('<div style="font-size:13px;font-weight:700;color:var(--blue-dk);margin-bottom:10px">Gap analysis - activities with room left</div>');
+    [1,2,3,4,5,6,7,8,9,10,11].forEach(function(actNum){
+      var cfg=ACT_CONFIG[actNum];
+      var logged=getActPtsLogged(actNum);
+      var remaining=cfg.max5yr-logged;
+      if(remaining>0){
+        gParts.push('<div style="display:flex;align-items:center;justify-content:space-between;padding:7px 0;border-bottom:0.5px solid rgba(24,95,165,0.15)">');
+        gParts.push('<div><div style="font-size:12px;font-weight:600;color:var(--blue-dk)">'+cfg.part+actNum+' - '+cfg.name+'</div>');
+        gParts.push('<div style="font-size:10px;color:var(--text2)">'+cfg.rate+' pts/'+cfg.unit+' - '+logged+'/'+cfg.max5yr+' pts claimed</div></div>');
+        gParts.push('<div style="text-align:right"><div style="font-size:13px;font-weight:700;color:var(--blue-dk)">+'+remaining+'</div>');
+        gParts.push('<div style="font-size:9px;color:var(--text2)">available</div></div></div>');
+      }
+    });
+    gParts.push('</div>');
+    gapBox.innerHTML=gParts.join('');
+    gapBox.style.display='block';
+  } else if(gapBox) { gapBox.style.display='none'; }
+
+  renderScsLists(m,partA,partB);
+}
+
+function renderScsLists(m,partA,partB){
+  function renderRow(actNum){
+    var cfg=ACT_CONFIG[actNum];
+    var logged=getActPtsLogged(actNum);
+    var pct=Math.min(100,Math.round(logged/cfg.max5yr*100));
+    var isCapped=logged>=cfg.max5yr;
+    var parts=[];
+    parts.push('<div style="background:var(--bg);border:0.5px solid var(--border);border-radius:11px;padding:11px 13px;margin-bottom:7px">');
+    parts.push('<div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:5px">');
+    parts.push('<div><span style="font-size:10px;font-weight:800;background:'+(cfg.part==='A'?'var(--olive)':'var(--blue)')+';color:#fff;padding:2px 6px;border-radius:8px;margin-right:5px">'+cfg.part+actNum+'</span>');
+    parts.push('<span style="font-size:12px;font-weight:600;color:var(--text)">'+cfg.name+'</span></div>');
+    parts.push('<span style="font-size:13px;font-weight:700;color:'+(isCapped?'var(--green-dk)':logged>0?'var(--amber)':'var(--text2)')+'">'+(logged+'/'+cfg.max5yr)+'</span></div>');
+    parts.push('<div style="height:4px;background:var(--bg2);border-radius:4px;overflow:hidden">');
+    parts.push('<div style="height:100%;width:'+pct+'%;background:'+(isCapped?'var(--green)':cfg.part==='A'?'var(--olive)':'var(--blue)')+';border-radius:4px"></div></div>');
+    if(isCapped) parts.push('<div style="font-size:9px;color:var(--green-dk);margin-top:3px;font-weight:600">Maximum reached</div>');
+    parts.push('</div>');
+    return parts.join('');
+  }
+  var aList=document.getElementById('scsPartAList');
+  var bList=document.getElementById('scsPartBList');
+  if(aList){ var h=''; [1,2,3,4,5].forEach(function(n){h+=renderRow(n);}); aList.innerHTML=h; }
+  if(bList){ var h=''; [6,7,8,9,10,11].forEach(function(n){h+=renderRow(n);}); bList.innerHTML=h; }
+}
+
+// ══════════════════════════════════════════════════════════════
+// ATTESTATION LETTER GENERATOR
+// ══════════════════════════════════════════════════════════════
+function initAttestationScreen(){
+  selectedAttestActs=[];
+  var m=methodConfig[activeMethod];
+  var actListEl=document.getElementById('attestActList');
+  if(actListEl){
+    var parts=[];
+    [1,2,3,4,5,6,7,8,9,10,11].forEach(function(actNum){
+      var cfg=ACT_CONFIG[actNum];
+      var logged=getActPtsLogged(actNum);
+      if(logged<cfg.max5yr){
+        parts.push('<div style="display:flex;align-items:center;gap:10px;padding:10px;background:var(--bg);border:0.5px solid var(--border);border-radius:10px;margin-bottom:7px;cursor:pointer" onclick="toggleAttestAct('+actNum+',this)">');
+        parts.push('<div style="width:20px;height:20px;border-radius:4px;border:1.5px solid var(--gold-dk);background:var(--bg);flex-shrink:0" id="attCheck'+actNum+'"></div>');
+        parts.push('<div style="flex:1"><div style="font-size:12px;font-weight:600;color:var(--text)">'+cfg.part+actNum+' - '+cfg.name+'</div>');
+        parts.push('<div style="font-size:10px;color:var(--text2)">'+logged+'/'+cfg.max5yr+' pts claimed - '+cfg.rate+' pt'+(cfg.rate>1?'s':'')+'/'+cfg.unit+'</div></div>');
+        parts.push('<div style="font-size:11px;font-weight:700;color:var(--green-dk)">+'+(cfg.max5yr-logged)+' available</div>');
+        parts.push('</div>');
+      }
+    });
+    actListEl.innerHTML=parts.join('');
+  }
+  buildAttestationLetter();
+}
+
+function toggleAttestAct(actNum,el){
+  var check=document.getElementById('attCheck'+actNum);
+  var idx=selectedAttestActs.indexOf(actNum);
+  if(idx>-1){
+    selectedAttestActs.splice(idx,1);
+    if(check){check.style.background='var(--bg)';check.innerHTML='';}
+  } else {
+    selectedAttestActs.push(actNum);
+    if(check){check.style.background='var(--gold-dk)';check.innerHTML='<i class="ti ti-check" style="font-size:12px;color:#fff"></i>';}
+  }
+  buildAttestationLetter();
+}
+
+function buildAttestationLetter(){
+  var m=methodConfig[activeMethod];
+  var actLines=[];
+  if(selectedAttestActs.length>0){
+    selectedAttestActs.forEach(function(n){
+      var cfg=ACT_CONFIG[n];
+      actLines.push('- '+cfg.nrcan+' (NRCan Activity #'+n+')');
+    });
+  } else {
+    actLines.push('- Performance of NDT Activities (NRCan Activity #1)');
+    actLines.push('- Research or Engineering of NDT (NRCan Activity #5)');
+  }
+  var parts=[
+    'To Whom It May Concern,',
+    '',
+    'Dwight Conrad Newell (NRCan Reg# 13415) has worked under my supervision. I am writing to confirm the following activities performed in the '+m.label+' certification method:',
+    ''
+  ].concat(actLines).concat([
+    '',
+    'During the period of [DATE FROM] to [DATE TO], [describe specific activities and responsibilities].',
+    '',
+    'I confirm that the information in this letter and in the accompanying NRCan SCS Form (8.2.1-073) is accurate to the best of my knowledge.',
+    '',
+    'Signed,',
+    '',
+    'Andrew Crawford',
+    'NRCan Reg# 6337 - CGSB Level 3 MT, PT, RT, UT',
+    'Buffalo Inspection Services, Edmonton AB',
+    'a.crawford@buffaloinspection.com - 780-405-4113'
+  ]);
+  var letter=parts.join('\n');
+  var preview=document.getElementById('attestLetterPreview');
+  if(preview){ preview.style.whiteSpace='pre-wrap'; preview.textContent=letter; }
+}
+
+function sendAttestationRequest(){
+  var m=methodConfig[activeMethod];
+  var subject=encodeURIComponent('Attestation request - Dwight Newell '+m.label+' renewal - NRCan 8.2.1-073');
+  var previewEl=document.getElementById('attestLetterPreview');
+  var letterText=previewEl?previewEl.textContent:'';
+  var bodyLines=[
+    'Hi Andrew,',
+    '',
+    'I am preparing my '+m.label+' certification renewal and need your attestation for activities on my NRCan SCS Form (8.2.1-073).',
+    '',
+    'Please review the letter template below, fill in the dates and specifics, sign and return to me.',
+    '',
+    '---',
+    letterText,
+    '---',
+    '',
+    'Thank you,',
+    'Dwight Newell',
+    '780-370-8808'
+  ];
+  var body=encodeURIComponent(bodyLines.join('\n'));
+  window.location.href='mailto:a.crawford@buffaloinspection.com?subject='+subject+'&body='+body;
+}
+
+function copyAttestationLink(){
+  var previewEl=document.getElementById('attestLetterPreview');
+  var text=previewEl?previewEl.textContent:'';
+  if(navigator.clipboard){
+    navigator.clipboard.writeText(text).then(function(){
+      alert('Letter template copied to clipboard. Paste into an email to Andrew Crawford.');
+    });
+  } else {
+    prompt('Copy this attestation letter template:',text);
+  }
+}
+
+function goLogScreen(){ goScreen('s-log'); }
+function goAttestScreen(){ goScreen('s-attestation'); }
+
+// Tab CSS helper
+var tabCSS = '.log-tab{flex:0 0 auto;padding:8px 12px;font-size:10px;font-weight:600;color:var(--text2);cursor:pointer;border-bottom:2.5px solid transparent;text-align:center;line-height:1.3;white-space:nowrap;min-width:60px}.log-tab.active{color:var(--olive-dk);border-bottom-color:var(--olive)}.act-sub-btn{background:var(--bg);border:1.5px solid var(--border);border-radius:12px;padding:12px;cursor:pointer;margin-bottom:0}.act-sub-btn.selected{border-color:var(--olive);background:var(--gold-lt)}';
+
+
 function betaMsg(msg){alert('🔧 Beta note:\n\n'+msg);}
 
 function handleSignIn(){
@@ -1637,266 +2645,706 @@ function clearAllData(){
 // ══════════════════════════════════════════════════════
 // FIX 1 — REAL PDF GENERATION using jsPDF
 // ══════════════════════════════════════════════════════
+// This is the new generatePDF function — paste into HTML
+// Builds exact NRCan forms: 8.2.1-075, 8.2.1-073, 8.2.1-002
+
 function generatePDF(){
   var m = methodConfig[activeMethod];
   var total = getTotalPoints();
+  var today = new Date();
+  var todayStr = today.toISOString().split('T')[0];
+  var dd = String(today.getDate()).padStart(2,'0');
+  var mm = String(today.getMonth()+1).padStart(2,'0');
+  var yyyy = today.getFullYear();
 
   try {
     var doc = new window.jspdf.jsPDF({ orientation:'portrait', unit:'mm', format:'a4' });
-    var olive = [107,112,64];
-    var gold = [232,160,32];
-    var dark = [26,26,26];
-    var mid = [100,100,100];
-    var W = 210; var M = 18;
+    var W=210; var H=297; var ML=18; var MR=192; var TW=MR-ML;
 
-    // ── PAGE 1: RENEWAL APPLICATION 8.2.1-075 ──
-    doc.setFillColor(olive[0],olive[1],olive[2]);
-    doc.rect(0,0,W,18,'F');
-    doc.setTextColor(255,255,255);
-    doc.setFontSize(11); doc.setFont('helvetica','bold');
-    doc.text('NRCan NDTCB — Renewal Application  8.2.1-075',M,11);
-    doc.setFontSize(8); doc.setFont('helvetica','normal');
-    doc.text('CERTainly — Sound Solutions DataCAT',W-M,11,{align:'right'});
+    // Colours
+    var cBlack=[0,0,0]; var cMid=[80,80,80]; var cLight=[150,150,150];
+    var cGov=[26,86,139]; // Government of Canada blue
+    var cRed=[163,45,45]; var cGreen=[59,109,17];
 
-    doc.setTextColor(dark[0],dark[1],dark[2]);
-    doc.setFontSize(14); doc.setFont('helvetica','bold');
-    doc.text('APPLICATION FOR RENEWAL OF NDT CERTIFICATION',M,28);
-    doc.setDrawColor(olive[0],olive[1],olive[2]);
-    doc.setLineWidth(0.5); doc.line(M,30,W-M,30);
+    // ── HELPERS ──
+    function header(pageNum, formNum, formTitle){
+      // Gov of Canada header bar
+      doc.setFillColor(cGov[0],cGov[1],cGov[2]);
+      doc.rect(0,0,W,10,'F');
+      doc.setFontSize(7); doc.setFont('helvetica','normal'); doc.setTextColor(255,255,255);
+      doc.text('Government of Canada / Gouvernement du Canada', ML, 6.5);
+      doc.text('Natural Resources Canada / Ressources naturelles Canada', MR, 6.5, {align:'right'});
 
-    var y = 38;
-    function field(label, value, x, fy, w){
-      doc.setFontSize(8); doc.setFont('helvetica','normal'); doc.setTextColor(mid[0],mid[1],mid[2]);
-      doc.text(label.toUpperCase(), x, fy);
-      doc.setFontSize(11); doc.setFont('helvetica','normal'); doc.setTextColor(dark[0],dark[1],dark[2]);
-      doc.text(value || '', x, fy+6);
-      doc.setDrawColor(200,200,200); doc.line(x, fy+8, x+(w||80), fy+8);
+      // Form title bar
+      doc.setFillColor(240,240,240);
+      doc.rect(0,10,W,14,'F');
+      doc.setDrawColor(200,200,200); doc.setLineWidth(0.3); doc.line(0,24,W,24);
+      doc.setFontSize(9); doc.setFont('helvetica','bold'); doc.setTextColor(cGov[0],cGov[1],cGov[2]);
+      doc.text(formNum+' — '+formTitle, ML, 19);
+      doc.setFont('helvetica','normal'); doc.setFontSize(7); doc.setTextColor(cMid[0],cMid[1],cMid[2]);
+      doc.text('NRCan National NDT Certification Body (NDTCB)     |     Aussi accessible en français     |     Version 01     |     Published 2025-03-24', ML, 22.5);
+      doc.setTextColor(cRed[0],cRed[1],cRed[2]); doc.setFont('helvetica','bold');
+      doc.text('PROTECTED (When Complete)', MR, 22.5, {align:'right'});
     }
 
-    field('Surname', 'Newell', M, y, 80);
-    field('Given Names', 'Dwight Conrad', M+90, y, 90);
-    y+=18;
-    field('NRCan Registration #', '13415', M, y, 45);
-    field('Date of Birth', '1972/05/20', M+55, y, 45);
-    field('Method', m.label+' · '+m.sector, M+110, y, 75);
-    y+=18;
-    field('Employer', 'Buffalo Inspection Services, Edmonton AB', M, y, 170);
-    y+=18;
-    field('Email', 'newells9@telus.net', M, y, 80);
-    field('Phone', '780-370-8808', M+90, y, 80);
-    y+=18;
-    field('City', 'LakeCountry', M, y, 55);
-    field('Province', 'BC', M+65, y, 25);
-    field('Language', 'English', M+100, y, 45);
-
-    // Attestation
-    y+=22;
-    doc.setFillColor(245,238,216);
-    doc.rect(M,y,W-M*2,28,'F');
-    doc.setFontSize(8); doc.setFont('helvetica','bold'); doc.setTextColor(dark[0],dark[1],dark[2]);
-    doc.text('APPLICANT ATTESTATION', M+4, y+7);
-    doc.setFont('helvetica','normal'); doc.setFontSize(8);
-    var attest = 'I certify that the information provided in this application is true and complete. I agree to abide by the NRCan NDTCB Code of Conduct.';
-    var lines = doc.splitTextToSize(attest, W-M*2-8);
-    doc.text(lines, M+4, y+13);
-
-    // Signature box
-    y+=36;
-    doc.setFontSize(8); doc.setFont('helvetica','normal'); doc.setTextColor(mid[0],mid[1],mid[2]);
-    doc.text('APPLICANT SIGNATURE', M, y);
-    doc.text('DATE', M+100, y);
-    if(savedSigData){
-      try{ doc.addImage(savedSigData,'PNG',M,y+2,60,14); }catch(e){}
+    function pageFooter(pageNum, totalPages, formNum){
+      doc.setDrawColor(200,200,200); doc.setLineWidth(0.3); doc.line(ML,280,MR,280);
+      doc.setFontSize(7); doc.setFont('helvetica','normal'); doc.setTextColor(cMid[0],cMid[1],cMid[2]);
+      doc.text(formNum+' — NRCan National NDT Certification Body (NDTCB)', ML, 285);
+      doc.text('Page '+pageNum+' of '+totalPages, MR, 285, {align:'right'});
+      doc.setTextColor(cRed[0],cRed[1],cRed[2]);
+      doc.text('PROTECTED (When Complete)', W/2, 285, {align:'center'});
     }
-    doc.setFontSize(11); doc.setTextColor(dark[0],dark[1],dark[2]);
-    doc.text(new Date().toISOString().split('T')[0], M+100, y+10);
-    doc.setDrawColor(100,100,100);
-    doc.line(M,y+18,M+85,y+18);
-    doc.line(M+100,y+18,M+180,y+18);
 
-    // ── PAGE 2: CODE OF CONDUCT 8.2.1-002 ──
-    doc.addPage();
-    doc.setFillColor(olive[0],olive[1],olive[2]);
-    doc.rect(0,0,W,18,'F');
-    doc.setTextColor(255,255,255);
-    doc.setFontSize(11); doc.setFont('helvetica','bold');
-    doc.text('NRCan NDTCB — Code of Conduct  8.2.1-002',M,11);
-    doc.setFontSize(8); doc.setFont('helvetica','normal');
-    doc.text('CERTainly — Sound Solutions DataCAT',W-M,11,{align:'right'});
+    function sectionTitle(text, y){
+      doc.setFillColor(230,235,245);
+      doc.rect(ML,y-4,TW,6,'F');
+      doc.setFontSize(8); doc.setFont('helvetica','bold'); doc.setTextColor(cGov[0],cGov[1],cGov[2]);
+      doc.text(text.toUpperCase(), ML+2, y);
+      return y+5;
+    }
 
-    doc.setTextColor(dark[0],dark[1],dark[2]);
-    doc.setFontSize(14); doc.setFont('helvetica','bold');
-    doc.text('CODE OF CONDUCT FOR NDT PERSONNEL',M,28);
-    doc.setDrawColor(olive[0],olive[1],olive[2]);
-    doc.line(M,30,W-M,30);
+    function labeledField(label, value, x, y, w, h){
+      h = h||7;
+      doc.setFontSize(6.5); doc.setFont('helvetica','normal'); doc.setTextColor(cLight[0],cLight[1],cLight[2]);
+      doc.text(label, x, y);
+      doc.setDrawColor(180,180,180); doc.setLineWidth(0.3);
+      doc.rect(x, y+1, w, h, 'S');
+      doc.setFontSize(9); doc.setTextColor(cBlack[0],cBlack[1],cBlack[2]); doc.setFont('helvetica','normal');
+      if(value) doc.text(value, x+2, y+6.5, {maxWidth:w-4});
+      return y+h+3;
+    }
 
-    y=40;
-    doc.setFontSize(9); doc.setFont('helvetica','normal'); doc.setTextColor(dark[0],dark[1],dark[2]);
-    var cocText = [
-      'As a certified NDT professional I agree to:',
-      '1. Comply with the relevant certification scheme provisions;',
-      '2. Report violations to NRCan NDTCB immediately;',
-      '3. Verify my certificate information and not make false claims;',
-      '4. Not falsify documents or misrepresent qualifications;',
-      '5. Discontinue all claims upon expiry of certification;',
-      '6. Only sign documents within my professional knowledge;',
-      '7. Undertake only assignments for which I am competent;',
-      '8. Maintain proficiency by updating technical knowledge as required.'
+    function checkBox(x, y, checked, label){
+      doc.setDrawColor(100,100,100); doc.setLineWidth(0.4);
+      doc.rect(x,y,4,4,'S');
+      if(checked){
+        doc.setFontSize(8); doc.setTextColor(cGov[0],cGov[1],cGov[2]);
+        doc.text('✓', x+0.5, y+3.2);
+      }
+      if(label){
+        doc.setFontSize(8); doc.setTextColor(cBlack[0],cBlack[1],cBlack[2]); doc.setFont('helvetica','normal');
+        doc.text(label, x+5.5, y+3.2);
+      }
+    }
+
+    function sigBox(label, name, regNum, x, y, w){
+      doc.setFontSize(7); doc.setFont('helvetica','bold'); doc.setTextColor(cMid[0],cMid[1],cMid[2]);
+      doc.text(label, x, y);
+      // Name field
+      doc.setFont('helvetica','normal'); doc.setFontSize(6.5); doc.setTextColor(cLight[0],cLight[1],cLight[2]);
+      doc.text('Full name (print)', x, y+6);
+      doc.setDrawColor(180,180,180); doc.rect(x,y+7,w*0.6,7,'S');
+      if(name){ doc.setFontSize(8); doc.setTextColor(cBlack[0],cBlack[1],cBlack[2]); doc.text(name,x+2,y+12); }
+      // Reg# field
+      doc.setFontSize(6.5); doc.setTextColor(cLight[0],cLight[1],cLight[2]);
+      doc.text('NRCan Reg#', x+w*0.63, y+6);
+      doc.setDrawColor(180,180,180); doc.rect(x+w*0.63,y+7,w*0.37,7,'S');
+      if(regNum){ doc.setFontSize(8); doc.setTextColor(cBlack[0],cBlack[1],cBlack[2]); doc.text(regNum,x+w*0.63+2,y+12); }
+      // Signature box
+      doc.setFontSize(6.5); doc.setTextColor(cLight[0],cLight[1],cLight[2]);
+      doc.text('Signature', x, y+18);
+      doc.setDrawColor(180,180,180); doc.rect(x,y+19,w*0.6,14,'S');
+      if(savedSigData){
+        try{ doc.addImage(savedSigData,'PNG',x+1,y+20,w*0.6-2,12); }catch(e){}
+      }
+      // Date field
+      doc.setFontSize(6.5); doc.setTextColor(cLight[0],cLight[1],cLight[2]);
+      doc.text('Date YYYY/MM/DD', x+w*0.63, y+18);
+      doc.setDrawColor(180,180,180); doc.rect(x+w*0.63,y+19,w*0.37,14,'S');
+      doc.setFontSize(8); doc.setTextColor(cBlack[0],cBlack[1],cBlack[2]);
+      doc.text(todayStr, x+w*0.63+2, y+27);
+    }
+
+    // ══════════════════════════════════════════════════════════════
+    // FORM 1: 8.2.1-075 — RENEWAL APPLICATION — PAGE 1
+    // ══════════════════════════════════════════════════════════════
+    header(1,'8.2.1-075','Renewal Application Form for Non-Destructive Testing Certification');
+
+    var y = 30;
+    doc.setFontSize(8); doc.setFont('helvetica','bold'); doc.setTextColor(cBlack[0],cBlack[1],cBlack[2]);
+    doc.text('RENEWAL APPLICATION FORM FOR NON-DESTRUCTIVE TESTING CERTIFICATION', ML, y); y+=4;
+    doc.setFont('helvetica','normal'); doc.setFontSize(7); doc.setTextColor(cMid[0],cMid[1],cMid[2]);
+    var introText = 'This application form is for candidates applying for NDT certification renewal according to the CAN/CGSB-48.9712-2022 standard whose certifications expire April 15, 2026 and later.';
+    var introLines = doc.splitTextToSize(introText, TW);
+    doc.text(introLines, ML, y); y += introLines.length*3.5 + 4;
+
+    y = sectionTitle('Section 1 — Applicant Information', y);
+    // Name fields
+    y = labeledField('Surname (Last Name)', 'Newell', ML, y, TW*0.4);
+    y -= 3; // pull back to same row
+    labeledField('Given Names', 'Dwight Conrad', ML+TW*0.42, y-7, TW*0.58);
+    y += 7;
+    y = labeledField('Former Surname (if applicable)', '', ML, y, TW*0.5);
+    // Address
+    y = labeledField('Address of Residence', 'LakeCountry, BC', ML, y, TW);
+    doc.setFontSize(6.5); doc.setFont('helvetica','normal'); doc.setTextColor(cLight[0],cLight[1],cLight[2]);
+    doc.text('City', ML, y); doc.text('Province/Territory', ML+TW*0.35, y); doc.text('Postal Code', ML+TW*0.65, y);
+    doc.setDrawColor(180,180,180);
+    doc.rect(ML, y+1, TW*0.32, 7, 'S'); doc.text('LakeCountry', ML+2, y+6);
+    doc.rect(ML+TW*0.35, y+1, TW*0.27, 7, 'S'); doc.text('BC', ML+TW*0.35+2, y+6);
+    doc.rect(ML+TW*0.65, y+1, TW*0.35, 7, 'S');
+    doc.setFontSize(9); doc.setTextColor(cBlack[0],cBlack[1],cBlack[2]);
+    y += 11;
+    // Contact
+    labeledField('Primary Email Address', 'newells9@telus.net', ML, y, TW*0.55);
+    labeledField('Telephone', '780-370-8808', ML+TW*0.58, y, TW*0.42);
+    y += 11;
+    labeledField('NRCan NDTCB Registration #', '13415', ML, y, TW*0.3);
+    labeledField('Date of Birth (YYYY/MM/DD)', '1972/05/20', ML+TW*0.33, y, TW*0.3);
+    labeledField('Preferred Language', 'English', ML+TW*0.66, y, TW*0.34);
+    y += 11;
+
+    y = sectionTitle('Present Employer', y);
+    labeledField('Present Employer', 'Buffalo Inspection Services', ML, y, TW*0.6);
+    labeledField('Telephone', '780-405-4113', ML+TW*0.63, y, TW*0.37);
+    y += 11;
+    labeledField('Contact Name', 'Andrew Crawford', ML, y, TW*0.5);
+    labeledField('Job Title', 'TQMS Manager / CGSB Level 3', ML+TW*0.53, y, TW*0.47);
+    y += 11;
+    labeledField('Email', 'a.crawford@buffaloinspection.com', ML, y, TW);
+    y += 11;
+
+    y = sectionTitle('Certifications Being Renewed', y);
+    // Method checkboxes
+    var methods = [
+      {label:'Magnetic Testing (MT) — EMC Sector', checked: activeMethod==='mt'},
+      {label:'Ultrasonic Testing (UT) — EMC Sector', checked: activeMethod==='ut'},
+      {label:'Penetrant Testing (PT) — EMC Sector', checked: false},
+      {label:'Radiographic Testing (RT) — EMC Sector', checked: false},
+      {label:'Eddy Current Testing (ET) — EMC Sector', checked: false},
+      {label:'UT Phased Array (UT-PA) — EMC Sector', checked: false},
+      {label:'Visual Testing (VT) — EMC Sector', checked: false},
     ];
-    cocText.forEach(function(t){ doc.text(t, M, y); y+=7; });
-
-    y+=10;
-    doc.setFontSize(10); doc.setFont('helvetica','bold');
-    doc.text('I, Dwight Conrad Newell, agree to abide by this Code of Conduct as a condition of NRCan NDTCB certification.', M, y, {maxWidth: W-M*2});
-    y+=18;
-    doc.setFontSize(8); doc.setFont('helvetica','normal'); doc.setTextColor(mid[0],mid[1],mid[2]);
-    doc.text('APPLICANT SIGNATURE', M, y);
-    doc.text('DATE', M+100, y);
-    if(savedSigData){
-      try{ doc.addImage(savedSigData,'PNG',M,y+2,60,14); }catch(e){}
-    }
-    doc.setFontSize(11); doc.setTextColor(dark[0],dark[1],dark[2]);
-    doc.text(new Date().toISOString().split('T')[0], M+100, y+10);
-    doc.setDrawColor(100,100,100);
-    doc.line(M,y+18,M+85,y+18);
-    doc.line(M+100,y+18,M+180,y+18);
-
-    // ── PAGE 3: SCS FORM 8.2.1-073 ──
-    doc.addPage();
-    doc.setFillColor(olive[0],olive[1],olive[2]);
-    doc.rect(0,0,W,18,'F');
-    doc.setTextColor(255,255,255);
-    doc.setFontSize(11); doc.setFont('helvetica','bold');
-    doc.text('NRCan NDTCB — SCS Application  8.2.1-073',M,11);
-    doc.setFontSize(8); doc.setFont('helvetica','normal');
-    doc.text('CERTainly — Sound Solutions DataCAT',W-M,11,{align:'right'});
-
-    doc.setTextColor(dark[0],dark[1],dark[2]);
-    doc.setFontSize(14); doc.setFont('helvetica','bold');
-    doc.text('STRUCTURED CREDIT SYSTEM APPLICATION FOR RENEWAL',M,28);
-    doc.setDrawColor(olive[0],olive[1],olive[2]);
-    doc.line(M,30,W-M,30);
-
-    y=38;
-    field('Last Name', 'Newell', M, y, 55);
-    field('First Name', 'Dwight Conrad', M+65, y, 55);
-    field('Reg#', '13415', M+130, y, 35);
-    y+=18;
-    field('Method & Level', m.label, M, y, 60);
-    field('Sector', m.sector, M+70, y, 35);
-    field('Total SCS Points', total+' / 100', M+115, y, 50);
-
-    y+=20;
-    doc.setFontSize(9); doc.setFont('helvetica','bold'); doc.setTextColor(dark[0],dark[1],dark[2]);
-    doc.text('POINTS SUMMARY', M, y);
-    y+=6;
-    doc.setFont('helvetica','normal'); doc.setFontSize(8);
-
-    var preloaded = methodConfig[activeMethod].preloaded || [];
-    var allEntries = preloaded.concat((logEntries[activeMethod]||[]).map(function(e){return {title:e.title,meta:e.from+' to '+e.to,pts:e.pts};}));
-    doc.setFillColor(245,245,245);
-    doc.rect(M,y,W-M*2,6,'F');
-    doc.setTextColor(mid[0],mid[1],mid[2]);
-    doc.text('Activity', M+2, y+4);
-    doc.text('Points', W-M-15, y+4);
-    y+=8;
-    doc.setTextColor(dark[0],dark[1],dark[2]);
-    allEntries.forEach(function(e,i){
-      if(i%2===0){ doc.setFillColor(250,250,250); doc.rect(M,y-1,W-M*2,6,'F'); }
-      var t = e.title || '';
-      if(t.length>55) t=t.substring(0,52)+'...';
-      doc.text(t, M+2, y+3);
-      doc.text(String(e.pts)+' pts', W-M-15, y+3);
-      y+=7;
+    methods.forEach(function(mth, i){
+      var col = i%2; var row = Math.floor(i/2);
+      checkBox(ML + col*(TW/2), y + row*6, mth.checked, mth.label);
     });
-    doc.setFillColor(232,160,32);
-    doc.rect(M,y,W-M*2,7,'F');
-    doc.setTextColor(255,255,255); doc.setFont('helvetica','bold');
-    doc.text('TOTAL: '+total+' / 100 points required', M+2, y+5);
-    doc.text(total>=100?'PASS ✓':'8 pts short — see attestations', W-M-50, y+5);
+    y += Math.ceil(methods.length/2)*6 + 4;
 
-    y+=18;
-    doc.setFontSize(8); doc.setFont('helvetica','normal'); doc.setTextColor(mid[0],mid[1],mid[2]);
-    doc.text('APPLICANT SIGNATURE', M, y);
-    doc.text('DATE', M+100, y);
-    if(savedSigData){
-      try{ doc.addImage(savedSigData,'PNG',M,y+2,60,14); }catch(e){}
-    }
-    doc.setFontSize(11); doc.setTextColor(dark[0],dark[1],dark[2]);
-    doc.text(new Date().toISOString().split('T')[0], M+100, y+10);
-    doc.setDrawColor(100,100,100);
-    doc.line(M,y+18,M+85,y+18);
-    doc.line(M+100,y+18,M+180,y+18);
+    y = sectionTitle('Payment of Fees', y);
+    doc.setFontSize(7.5); doc.setFont('helvetica','normal'); doc.setTextColor(cMid[0],cMid[1],cMid[2]);
+    doc.text('Payment via: NRCan secure electronic payment system (link sent by NRCan after application review)', ML, y+4);
+    doc.text('Payable to: Receiver General for Canada    |    Personal cheques not accepted    |    Do not send credit card info by email', ML, y+8);
+    y += 14;
 
-    // ── PAGE 4: RECORD OF EXPERIENCE ──
+    pageFooter(1, 6, '8.2.1-075');
+
+    // ── PAGE 2: RECORD OF EXPERIENCE ──
     doc.addPage();
-    doc.setFillColor(olive[0],olive[1],olive[2]);
-    doc.rect(0,0,W,18,'F');
-    doc.setTextColor(255,255,255);
-    doc.setFontSize(11); doc.setFont('helvetica','bold');
-    doc.text('NRCan NDTCB — Record of Experience  Page 2',M,11);
-    doc.setFontSize(8); doc.setFont('helvetica','normal');
-    doc.text('CERTainly — Sound Solutions DataCAT',W-M,11,{align:'right'});
+    header(2,'8.2.1-075','Renewal Application Form for Non-Destructive Testing Certification');
+    y=30;
+    doc.setFontSize(8); doc.setFont('helvetica','bold'); doc.setTextColor(cBlack[0],cBlack[1],cBlack[2]);
+    doc.text('DOCUMENT MUST BE COMPLETED IN ITS ENTIRETY FOR PROCESSING', ML, y); y+=7;
 
-    doc.setTextColor(dark[0],dark[1],dark[2]);
-    doc.setFontSize(14); doc.setFont('helvetica','bold');
-    doc.text('RECORD OF EXPERIENCE — PAGE 2',M,28);
-    doc.setDrawColor(olive[0],olive[1],olive[2]);
-    doc.line(M,30,W-M,30);
+    y = sectionTitle('Record of Experience — Work History (Past 5 Years)', y);
+    doc.setFontSize(7); doc.setFont('helvetica','normal'); doc.setTextColor(cMid[0],cMid[1],cMid[2]);
+    doc.text('Please provide verifiable documentary evidence of continued satisfactory work activity without significant interruption.', ML, y+3); y+=8;
 
-    y=40;
     var positions = [
-      {company:'Buffalo Inspection Services, Edmonton AB', from:'2025/01', to:'2025/11', role:'NDT Technician / Inspector'},
-      {company:'KC Inspection Ltd, LakeCountry BC', from:'2014/01', to:'2025/01', role:'Owner / Senior Inspector'},
-      {company:'Trans Mountain Expansion Project (TMEP)', from:'2021/05', to:'2023/06', role:'NDT Coordinator — Spreads 4A/B & 5A'}
+      {company:'Buffalo Inspection Services', location:'Edmonton, Alberta', from:'2025/01', to:'2025/11', role:'NDT Technician / Inspector — MT & UT'},
+      {company:'KC Inspection Ltd', location:'LakeCountry, British Columbia', from:'2021/01', to:'2025/01', role:'Owner / Senior Inspector — MT, UT (UTSW, UT Thickness), piping, pipeline, vessels'},
+      {company:'Trans Mountain Expansion Project (TMEP)', location:'Alberta / BC — Spreads 4A/B & 5A', from:'2021/05', to:'2023/06', role:'NDT Coordinator — Technical oversight, procedure review, coordination and audit of UT & MT'},
     ];
 
-    positions.forEach(function(p,i){
-      doc.setFillColor(245,238,216);
-      doc.rect(M,y,W-M*2,5,'F');
-      doc.setFontSize(9); doc.setFont('helvetica','bold'); doc.setTextColor(dark[0],dark[1],dark[2]);
-      doc.text('POSITION '+(i+1), M+2, y+3.5);
-      y+=7;
-      field('Company / Employer', p.company, M, y, W-M*2);
-      y+=14;
-      field('Position / Role', p.role, M, y, 80);
-      field('From', p.from, M+95, y, 30);
-      field('To', p.to, M+135, y, 30);
-      y+=18;
+    positions.forEach(function(p, i){
+      doc.setFillColor(245,248,252);
+      doc.rect(ML, y, TW, 5, 'F');
+      doc.setFontSize(7.5); doc.setFont('helvetica','bold'); doc.setTextColor(cGov[0],cGov[1],cGov[2]);
+      doc.text('Position '+(i+1), ML+2, y+3.5); y+=6;
+      labeledField('Company', p.company, ML, y, TW*0.55);
+      labeledField('Location', p.location, ML+TW*0.58, y, TW*0.42);
+      y+=11;
+      doc.setFontSize(6.5); doc.setTextColor(cLight[0],cLight[1],cLight[2]);
+      doc.text('Period of Employment — From (YYYY/MM)', ML, y);
+      doc.text('To (YYYY/MM)', ML+TW*0.35, y);
+      doc.setDrawColor(180,180,180);
+      doc.rect(ML, y+1, TW*0.3, 7, 'S'); doc.setFontSize(9); doc.setTextColor(cBlack[0],cBlack[1],cBlack[2]); doc.text(p.from, ML+2, y+6);
+      doc.rect(ML+TW*0.35, y+1, TW*0.3, 7, 'S'); doc.text(p.to, ML+TW*0.35+2, y+6);
+      y+=11;
+      labeledField('Position Held / Role', p.role, ML, y, TW, 9);
+      y+=13;
     });
 
-    y+=4;
-    doc.setFontSize(8); doc.setFont('helvetica','normal'); doc.setTextColor(mid[0],mid[1],mid[2]);
-    doc.text('APPLICANT SIGNATURE', M, y);
-    doc.text('DATE', M+100, y);
-    if(savedSigData){
-      try{ doc.addImage(savedSigData,'PNG',M,y+2,60,14); }catch(e){}
-    }
-    doc.setFontSize(11); doc.setTextColor(dark[0],dark[1],dark[2]);
-    doc.text(new Date().toISOString().split('T')[0], M+100, y+10);
-    doc.setDrawColor(100,100,100);
-    doc.line(M,y+18,M+85,y+18);
-    doc.line(M+100,y+18,M+180,y+18);
+    y+=2;
+    doc.setFontSize(7.5); doc.setFont('helvetica','bold'); doc.setTextColor(cBlack[0],cBlack[1],cBlack[2]);
+    doc.text('General Work History — Approximate % of Work Time Spent (must total 100%)', ML, y); y+=5;
+    var pcts = [['% doing inspections','70%'],['% writing procedures/documents','10%'],['% supervision of staff/meetings','10%'],['% training and/or conferences','5%'],['% planning/reporting','5%']];
+    pcts.forEach(function(p,i){
+      var col=i%3; var row=Math.floor(i/3);
+      doc.setFontSize(7); doc.setFont('helvetica','normal'); doc.setTextColor(cMid[0],cMid[1],cMid[2]);
+      doc.text(p[0], ML+col*(TW/3), y+row*7);
+      doc.setDrawColor(180,180,180); doc.rect(ML+col*(TW/3)+TW/3-12, y+row*7-4, 12, 5, 'S');
+      doc.setFontSize(8); doc.setTextColor(cBlack[0],cBlack[1],cBlack[2]); doc.text(p[1], ML+col*(TW/3)+TW/3-11, y+row*7);
+    });
+    y+=18;
 
-    // Footer on all pages
-    var totalPages = doc.getNumberOfPages();
-    for(var p=1; p<=totalPages; p++){
-      doc.setPage(p);
-      doc.setFillColor(107,112,64);
-      doc.rect(0,285,W,12,'F');
-      doc.setFontSize(7); doc.setFont('helvetica','normal'); doc.setTextColor(245,238,216);
-      doc.text('Generated by CERTainly — Sound Solutions DataCAT · Dwight Conrad Newell · Reg# 13415 · '+new Date().toISOString().split('T')[0], M, 292);
-      doc.text('Page '+p+' of '+totalPages, W-M, 292, {align:'right'});
+    // Applicant + Supervisor signatures on page 2
+    doc.setFontSize(7.5); doc.setFont('helvetica','bold'); doc.setTextColor(cBlack[0],cBlack[1],cBlack[2]);
+    doc.text('I attest to the validity of the information provided above:', ML, y); y+=5;
+    sigBox('Applicant Signature', 'Dwight Conrad Newell', '13415', ML, y, TW*0.48);
+    sigBox('Supervisor Signature (same as Section B, page 3)', 'Andrew Crawford', '6337', ML+TW*0.52, y, TW*0.48);
+    y+=38;
+
+    pageFooter(2, 6, '8.2.1-075');
+
+    // ── PAGE 3: ATTESTATIONS ──
+    doc.addPage();
+    header(3,'8.2.1-075','Renewal Application Form for Non-Destructive Testing Certification');
+    y=30;
+    doc.setFontSize(8); doc.setFont('helvetica','bold'); doc.setTextColor(cBlack[0],cBlack[1],cBlack[2]);
+    doc.text('DOCUMENT MUST BE COMPLETED IN ITS ENTIRETY FOR PROCESSING', ML, y); y+=7;
+
+    y = sectionTitle('Attestations', y);
+    doc.setFontSize(7); doc.setFont('helvetica','normal'); doc.setTextColor(cMid[0],cMid[1],cMid[2]);
+    var attNote = 'All attestation sections must be completed. Applicants cannot sign for themselves. The same person(s), appropriately qualified for each of these definitions, may sign for one or more of these roles.';
+    doc.text(doc.splitTextToSize(attNote,TW), ML, y+3); y+=12;
+
+    // A) Employer
+    doc.setFillColor(240,245,255);
+    doc.rect(ML,y,TW,5,'F');
+    doc.setFontSize(8); doc.setFont('helvetica','bold'); doc.setTextColor(cGov[0],cGov[1],cGov[2]);
+    doc.text('A) Employer', ML+2, y+3.5); y+=7;
+    doc.setFontSize(7); doc.setFont('helvetica','normal'); doc.setTextColor(cMid[0],cMid[1],cMid[2]);
+    doc.text('A member of the management staff of the organization that the applicant works for. I attest to the best of my knowledge that the information given is accurate.', ML, y+3); y+=8;
+    sigBox('Employer', 'Andrew Crawford', '6337', ML, y, TW*0.48);
+    doc.setFontSize(7); doc.setFont('helvetica','normal'); doc.setTextColor(cMid[0],cMid[1],cMid[2]);
+    doc.text('Current Employer: Buffalo Inspection Services, Edmonton AB', ML+TW*0.52, y+5);
+    doc.text('Telephone: 780-405-4113', ML+TW*0.52, y+10);
+    doc.text('Email: a.crawford@buffaloinspection.com', ML+TW*0.52, y+15);
+    doc.text('Job Title: TQMS Manager / CGSB Level 3 PT MT RT UT', ML+TW*0.52, y+20);
+    y+=42;
+
+    // B) Supervisor
+    doc.setFillColor(240,245,255);
+    doc.rect(ML,y,TW,5,'F');
+    doc.setFontSize(8); doc.setFont('helvetica','bold'); doc.setTextColor(cGov[0],cGov[1],cGov[2]);
+    doc.text('B) Supervisor', ML+2, y+3.5); y+=7;
+    doc.setFontSize(7); doc.setFont('helvetica','normal'); doc.setTextColor(cMid[0],cMid[1],cMid[2]);
+    doc.text('An appropriately qualified individual who is accountable for directing the technical work and safety of the applicant. I attest to the best of my knowledge that the information is accurate.', ML, y+3); y+=8;
+    sigBox('Supervisor', 'Andrew Crawford', '6337', ML, y, TW*0.48);
+    doc.setFontSize(7); doc.setFont('helvetica','normal'); doc.setTextColor(cMid[0],cMid[1],cMid[2]);
+    doc.text('Current Employer: Buffalo Inspection Services, Edmonton AB', ML+TW*0.52, y+5);
+    doc.text('Telephone: 780-405-4113', ML+TW*0.52, y+10);
+    doc.text('Email: a.crawford@buffaloinspection.com', ML+TW*0.52, y+15);
+    y+=42;
+
+    // C) Referee
+    doc.setFillColor(240,245,255);
+    doc.rect(ML,y,TW,5,'F');
+    doc.setFontSize(8); doc.setFont('helvetica','bold'); doc.setTextColor(cGov[0],cGov[1],cGov[2]);
+    doc.text('C) Referee', ML+2, y+3.5); y+=7;
+    doc.setFontSize(7); doc.setFont('helvetica','normal'); doc.setTextColor(cMid[0],cMid[1],cMid[2]);
+    doc.text('Active NRCan/CGSB-certified Level 2 or Level 3 personnel who can attest to and substantiate the validity of the candidate\'s application.', ML, y+3); y+=8;
+    sigBox('Referee', 'Andrew Crawford', '6337', ML, y, TW*0.48);
+    doc.setFontSize(7); doc.setTextColor(cMid[0],cMid[1],cMid[2]);
+    doc.text('Certification: MT-3, PT-3, RT-3, UT-3 · EMC Sector', ML+TW*0.52, y+5);
+    doc.text('Employer: Buffalo Inspection Services, Edmonton AB', ML+TW*0.52, y+10);
+    doc.text('Telephone: 780-405-4113', ML+TW*0.52, y+15);
+    doc.text('Email: a.crawford@buffaloinspection.com', ML+TW*0.52, y+20);
+    y+=42;
+
+    pageFooter(3, 6, '8.2.1-075');
+
+    // ── PAGES 4-5: INFORMATION (condensed) ──
+    doc.addPage();
+    header(4,'8.2.1-075','Renewal Application Form for Non-Destructive Testing Certification');
+    y=30;
+    y = sectionTitle('Applicant Attestation', y);
+    var attText = 'I attest that the statements made by me in this application are true and complete. I understand that if any of these statements are found to be untrue, or if any misrepresentation or falsification of this form or the attached documents is discovered, an NRCan NDTCB Code of Conduct violation investigation may result, and this application may be rejected and/or certification(s) may be withdrawn. I agree that the NRCan NDTCB may contact me and/or my signatories to verify information related to this application. I confirm that during the past period of validity I did not have an absence or change of activity that prevented me from practising the duties corresponding to the level in the NDT method and sector(s) for which I am certified, for either a continuous period in excess of one year or two or more periods for a total time exceeding two years.';
+    doc.setFontSize(7.5); doc.setFont('helvetica','normal'); doc.setTextColor(cMid[0],cMid[1],cMid[2]);
+    var attLines = doc.splitTextToSize(attText, TW);
+    doc.text(attLines, ML, y+4); y += attLines.length*3.5+10;
+
+    y = sectionTitle('Release of Information', y);
+    doc.setFontSize(7.5); doc.text('This is to authorize the NRCan NDTCB, if requested, to release my examination results and additional information to my employer and/or the payer of my fees.', ML, y+4); y+=12;
+
+    y += 5;
+    sigBox('Applicant Signature', 'Dwight Conrad Newell', '13415', ML, y, TW*0.55);
+    y+=42;
+
+    y = sectionTitle('Applicant Name for Certification ID Card', y);
+    labeledField('Surname as it will appear on ID card', 'Newell', ML, y, TW*0.45);
+    labeledField('Given Names as they will appear on ID card', 'Dwight Conrad', ML+TW*0.47, y, TW*0.53);
+    y+=13;
+
+    pageFooter(4, 6, '8.2.1-075');
+
+    // ── PAGE 5-6: CHECKLIST (condensed) ──
+    doc.addPage();
+    header(5,'8.2.1-075','Renewal Application Form for Non-Destructive Testing Certification');
+    y=30;
+    y = sectionTitle('NDT Renewal Application Checklist', y);
+    var checklist = [
+      {item:'1. Application Form (8.2.1-075)', done:true, note:'Completed, signed, dated'},
+      {item:'2. Payment of Fees', done:false, note:'NRCan will send secure payment link after review'},
+      {item:'3. Record of Experience (Page 2)', done:true, note:'Signed by applicant and supervisor'},
+      {item:'4. Attestations (Page 3)', done:true, note:'Employer, supervisor and referee signed'},
+      {item:'5. Code of Conduct (8.2.1-002)', done:true, note:'Signed at onboarding'},
+      {item:'6. Vision Test Report Form', done:true, note:'On file — Dr. Atim Karmal — within 5 years'},
+      {item:'7. Two Passport Photographs', done:false, note:'Required every 10 years — confirm if due'},
+      {item:'8. SCS Application Form (8.2.1-073)', done:true, note:'Attached — '+total+'/100 points'},
+    ];
+    checklist.forEach(function(c,i){
+      var bg = i%2===0 ? [255,255,255] : [248,250,252];
+      doc.setFillColor(bg[0],bg[1],bg[2]);
+      doc.rect(ML,y,TW,9,'F');
+      checkBox(ML+2, y+2.5, c.done);
+      doc.setFontSize(8); doc.setFont('helvetica',c.done?'normal':'bold'); doc.setTextColor(c.done?cBlack[0]:cMid[0],c.done?cBlack[1]:cMid[1],c.done?cBlack[2]:cMid[2]);
+      doc.text(c.item, ML+10, y+5.5);
+      doc.setFontSize(7); doc.setFont('helvetica','italic'); doc.setTextColor(c.done?cGreen[0]:cRed[0],c.done?cGreen[1]:cRed[1],c.done?cGreen[2]:cRed[2]);
+      doc.text(c.note, MR, y+5.5, {align:'right'});
+      y+=10;
+    });
+
+    y+=6;
+    doc.setFontSize(7); doc.setFont('helvetica','normal'); doc.setTextColor(cMid[0],cMid[1],cMid[2]);
+    doc.text('Submit to: ndtrecertification-endrecertification@nrcan-rncan.gc.ca or ndt-end@nrcan-rncan.gc.ca', ML, y+4);
+    doc.text('Or by mail: NRCan NDTCB, CanmetMATERIALS, 183 Longwood Road South, Office 120, Hamilton, Ontario, L8P 0A5', ML, y+8);
+    doc.text('Tel: 1-866-858-0473 or 905-645-0653   |   Fax: 905-645-0836', ML, y+12);
+    y+=20;
+
+    doc.setFontSize(7.5); doc.setFont('helvetica','bold'); doc.setTextColor(cBlack[0],cBlack[1],cBlack[2]);
+    doc.text('I have read the information in this form and the requirements stated in this checklist and I am submitting my application accordingly.', ML, y); y+=8;
+    labeledField('Applicant Name (print)', 'Dwight Conrad Newell', ML, y, TW*0.5);
+    labeledField('Date (YYYY/MM/DD)', todayStr, ML+TW*0.53, y, TW*0.47);
+    y+=12;
+
+    pageFooter(5, 6, '8.2.1-075');
+
+    // ── PAGE 6: ADDITIONAL INFO ──
+    doc.addPage();
+    header(6,'8.2.1-075','Renewal Application Form for Non-Destructive Testing Certification');
+    y=30;
+    y=sectionTitle('Late Renewal Policy',y);
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');doc.setTextColor(cMid[0],cMid[1],cMid[2]);
+    var lateText='Certifications that are not renewed by the expiry date may be reactivated up to 12 months after the expiry date by submitting the renewal documents including a late renewal application fee. Applications received more than 12 months after expiry require recertification.';
+    doc.text(doc.splitTextToSize(lateText,TW),ML,y+4); y+=18;
+    y=sectionTitle('Digital Signature Requirements',y);
+    doc.setFontSize(7.5);
+    var sigText='Digital signatures are only acceptable if the digital signature form field is utilized with the signatory\'s PDF generated digital ID. The NRCan NDTCB will NOT accept an e-sign/e-signature made from a typed font or a simple signature image. Note: For the purposes of this CERTainly submission, handwritten signatures drawn on the form are provided. NRCan may request PDF digital signatures prior to final processing.';
+    doc.text(doc.splitTextToSize(sigText,TW),ML,y+4); y+=22;
+    y=sectionTitle('Privacy Policy',y);
+    doc.setFontSize(7.5);
+    doc.text('All personal information is protected under the federal Privacy Act. Certified personnel name, city, province and certification status are made publicly available.',ML,y+4);
+    pageFooter(6,6,'8.2.1-075');
+
+    // ══════════════════════════════════════════════════════════════
+    // FORM 2: 8.2.1-073 — SCS APPLICATION FORM
+    // ══════════════════════════════════════════════════════════════
+    doc.addPage();
+    header(1,'8.2.1-073','Structured Credit System Application Form for Renewal');
+    y=30;
+    doc.setFontSize(8);doc.setFont('helvetica','bold');doc.setTextColor(cBlack[0],cBlack[1],cBlack[2]);
+    doc.text('STRUCTURED CREDIT SYSTEM APPLICATION FORM FOR RENEWAL',ML,y); y+=5;
+    doc.setFont('helvetica','normal');doc.setFontSize(7);doc.setTextColor(cMid[0],cMid[1],cMid[2]);
+    doc.text('One form per method/sector. Counts as an examination attempt. Cannot be withdrawn once submitted.',ML,y); y+=7;
+
+    y=sectionTitle('Applicant Information',y);
+    labeledField('Surname (Last Name)','Newell',ML,y,TW*0.35);
+    labeledField('Given Names','Dwight Conrad',ML+TW*0.37,y,TW*0.35);
+    labeledField('Date of Birth','1972/05/20',ML+TW*0.74,y,TW*0.26);
+    y+=11;
+    labeledField('NRCan NDTCB Registration #','13415',ML,y,TW*0.25);
+    labeledField('Method and Level',m.label+' · '+m.sector,ML+TW*0.27,y,TW*0.35);
+    labeledField('Telephone','780-370-8808',ML+TW*0.64,y,TW*0.36);
+    y+=11;
+    labeledField('Email','newells9@telus.net',ML,y,TW);
+    y+=11;
+
+    y=sectionTitle('Structured Credit System Points Table — Level 2',y);
+    doc.setFontSize(7);doc.setFont('helvetica','normal');doc.setTextColor(cMid[0],cMid[1],cMid[2]);
+    doc.text('Minimum 100 points required. Minimum 50 points must come from Part A activities.',ML,y+3); y+=8;
+
+    // Table header
+    var cols=[ML, ML+TW*0.45, ML+TW*0.58, ML+TW*0.68, ML+TW*0.76, ML+TW*0.84, MR];
+    var colW=[TW*0.44,TW*0.12,TW*0.09,TW*0.08,TW*0.08,TW*0.08,TW*0.09];
+    var hdrs=['Activity','Rate','Max/yr','Yr 1','Yr 2','Yr 3','Yr 4','Yr 5','Total'];
+    doc.setFillColor(cGov[0],cGov[1],cGov[2]);
+    doc.rect(ML,y,TW,6,'F');
+    doc.setFontSize(6.5);doc.setFont('helvetica','bold');doc.setTextColor(255,255,255);
+    var tCols=[ML,ML+TW*0.42,ML+TW*0.53,ML+TW*0.62,ML+TW*0.69,ML+TW*0.76,ML+TW*0.83,ML+TW*0.89,MR-2];
+    ['Activity','Rate','Max/yr','Yr 1','Yr 2','Yr 3','Yr 4','Yr 5','Total'].forEach(function(h,i){
+      doc.text(h,tCols[i],y+4);
+    });
+    y+=7;
+
+    // Activity rows
+    var actDefs=[
+      {num:1,label:'A#1 Performance of NDT Activities',rate:'2/day',maxYr:25,max5:95,part:'A'},
+      {num:2,label:'A#2 Completion of theoretical training',rate:'1/day',maxYr:5,max5:15,part:'A'},
+      {num:3,label:'A#3 Completion of practical training',rate:'2/day',maxYr:10,max5:25,part:'A'},
+      {num:4,label:'A#4 Delivery of training in NDT',rate:'1/day',maxYr:15,max5:75,part:'A'},
+      {num:5,label:'A#5 Research/engineering of NDT',rate:'1/wk',maxYr:15,max5:60,part:'A'},
+      {num:6,label:'B#6 Technical seminar participation',rate:'1/day',maxYr:2,max5:10,part:'B'},
+      {num:7,label:'B#7 Presenting at technical seminar',rate:'3/pres.',maxYr:3,max5:15,part:'B'},
+      {num:8,label:'B#8 NDT society membership',rate:'1/mbr.',maxYr:2,max5:5,part:'B'},
+      {num:9,label:'B#9 Technical oversight and mentoring',rate:'2/mentee',maxYr:10,max5:30,part:'B'},
+      {num:10,label:'B#10 Standardization committees',rate:'1/cmte.',maxYr:3,max5:15,part:'B'},
+      {num:11,label:'B#11 Technical role in cert body',rate:'2/act.',maxYr:10,max5:30,part:'B'},
+    ];
+
+    // Build year-by-year points from logged entries
+    var certYear1Start = new Date('2021-05-15');
+    function getYearPts(actNum, yearNum){
+      var yStart = new Date(certYear1Start);
+      yStart.setFullYear(yStart.getFullYear()+(yearNum-1));
+      var yEnd = new Date(yStart);
+      yEnd.setFullYear(yEnd.getFullYear()+1);
+      var pts=0;
+      (logEntries[activeMethod]||[]).forEach(function(e){
+        if(e.actNum===actNum && e.from){
+          var eDate = new Date(e.from);
+          if(eDate >= yStart && eDate < yEnd) pts+=(e.pts||0);
+        }
+      });
+      // Add preloaded
+      if(yearNum===1||yearNum===2||yearNum===3){
+        var preloaded = methodConfig[activeMethod].preloaded||[];
+        preloaded.forEach(function(p){
+          if((p.actNum||9)===actNum) pts+=Math.round(p.pts/3);
+        });
+      }
+      return Math.min(pts, actDefs.find(function(a){return a.num===actNum;})?actDefs.find(function(a){return a.num===actNum;}).maxYr:99);
     }
 
-    // Save
-    var fname = 'CERTainly_'+activeMethod.toUpperCase()+'_Renewal_Newell_'+new Date().toISOString().split('T')[0]+'.pdf';
+    var partATotal=0; var partBTotal=0;
+    actDefs.forEach(function(a,i){
+      var bg = i%2===0?[255,255,255]:[248,250,252];
+      doc.setFillColor(bg[0],bg[1],bg[2]);
+      doc.rect(ML,y,TW,7,'F');
+      if(a.part==='A'){doc.setFillColor(240,248,240);doc.rect(ML,y,3,7,'F');}
+      else{doc.setFillColor(240,244,255);doc.rect(ML,y,3,7,'F');}
+      doc.setFontSize(7.5);doc.setFont('helvetica','normal');doc.setTextColor(cBlack[0],cBlack[1],cBlack[2]);
+      doc.text(a.label,ML+4,y+4.5);
+      doc.text(a.rate,tCols[1],y+4.5);
+      doc.text(String(a.maxYr),tCols[2],y+4.5);
+      // Year pts
+      var rowTotal=0;
+      [1,2,3,4,5].forEach(function(yr,j){
+        var pts=getYearPts(a.num,yr);
+        rowTotal+=pts;
+        doc.text(pts>0?String(pts):'-',tCols[3+j],y+4.5);
+      });
+      rowTotal=Math.min(rowTotal,a.max5);
+      doc.setFont('helvetica','bold');
+      doc.setTextColor(rowTotal>0?cGreen[0]:cMid[0],rowTotal>0?cGreen[1]:cMid[1],rowTotal>0?cGreen[2]:cMid[2]);
+      doc.text(String(rowTotal),tCols[8],y+4.5);
+      if(a.part==='A') partATotal+=rowTotal; else partBTotal+=rowTotal;
+      y+=8;
+    });
+
+    // Totals row
+    doc.setFillColor(cGov[0],cGov[1],cGov[2]);
+    doc.rect(ML,y,TW,8,'F');
+    doc.setFontSize(8);doc.setFont('helvetica','bold');doc.setTextColor(255,255,255);
+    doc.text('TOTALS',ML+2,y+5.5);
+    doc.text('Part A: '+partATotal+' pts',ML+TW*0.35,y+5.5);
+    doc.text('Part B: '+partBTotal+' pts',ML+TW*0.55,y+5.5);
+    var grandTotal=partATotal+partBTotal;
+    var passColor=grandTotal>=100&&partATotal>=50?[0,180,0]:[255,120,0];
+    doc.setTextColor(passColor[0],passColor[1],passColor[2]);
+    doc.text('TOTAL: '+grandTotal+'/100 — '+(grandTotal>=100&&partATotal>=50?'PASS ✓':'REVIEW REQUIRED'),ML+TW*0.72,y+5.5);
+    y+=12;
+
+    pageFooter(1,6,'8.2.1-073');
+
+    // ── SCS PAGE 2: POINTS DETAIL ──
+    doc.addPage();
+    header(2,'8.2.1-073','Structured Credit System Application Form for Renewal');
+    y=30;
+    y=sectionTitle('Structured Credit System Reporting — Year by Year Detail',y);
+    doc.setFontSize(7);doc.setFont('helvetica','normal');doc.setTextColor(cMid[0],cMid[1],cMid[2]);
+    doc.text('"Year" refers to certification year, not calendar year. Year 1 begins on the date of last certification/recertification.',ML,y+3); y+=9;
+
+    // Detailed entries
+    var entries=logEntries[activeMethod]||[];
+    var preloaded=methodConfig[activeMethod].preloaded||[];
+    var allEntries=preloaded.map(function(p){return {title:p.title,meta:p.meta,pts:p.pts,actNum:p.actNum||9,nrcanLabel:p.title};})
+      .concat(entries.map(function(e){return {title:e.title,meta:(e.from||'')+(e.to?' to '+e.to:''),pts:e.pts,actNum:e.actNum,nrcanLabel:e.nrcanLabel||e.title};}));
+
+    allEntries.forEach(function(e,i){
+      if(y>255){doc.addPage();header(2,'8.2.1-073','Structured Credit System');y=30;}
+      var bg=i%2===0?[255,255,255]:[248,250,252];
+      doc.setFillColor(bg[0],bg[1],bg[2]);
+      doc.rect(ML,y,TW,10,'F');
+      doc.setFontSize(8);doc.setFont('helvetica','bold');doc.setTextColor(cGov[0],cGov[1],cGov[2]);
+      doc.text('Activity #'+(e.actNum||'?'),ML+2,y+4.5);
+      doc.setFont('helvetica','normal');doc.setTextColor(cBlack[0],cBlack[1],cBlack[2]);
+      doc.text(e.nrcanLabel||e.title,ML+22,y+4.5,{maxWidth:TW-35});
+      doc.setFontSize(7);doc.setTextColor(cMid[0],cMid[1],cMid[2]);
+      if(e.meta) doc.text(e.meta,ML+22,y+8.5);
+      doc.setFontSize(9);doc.setFont('helvetica','bold');doc.setTextColor(cGreen[0],cGreen[1],cGreen[2]);
+      doc.text('+'+e.pts+' pts',MR,y+5.5,{align:'right'});
+      y+=11;
+    });
+
+    y+=5;
+    doc.setFillColor(235,245,235);
+    doc.rect(ML,y,TW,10,'F');
+    doc.setFontSize(9);doc.setFont('helvetica','bold');doc.setTextColor(cBlack[0],cBlack[1],cBlack[2]);
+    doc.text('Grand Total: '+grandTotal+' / 100 points required',ML+2,y+6.5);
+    doc.setTextColor(grandTotal>=100&&partATotal>=50?cGreen[0]:cRed[0],grandTotal>=100&&partATotal>=50?cGreen[1]:cRed[1],grandTotal>=100&&partATotal>=50?cGreen[2]:cRed[2]);
+    doc.text(grandTotal>=100&&partATotal>=50?'MEETS REQUIREMENTS ✓':'DOES NOT MEET REQUIREMENTS',MR,y+6.5,{align:'right'});
+    y+=15;
+
+    pageFooter(2,6,'8.2.1-073');
+
+    // ── SCS PAGES 3-4: EVIDENCE ──
+    doc.addPage();
+    header(3,'8.2.1-073','Structured Credit System Application Form for Renewal');
+    y=30;
+    y=sectionTitle('Structured Credit System Activity Evidence',y);
+    doc.setFontSize(7);doc.setFont('helvetica','normal');doc.setTextColor(cMid[0],cMid[1],cMid[2]);
+    doc.text('Fill in the following sections as applicable to support your reported structured credit system activities.',ML,y+3); y+=9;
+
+    var evidenceSections=[
+      {num:1,title:'Activity #1: Performance of NDT Activities',content:'Buffalo Inspection Services, Edmonton AB — MT & UT Technician/Inspector — Jan 2025 to Nov 2025\nKC Inspection Ltd, LakeCountry BC — Owner/Senior Inspector — UTSW, UT Thickness, MT — Jan 2021 to Jan 2025\nTMEP Spreads 4A/B & 5A — NDT Coordinator — MT & UT oversight, procedure review, audit — May 2021 to Jun 2023'},
+      {num:2,title:'Activity #2: Completion of Theoretical Training',content:'Enbridge Pipeline Integrity Assessment (PIA) Training — Apr 17-21, 2023 — 5 days — UT & MT of pipelines\nProvider: JMP Inspections INC / Joe Powers'},
+      {num:5,title:'Activity #5: Research / Engineering of NDT',content:'KC Inspection Ltd — NDT coordination software development — procedure review and coordination engineering — Jan 2021 to Jan 2023\nTMEP — Procedure development and technical oversight for UT/MT inspection programs — May 2021 to Jun 2023'},
+      {num:8,title:'Activity #8: NDT Society Memberships',content:'ASTTBC — Applied Science Technologists & Technicians of BC — Member #34544\nAWS — American Welding Society — Member #59109\nAPI — American Petroleum Institute — Member #78611'},
+      {num:9,title:'Activity #9: Technical Oversight and Mentoring',content:'TMEP Spreads 4A/B & 5A — NDT Coordinator — supervised and mentored multiple NDT technicians in MT and UT — May 2021 to Jun 2023\nConfirmed by: Robert Bishop (QA Manager, Spread 5A), Anderson Nuttall (CWI, Spread 3/4A), Joe Powers (Pipeline Quality Specialist)'},
+    ];
+
+    evidenceSections.forEach(function(sec){
+      if(y>240){doc.addPage();header(3,'8.2.1-073','Structured Credit System');y=30;}
+      doc.setFillColor(240,245,255);
+      doc.rect(ML,y,TW,5,'F');
+      doc.setFontSize(8);doc.setFont('helvetica','bold');doc.setTextColor(cGov[0],cGov[1],cGov[2]);
+      doc.text(sec.title,ML+2,y+3.5); y+=6;
+      doc.setFontSize(8);doc.setFont('helvetica','normal');doc.setTextColor(cBlack[0],cBlack[1],cBlack[2]);
+      var lines=doc.splitTextToSize(sec.content,TW-4);
+      doc.text(lines,ML+2,y+5);
+      doc.setDrawColor(200,210,230);doc.rect(ML,y,TW,lines.length*4+6,'S');
+      y+=lines.length*4+10;
+    });
+
+    pageFooter(3,6,'8.2.1-073');
+
+    // ── SCS PAGE 4-5-6: APPLICANT + SUPERVISOR ATTESTATION ──
+    doc.addPage();
+    header(4,'8.2.1-073','Structured Credit System Application Form for Renewal');
+    y=30;
+    y=sectionTitle('Applicant and Employer/Supervisor Attestations',y);
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');doc.setTextColor(cMid[0],cMid[1],cMid[2]);
+    var scsAttText='I attest that the statements made by me in this application are true and complete. I understand that this application counts as an examination attempt and cannot be withdrawn once submitted. I understand that the NRCan NDTCB may conduct audits and investigations to verify the validity of the information.';
+    doc.text(doc.splitTextToSize(scsAttText,TW),ML,y+4); y+=16;
+
+    sigBox('Applicant Attestation','Dwight Conrad Newell','13415',ML,y,TW*0.48);
+    y+=42;
+    sigBox('Employer/Supervisor Attestation (same as renewal application)','Andrew Crawford','6337',ML,y,TW*0.48);
+    doc.setFontSize(7);doc.setTextColor(cMid[0],cMid[1],cMid[2]);
+    doc.text('I attest to the best of my knowledge that the information given on this form is accurate.',ML+TW*0.52,y+5);
+    doc.text('Buffalo Inspection Services, Edmonton AB',ML+TW*0.52,y+10);
+    doc.text('a.crawford@buffaloinspection.com',ML+TW*0.52,y+15);
+    y+=45;
+
+    pageFooter(4,6,'8.2.1-073');
+
+    // Pages 5-6 condensed
+    doc.addPage();
+    header(5,'8.2.1-073','Structured Credit System Application Form for Renewal');
+    y=30;
+    y=sectionTitle('Documentary Evidence Submission',y);
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');doc.setTextColor(cMid[0],cMid[1],cMid[2]);
+    var docText='Candidates must submit documentation to demonstrate compliance including: confirmation of work activities by a certified individual or referee; confirmation of level of activity in the given method; dates and protocol numbers of reports; details of job specific training received; confirmation of employer authorization to operate; summary of activities and outputs; job/position description.';
+    doc.text(doc.splitTextToSize(docText,TW),ML,y+4); y+=20;
+    y=sectionTitle('Supporting Documents Attached',y);
+    var docs=['Attestation letter — Robert Bishop, QA Manager, TMEP Spread 5A (Inspection.welding@gmail.com)','Attestation letter — Anderson Nuttall, Chief Welding Inspector, TMEP Spread 3/4A (Anderson.nuttall@nrm.ca)','Attestation letter — Joe Powers, Pipeline Quality Specialist, TMEP (jmpinspectionsinc@gmail.com)','Attestation letter — Joe Powers, JMP Inspections — Enbridge PIA Training (Apr 17-21, 2023)','Attestation letter — Joe Powers, JMP Inspections — KC Inspection Ltd (Jan 2021-current)'];
+    docs.forEach(function(d,i){
+      checkBox(ML,y+i*8+2,true);
+      doc.setFontSize(8);doc.setFont('helvetica','normal');doc.setTextColor(cBlack[0],cBlack[1],cBlack[2]);
+      doc.text(d,ML+7,y+i*8+5);
+    });
+    y+=docs.length*8+8;
+    pageFooter(5,6,'8.2.1-073');
+
+    doc.addPage();
+    header(6,'8.2.1-073','Structured Credit System Application Form for Renewal');
+    y=30;
+    y=sectionTitle('Engineering of NDT — Activity #5 Reference',y);
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');doc.setTextColor(cMid[0],cMid[1],cMid[2]);
+    var engText='As defined in Annex E of CAN/CGSB 48.9712-2022, engineering of NDT covers: selection of NDT techniques; establishment or validation of NDT procedures; technical evaluation of NDT suppliers; coordination and supervision of NDT personnel activities; establishment of in-service inspection programmes; responsibility for an NDT facility. Activities claimed under A#5 by Dwight Conrad Newell include coordination software development (KC Inspection Ltd, 2021-2023) and NDT procedure development for TMEP pipeline inspection programs (2021-2023).';
+    doc.text(doc.splitTextToSize(engText,TW),ML,y+4); y+=25;
+    pageFooter(6,6,'8.2.1-073');
+
+    // ══════════════════════════════════════════════════════════════
+    // FORM 3: 8.2.1-002 — CODE OF CONDUCT
+    // ══════════════════════════════════════════════════════════════
+    doc.addPage();
+    header(1,'8.2.1-002','NRCan NDTCB Code of Conduct');
+    y=30;
+    doc.setFontSize(9);doc.setFont('helvetica','bold');doc.setTextColor(cBlack[0],cBlack[1],cBlack[2]);
+    doc.text('NATURAL RESOURCES CANADA NATIONAL NON-DESTRUCTIVE TESTING CERTIFICATION BODY',ML,y); y+=5;
+    doc.text('CODE OF CONDUCT',ML,y); y+=7;
+
+    doc.setFontSize(7.5);doc.setFont('helvetica','normal');doc.setTextColor(cMid[0],cMid[1],cMid[2]);
+    doc.text('Individuals certified or in the process of being certified must recognize that personal integrity and professional competence are the fundamental',ML,y);y+=4;
+    doc.text('principles on which their non-destructive testing activities are founded. Accordingly, it is a condition of certification that certificate holders and',ML,y);y+=4;
+    doc.text('candidates shall comply with this code of conduct:',ML,y);y+=8;
+
+    var cocItems=[
+      'Comply with the relevant provisions of the applicable certification scheme and permit the publishing of personal certification status and associated information for the public verification of certification status;',
+      'At all times, be aware of and comply with the provisions and requirements of codes, regulations and standards under which they are working and immediately report to the NRCan NDTCB any perceived violation(s);',
+      'Immediately report to the NRCan NDTCB any perceived violation(s) of this code of conduct or any attempt to pressure or force an individual certified to violate this code of conduct;',
+      'Verify the information on their certificates and/or wallet card, and if incorrect inform the NRCan NDTCB immediately;',
+      'Not attempt to cheat on certification examinations, falsify documents, falsely claim or misrepresent their own or their associate\'s academic or professional qualifications;',
+      'Discontinue all claims to certification upon expiry, suspension or withdrawal of certification, and upon request return to the NRCan NDTCB any certificates and/or wallet cards;',
+      'Inform their employer in the event that their certification is suspended, cancelled or withdrawn;',
+      'Only sign documents for which they have personal professional knowledge and/or direct supervisory control;',
+      'Undertake only those non-destructive testing assignments for which they are competent by virtue of their training, experience, qualification and certification;',
+      'Perform their professional duties with proper regard for the physical environment and the safety, health and well-being of the public;',
+      'Maintain their proficiency by updating their technical knowledge as required to properly practice non-destructive testing in the certified methods, levels and sectors;',
+      'Refrain from unethical acts which would discredit the certification scheme or bring the NRCan NDTCB into disrepute.',
+    ];
+    cocItems.forEach(function(item,i){
+      doc.setFontSize(7.5);doc.setFont('helvetica','normal');doc.setTextColor(cBlack[0],cBlack[1],cBlack[2]);
+      var lines=doc.splitTextToSize((i+1)+'. '+item,TW-6);
+      doc.text(lines,ML+4,y);
+      y+=lines.length*4+2;
+    });
+
+    y+=5;
+    doc.setFontSize(8);doc.setFont('helvetica','bold');doc.setTextColor(cBlack[0],cBlack[1],cBlack[2]);
+    doc.text('I, Dwight Conrad Newell, agree to abide by this code of conduct.',ML,y); y+=8;
+    labeledField('Print Full Name','Dwight Conrad Newell',ML,y,TW*0.5);
+    y+=11;
+    sigBox('Signature','Dwight Conrad Newell','13415',ML,y,TW*0.55);
+    doc.setFontSize(8);doc.setFont('helvetica','normal');doc.setTextColor(cMid[0],cMid[1],cMid[2]);
+    doc.text('Date: '+todayStr,ML+TW*0.6,y+15);
+    y+=42;
+
+    doc.setFontSize(7);doc.setTextColor(cLight[0],cLight[1],cLight[2]);
+    doc.text('8.2.1-002 NRCan NDTCB Code of Conduct  |  Version 02  |  Published 2017-03-03  |  Page 1 of 1',ML,y);
+    doc.text('PROTECTED (When Complete)',MR,y,{align:'right'});
+
+    // ══════════════════════════════════════════════════════════════
+    // SAVE
+    // ══════════════════════════════════════════════════════════════
+    var fname = 'CERTainly_'+activeMethod.toUpperCase()+'_Newell_'+todayStr+'.pdf';
     doc.save(fname);
 
+    // Show success
+    setTimeout(function(){
+      var pages = doc.getNumberOfPages();
+      alert('✓ PDF generated successfully\n\n'+
+        'File: '+fname+'\n'+
+        'Pages: '+pages+'\n\n'+
+        'Forms included:\n'+
+        '• 8.2.1-075 — Renewal Application (6 pages)\n'+
+        '• 8.2.1-073 — SCS Application (6 pages)\n'+
+        '• 8.2.1-002 — Code of Conduct (1 page)\n\n'+
+        'Note: NRCan requires PDF digital signatures for final submission. '+
+        'The signature shown is a handwritten representation. '+
+        'NRCan may request a PDF digital ID signature prior to processing.');
+    },1500);
+
   } catch(err){
-    alert('PDF generation error: '+err.message+'. Please ensure you have completed onboarding first.');
+    console.error('PDF error:',err);
+    alert('PDF generation error: '+err.message+'\n\nPlease complete onboarding including signature capture first.');
   }
 }
+
 
 // ══════════════════════════════════════════════════════
 // FIX 5b — SUBMIT TO NRCAN via email client
@@ -2235,4 +3683,93 @@ window.onload=function(){
 };
 </script>
 </body>
-</html>
+</html><!-- SCS TRACKER — SHORTFALL DETECTOR + GAP ANALYSIS -->
+<div id="s-scs" style="display:none">
+<div class="status-bar"><span class="status-time">9:41</span><div class="status-icons"><i class="ti ti-wifi"></i><i class="ti ti-battery"></i></div></div>
+<div class="method-header">
+  <div class="method-header-left">
+    <span class="back-btn" onclick="goScreen('s-select-method-scs')"><i class="ti ti-arrow-left" style="font-size:17px"></i></span>
+    <span id="scsMethodBadge" class="method-badge mt">MT Level 2</span>
+  </div>
+  <span style="font-size:12px;color:var(--text2)">SCS points</span>
+</div>
+<div class="screen-body" style="padding-bottom:90px">
+  <div style="border-radius:14px;padding:16px;margin-bottom:14px" id="scsTotalCard">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px">
+      <div>
+        <div style="font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;margin-bottom:2px">Total accumulated</div>
+        <div style="font-size:11px" id="scsRemaining"></div>
+      </div>
+      <div style="font-size:32px;font-weight:800" id="scsTotalDisplay">0/100</div>
+    </div>
+    <div style="height:8px;background:rgba(0,0,0,0.1);border-radius:8px;overflow:hidden;margin-bottom:8px">
+      <div id="scsBar" style="height:100%;border-radius:8px;transition:width .4s;width:0%"></div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+      <div style="background:rgba(0,0,0,0.1);border-radius:8px;padding:8px;text-align:center">
+        <div style="font-size:18px;font-weight:700" id="scsPartA">0</div>
+        <div style="font-size:9px;opacity:.75">Part A pts - min 50</div>
+      </div>
+      <div style="background:rgba(0,0,0,0.1);border-radius:8px;padding:8px;text-align:center">
+        <div style="font-size:18px;font-weight:700" id="scsPartB">0</div>
+        <div style="font-size:9px;opacity:.75">Part B pts</div>
+      </div>
+    </div>
+  </div>
+  <div id="scsShortfallBox" style="display:none"></div>
+  <div id="scsGapBox" style="display:none"></div>
+  <div style="font-size:11px;font-weight:700;color:var(--olive-dk);letter-spacing:.05em;text-transform:uppercase;margin-bottom:8px;margin-top:4px">Part A - Direct Practice</div>
+  <div id="scsPartAList"></div>
+  <div style="font-size:11px;font-weight:700;color:var(--blue);letter-spacing:.05em;text-transform:uppercase;margin-bottom:8px;margin-top:12px">Part B - Professional Development</div>
+  <div id="scsPartBList"></div>
+  <button class="primary-btn" style="margin-top:8px" onclick="goScreen('s-renewal-checklist')"><i class="ti ti-arrow-right"></i>Proceed to renewal package</button>
+</div>
+<div class="bottom-nav">
+  <div class="nav-item" onclick="goScreen('s-dashboard')"><i class="ti ti-layout-dashboard nav-icon"></i><span class="nav-label">Dashboard</span></div>
+  <div class="nav-item" onclick="goScreen('s-select-method-log')"><i class="ti ti-pencil nav-icon"></i><span class="nav-label">Log</span></div>
+  <div class="nav-item active" onclick="goScreen('s-select-method-scs')"><i class="ti ti-chart-bar nav-icon"></i><span class="nav-label">Points</span></div>
+  <div class="nav-item" onclick="goScreen('s-select-method-renew')"><i class="ti ti-file-certificate nav-icon"></i><span class="nav-label">Renew</span></div>
+  <div class="nav-item" onclick="goScreen('s-verify')"><i class="ti ti-search nav-icon"></i><span class="nav-label">Verify</span></div>
+</div>
+</div>
+
+<!-- ATTESTATION LETTER SCREEN -->
+<div id="s-attestation" style="display:none">
+<div class="status-bar"><span class="status-time">9:41</span><div class="status-icons"><i class="ti ti-wifi"></i><i class="ti ti-battery"></i></div></div>
+<div class="top-bar">
+  <span class="back-btn" onclick="goScreen('s-scs')"><i class="ti ti-arrow-left" style="font-size:17px"></i>Back</span>
+  <span style="font-size:14px;font-weight:600;color:var(--text)">Request attestation</span>
+</div>
+<div class="screen-body" style="padding-bottom:90px">
+  <div style="background:var(--amber-lt);border-radius:12px;padding:13px;margin-bottom:14px;display:flex;gap:10px">
+    <i class="ti ti-info-circle" style="font-size:18px;color:var(--amber);flex-shrink:0;margin-top:1px"></i>
+    <div style="font-size:12px;color:var(--amber);line-height:1.6"><strong>Have you done the work but lack documentation?</strong><br>A supervisor attestation letter is an official NRCan-accepted way to confirm activities performed. CERTainly generates a pre-written NRCan-compliant template your supervisor just needs to confirm and sign.</div>
+  </div>
+  <div style="font-size:12px;font-weight:600;color:var(--text2);letter-spacing:.04em;text-transform:uppercase;margin-bottom:10px">Select activities needing attestation</div>
+  <div id="attestActList"></div>
+  <div style="height:0.5px;background:var(--border);margin:14px 0"></div>
+  <div style="font-size:12px;font-weight:600;color:var(--text2);letter-spacing:.04em;text-transform:uppercase;margin-bottom:10px">Signatory</div>
+  <div class="signatory-card" style="margin-bottom:10px">
+    <div class="sig-person">
+      <div class="sig-avatar">AC</div>
+      <div><div style="font-size:14px;font-weight:600;color:var(--text)">Andrew Crawford</div><div style="font-size:11px;color:var(--text2)">Buffalo Inspection Services - Reg# 6337 - verified</div></div>
+    </div>
+    <div style="font-size:11px;color:var(--text2);margin-bottom:10px">a.crawford@buffaloinspection.com - 780-405-4113</div>
+  </div>
+  <div style="font-size:12px;font-weight:600;color:var(--text2);letter-spacing:.04em;text-transform:uppercase;margin-bottom:10px">Letter preview</div>
+  <div style="background:var(--bg);border:0.5px solid var(--border);border-radius:12px;padding:14px;margin-bottom:14px">
+    <div style="font-size:12px;color:var(--text);line-height:1.8" id="attestLetterPreview"></div>
+  </div>
+  <button class="primary-btn" onclick="sendAttestationRequest()"><i class="ti ti-mail"></i>Email attestation request to Andrew Crawford</button>
+  <button class="secondary-btn" onclick="copyAttestationLink()"><i class="ti ti-copy"></i>Copy letter template to clipboard</button>
+</div>
+<div class="bottom-nav">
+  <div class="nav-item" onclick="goScreen('s-dashboard')"><i class="ti ti-layout-dashboard nav-icon"></i><span class="nav-label">Dashboard</span></div>
+  <div class="nav-item" onclick="goScreen('s-select-method-log')"><i class="ti ti-pencil nav-icon"></i><span class="nav-label">Log</span></div>
+  <div class="nav-item active" onclick="goScreen('s-select-method-scs')"><i class="ti ti-chart-bar nav-icon"></i><span class="nav-label">Points</span></div>
+  <div class="nav-item" onclick="goScreen('s-select-method-renew')"><i class="ti ti-file-certificate nav-icon"></i><span class="nav-label">Renew</span></div>
+  <div class="nav-item" onclick="goScreen('s-verify')"><i class="ti ti-search nav-icon"></i><span class="nav-label">Verify</span></div>
+</div>
+</div>
+
+
