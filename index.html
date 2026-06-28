@@ -858,6 +858,8 @@ select.field-input{background-image:url("data:image/svg+xml,%3Csvg xmlns='http:/
   <div class="verify-chip" onclick="setEmpMethod('VT',this)" style="background:rgba(255,255,255,0.1);color:var(--cream);border-color:transparent">VT</div>
   <div class="verify-chip" onclick="setEmpMethod('UT-PA',this)" style="background:rgba(255,255,255,0.1);color:var(--cream);border-color:transparent">UT-PA</div>
   <div class="verify-chip" onclick="setEmpMethod('CEDO',this)" style="background:rgba(255,255,255,0.1);color:var(--cream);border-color:transparent">CEDO</div>
+  <div class="verify-chip" onclick="setEmpMethod('XF',this)" style="background:rgba(255,255,255,0.1);color:var(--cream);border-color:transparent">XF</div>
+  <div class="verify-chip" onclick="setEmpMethod('WW',this)" style="background:rgba(255,255,255,0.1);color:var(--cream);border-color:transparent">WW</div>
   <div class="verify-chip" onclick="setEmpMethod('overdue',this)" style="background:rgba(163,45,45,0.4);color:#ffaaaa;border-color:transparent">Overdue</div>
   <div class="verify-chip" onclick="setEmpMethod('expiring',this)" style="background:rgba(186,117,23,0.4);color:#ffd080;border-color:transparent">Expiring</div>
 </div>
@@ -906,6 +908,8 @@ select.field-input{background-image:url("data:image/svg+xml,%3Csvg xmlns='http:/
     <div class="verify-chip" onclick="setVerifyFilter('VT',this)">VT</div>
     <div class="verify-chip" onclick="setVerifyFilter('UT-PA',this)">UT-PA</div>
     <div class="verify-chip" onclick="setVerifyFilter('CEDO',this)">CEDO</div>
+    <div class="verify-chip" onclick="setVerifyFilter('XF',this)">XF</div>
+    <div class="verify-chip" onclick="setVerifyFilter('WW',this)">WW</div>
     <div class="verify-chip" onclick="setVerifyFilter('AB',this)">AB</div>
     <div class="verify-chip" onclick="setVerifyFilter('BC',this)">BC</div>
     <div class="verify-chip" onclick="setVerifyFilter('ON',this)">ON</div>
@@ -1683,6 +1687,9 @@ function generatePDF(){
 // ── VERIFY / NRCan DIRECTORY ──
 var NRCAN_DATA=[
   {name:'Dwight Conrad Newell',reg:'13415',employer:'Buffalo Inspection Services',province:'AB',certs:[{method:'MT',level:2,expiry:'2026-08-15',sector:'EMC'},{method:'UT',level:2,expiry:'2026-05-15',sector:'EMC'}]},
+  {name:'Kristian Newell',reg:'31858',employer:'Lakecountry',province:'BC',certs:[{method:'MT',level:2,expiry:'2035-01-15',sector:'EMC'},{method:'UT',level:1,expiry:'2035-01-15',sector:'EMC'}]},
+  {name:'Job Hosea Olewe',reg:'TBD',employer:'Calgary',province:'AB',certs:[{method:'PT',level:2,expiry:'2026-07-15',sector:'EMC'},{method:'UT',level:2,expiry:'2027-07-15',sector:'EMC'}]},
+  {name:'Joseph Murray Powers',reg:'TBD',employer:'Royston',province:'BC',certs:[{method:'MT',level:2,expiry:'2031-11-15',sector:'EMC'},{method:'PT',level:2,expiry:'2031-11-15',sector:'EMC'},{method:'UT',level:2,expiry:'2032-11-15',sector:'EMC'},{method:'UT-PA',level:2,expiry:'2033-08-09',sector:'WW'},{method:'XF',level:2,expiry:'2030-11-17',sector:'EMC'}]},
   {name:'Andrew Crawford',reg:'6337',employer:'Buffalo Inspection Services',province:'AB',certs:[{method:'MT',level:3,expiry:'2027-03-01',sector:'EMC'},{method:'PT',level:3,expiry:'2027-03-01',sector:'EMC'},{method:'RT',level:3,expiry:'2027-03-01',sector:'EMC'},{method:'UT',level:3,expiry:'2027-03-01',sector:'EMC'}]},
   {name:'James Okafor',reg:'8821',employer:'Applus RTD',province:'AB',certs:[{method:'RT',level:2,expiry:'2027-02-01',sector:'EMC'},{method:'UT',level:2,expiry:'2027-02-01',sector:'EMC'}]},
   {name:'Sarah Melnyk',reg:'11204',employer:'Team Industrial',province:'BC',certs:[{method:'MT',level:2,expiry:'2025-11-30',sector:'EMC'},{method:'PT',level:2,expiry:'2025-11-30',sector:'EMC'}]},
